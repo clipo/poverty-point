@@ -8,7 +8,7 @@ This supplemental information accompanies the main manuscript. Sections S1-S5 de
 
 The model is documented under the **ODD protocol** (Overview, Design concepts, Details; Grimm et al. 2010), a standardized format for agent-based-model documentation that allows other researchers to replicate the model. ODD is a documentation convention rather than a substantive theoretical choice; the headings below (Purpose and patterns, Entities and state variables, Process overview and scheduling, Design concepts, Initialization, Submodels) follow the ODD specification.
 
-The model is specified following the ODD (Overview, Design concepts, Details) protocol (Grimm et al. 2010). Source code is available at https://github.com/clipo/poverty-point-signaling.
+The model is specified following the ODD (Overview, Design concepts, Details) protocol (Grimm et al. 2010). Source code is available at https://github.com/clipo/poverty-point.
 
 ### S1.1 Purpose and patterns
 
