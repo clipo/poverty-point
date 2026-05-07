@@ -1,0 +1,1062 @@
+{
+  "sweep": [
+    {
+      "alpha": 0.0,
+      "rows": [
+        {
+          "name": "Poverty Point",
+          "n_agg": 25,
+          "eps": 0.49,
+          "M_g": 129.7835460285217,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 750000.0,
+          "observed_volume_m3": 750000,
+          "observed_scale": 3,
+          "log_overpred": 0.0
+        },
+        {
+          "name": "Lower Jackson",
+          "n_agg": 1,
+          "eps": 0.48,
+          "M_g": 5.24423692002439,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 30305.67287130468,
+          "observed_volume_m3": 1000,
+          "observed_scale": 0,
+          "log_overpred": 1.481523931013923
+        },
+        {
+          "name": "Watson Brake",
+          "n_agg": 8,
+          "eps": 0.43,
+          "M_g": 41.54143104486696,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 240061.81243347478,
+          "observed_volume_m3": 7000,
+          "observed_scale": 2,
+          "log_overpred": 1.5352250406240215
+        },
+        {
+          "name": "Caney",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 150100.3330374007,
+          "observed_volume_m3": 5000,
+          "observed_scale": 2,
+          "log_overpred": 1.4774116515058189
+        },
+        {
+          "name": "Frenchman's Bend",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 150100.3330374007,
+          "observed_volume_m3": 2000,
+          "observed_scale": 1,
+          "log_overpred": 1.8753516601778564
+        },
+        {
+          "name": "Insley",
+          "n_agg": 6,
+          "eps": 0.43,
+          "M_g": 31.16258406502227,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 180083.98417184872,
+          "observed_volume_m3": 14000,
+          "observed_scale": 2,
+          "log_overpred": 1.1093470547366384
+        },
+        {
+          "name": "J.W. Copes",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 90158.3766277002,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 2.2560360789595837
+        },
+        {
+          "name": "Cowpen Slough",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 90158.3766277002,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 2.2560360789595837
+        },
+        {
+          "name": "Jaketown",
+          "n_agg": 8,
+          "eps": 0.4,
+          "M_g": 41.54172627847892,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 240063.5185450409,
+          "observed_volume_m3": 5000,
+          "observed_scale": 1,
+          "log_overpred": 1.6813561628081815
+        },
+        {
+          "name": "Claiborne",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 120138.04790743286,
+          "observed_volume_m3": 3000,
+          "observed_scale": 1,
+          "log_overpred": 1.60255931620849
+        },
+        {
+          "name": "Cedarland",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 120138.04790743286,
+          "observed_volume_m3": 1000,
+          "observed_scale": 1,
+          "log_overpred": 2.0796805709281525
+        }
+      ],
+      "mean_log_overpred": 1.577684322356568,
+      "std_log_overpred": 0.6325999321861702,
+      "spearman_rho_volume": 0.8847926267281105,
+      "spearman_p_volume": 0.0002957009973791468,
+      "spearman_rho_scale": 0.8477988160551113,
+      "spearman_p_scale": 0.0009791873543320932
+    },
+    {
+      "alpha": 0.5,
+      "rows": [
+        {
+          "name": "Poverty Point",
+          "n_agg": 25,
+          "eps": 0.49,
+          "M_g": 129.7835460285217,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 750000.0,
+          "observed_volume_m3": 750000,
+          "observed_scale": 3,
+          "log_overpred": 0.0
+        },
+        {
+          "name": "Lower Jackson",
+          "n_agg": 1,
+          "eps": 0.48,
+          "M_g": 5.24423692002439,
+          "m3_per_Mg": 1155.7705471156987,
+          "predicted_volume_m3": 6061.134574260936,
+          "observed_volume_m3": 1000,
+          "observed_scale": 0,
+          "log_overpred": 0.7825539266779041
+        },
+        {
+          "name": "Watson Brake",
+          "n_agg": 8,
+          "eps": 0.43,
+          "M_g": 41.54143104486696,
+          "m3_per_Mg": 3269.0127654447865,
+          "predicted_volume_m3": 135799.46838051445,
+          "observed_volume_m3": 7000,
+          "observed_scale": 2,
+          "log_overpred": 1.2878000297839745
+        },
+        {
+          "name": "Caney",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 2584.381509742826,
+          "predicted_volume_m3": 67126.90962339709,
+          "observed_volume_m3": 5000,
+          "observed_scale": 2,
+          "log_overpred": 1.1279266493378095
+        },
+        {
+          "name": "Frenchman's Bend",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 2584.381509742826,
+          "predicted_volume_m3": 67126.90962339709,
+          "observed_volume_m3": 2000,
+          "observed_scale": 1,
+          "log_overpred": 1.525866658009847
+        },
+        {
+          "name": "Insley",
+          "n_agg": 6,
+          "eps": 0.43,
+          "M_g": 31.16258406502227,
+          "m3_per_Mg": 2831.048100170806,
+          "predicted_volume_m3": 88222.77441369432,
+          "observed_volume_m3": 14000,
+          "observed_scale": 2,
+          "log_overpred": 0.7994526755924415
+        },
+        {
+          "name": "J.W. Copes",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 2001.8533094960692,
+          "predicted_volume_m3": 31231.777809421426,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 1.7956267019833962
+        },
+        {
+          "name": "Cowpen Slough",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 2001.8533094960692,
+          "predicted_volume_m3": 31231.777809421426,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 1.7956267019833962
+        },
+        {
+          "name": "Jaketown",
+          "n_agg": 8,
+          "eps": 0.4,
+          "M_g": 41.54172627847892,
+          "m3_per_Mg": 3269.0127654447865,
+          "predicted_volume_m3": 135800.43350296072,
+          "observed_volume_m3": 5000,
+          "observed_scale": 1,
+          "log_overpred": 1.4339311519681344
+        },
+        {
+          "name": "Claiborne",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 2311.5410942313974,
+          "predicted_volume_m3": 48055.219162973146,
+          "observed_volume_m3": 3000,
+          "observed_scale": 1,
+          "log_overpred": 1.2046193075364524
+        },
+        {
+          "name": "Cedarland",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 2311.5410942313974,
+          "predicted_volume_m3": 48055.219162973146,
+          "observed_volume_m3": 1000,
+          "observed_scale": 1,
+          "log_overpred": 1.6817405622561148
+        }
+      ],
+      "mean_log_overpred": 1.2213767604663155,
+      "std_log_overpred": 0.5371337522237166,
+      "spearman_rho_volume": 0.8847926267281105,
+      "spearman_p_volume": 0.0002957009973791468,
+      "spearman_rho_scale": 0.8477988160551113,
+      "spearman_p_scale": 0.0009791873543320932
+    },
+    {
+      "alpha": 1.0,
+      "rows": [
+        {
+          "name": "Poverty Point",
+          "n_agg": 25,
+          "eps": 0.49,
+          "M_g": 129.7835460285217,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 750000.0,
+          "observed_volume_m3": 750000,
+          "observed_scale": 3,
+          "log_overpred": 0.0
+        },
+        {
+          "name": "Lower Jackson",
+          "n_agg": 1,
+          "eps": 0.48,
+          "M_g": 5.24423692002439,
+          "m3_per_Mg": 231.15410942313974,
+          "predicted_volume_m3": 1212.226914852187,
+          "observed_volume_m3": 1000,
+          "observed_scale": 0,
+          "log_overpred": 0.08358392234188529
+        },
+        {
+          "name": "Watson Brake",
+          "n_agg": 8,
+          "eps": 0.43,
+          "M_g": 41.54143104486696,
+          "m3_per_Mg": 1849.232875385118,
+          "predicted_volume_m3": 76819.77997871193,
+          "observed_volume_m3": 7000,
+          "observed_scale": 2,
+          "log_overpred": 1.0403750189439276
+        },
+        {
+          "name": "Caney",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 1155.7705471156987,
+          "predicted_volume_m3": 30020.06660748014,
+          "observed_volume_m3": 5000,
+          "observed_scale": 2,
+          "log_overpred": 0.7784416471698
+        },
+        {
+          "name": "Frenchman's Bend",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 1155.7705471156987,
+          "predicted_volume_m3": 30020.06660748014,
+          "observed_volume_m3": 2000,
+          "observed_scale": 1,
+          "log_overpred": 1.1763816558418376
+        },
+        {
+          "name": "Insley",
+          "n_agg": 6,
+          "eps": 0.43,
+          "M_g": 31.16258406502227,
+          "m3_per_Mg": 1386.9246565388385,
+          "predicted_volume_m3": 43220.15620124369,
+          "observed_volume_m3": 14000,
+          "observed_scale": 2,
+          "log_overpred": 0.4895582964482445
+        },
+        {
+          "name": "J.W. Copes",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 693.4623282694192,
+          "predicted_volume_m3": 10819.005195324024,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 1.3352173250072086
+        },
+        {
+          "name": "Cowpen Slough",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 693.4623282694192,
+          "predicted_volume_m3": 10819.005195324024,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 1.3352173250072086
+        },
+        {
+          "name": "Jaketown",
+          "n_agg": 8,
+          "eps": 0.4,
+          "M_g": 41.54172627847892,
+          "m3_per_Mg": 1849.232875385118,
+          "predicted_volume_m3": 76820.3259344131,
+          "observed_volume_m3": 5000,
+          "observed_scale": 1,
+          "log_overpred": 1.1865061411280875
+        },
+        {
+          "name": "Claiborne",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 924.616437692559,
+          "predicted_volume_m3": 19222.087665189258,
+          "observed_volume_m3": 3000,
+          "observed_scale": 1,
+          "log_overpred": 0.8066792988644147
+        },
+        {
+          "name": "Cedarland",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 924.616437692559,
+          "predicted_volume_m3": 19222.087665189258,
+          "observed_volume_m3": 1000,
+          "observed_scale": 1,
+          "log_overpred": 1.283800553584077
+        }
+      ],
+      "mean_log_overpred": 0.8650691985760628,
+      "std_log_overpred": 0.4857334515909779,
+      "spearman_rho_volume": 0.8847926267281105,
+      "spearman_p_volume": 0.0002957009973791468,
+      "spearman_rho_scale": 0.8477988160551113,
+      "spearman_p_scale": 0.0009791873543320932
+    },
+    {
+      "alpha": 1.25,
+      "rows": [
+        {
+          "name": "Poverty Point",
+          "n_agg": 25,
+          "eps": 0.49,
+          "M_g": 129.7835460285217,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 750000.0,
+          "observed_volume_m3": 750000,
+          "observed_scale": 3,
+          "log_overpred": 0.0
+        },
+        {
+          "name": "Lower Jackson",
+          "n_agg": 1,
+          "eps": 0.48,
+          "M_g": 5.24423692002439,
+          "m3_per_Mg": 103.37526038971305,
+          "predicted_volume_m3": 542.124357152868,
+          "observed_volume_m3": 1000,
+          "observed_scale": 0,
+          "log_overpred": -0.2659010798261241
+        },
+        {
+          "name": "Watson Brake",
+          "n_agg": 8,
+          "eps": 0.43,
+          "M_g": 41.54143104486696,
+          "m3_per_Mg": 1390.846174202064,
+          "predicted_volume_m3": 57777.74043963206,
+          "observed_volume_m3": 7000,
+          "observed_scale": 2,
+          "log_overpred": 0.9166625135239039
+        },
+        {
+          "name": "Caney",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 772.9103481609185,
+          "predicted_volume_m3": 20075.628498498772,
+          "observed_volume_m3": 5000,
+          "observed_scale": 2,
+          "log_overpred": 0.6036991460857952
+        },
+        {
+          "name": "Frenchman's Bend",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 772.9103481609185,
+          "predicted_volume_m3": 20075.628498498772,
+          "observed_volume_m3": 2000,
+          "observed_scale": 1,
+          "log_overpred": 1.001639154757833
+        },
+        {
+          "name": "Insley",
+          "n_agg": 6,
+          "eps": 0.43,
+          "M_g": 31.16258406502227,
+          "m3_per_Mg": 970.7461559820046,
+          "predicted_volume_m3": 30250.95869158644,
+          "observed_volume_m3": 14000,
+          "observed_scale": 2,
+          "log_overpred": 0.334611106876146
+        },
+        {
+          "name": "J.W. Copes",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 408.14848134329543,
+          "predicted_volume_m3": 6367.700681212986,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 1.1050126365191149
+        },
+        {
+          "name": "Cowpen Slough",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 408.14848134329543,
+          "predicted_volume_m3": 6367.700681212986,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 1.1050126365191149
+        },
+        {
+          "name": "Jaketown",
+          "n_agg": 8,
+          "eps": 0.4,
+          "M_g": 41.54172627847892,
+          "m3_per_Mg": 1390.846174202064,
+          "predicted_volume_m3": 57778.151064171754,
+          "observed_volume_m3": 5000,
+          "observed_scale": 1,
+          "log_overpred": 1.062793635708064
+        },
+        {
+          "name": "Claiborne",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 584.7787810279295,
+          "predicted_volume_m3": 12157.115681085232,
+          "observed_volume_m3": 3000,
+          "observed_scale": 1,
+          "log_overpred": 0.6077092945283958
+        },
+        {
+          "name": "Cedarland",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 584.7787810279295,
+          "predicted_volume_m3": 12157.115681085232,
+          "observed_volume_m3": 1000,
+          "observed_scale": 1,
+          "log_overpred": 1.0848305492480583
+        }
+      ],
+      "mean_log_overpred": 0.6869154176309366,
+      "std_log_overpred": 0.4814660079828877,
+      "spearman_rho_volume": 0.8847926267281105,
+      "spearman_p_volume": 0.0002957009973791468,
+      "spearman_rho_scale": 0.8477988160551113,
+      "spearman_p_scale": 0.0009791873543320932
+    },
+    {
+      "alpha": 1.5,
+      "rows": [
+        {
+          "name": "Poverty Point",
+          "n_agg": 25,
+          "eps": 0.49,
+          "M_g": 129.7835460285217,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 750000.0,
+          "observed_volume_m3": 750000,
+          "observed_scale": 3,
+          "log_overpred": 0.0
+        },
+        {
+          "name": "Lower Jackson",
+          "n_agg": 1,
+          "eps": 0.48,
+          "M_g": 5.24423692002439,
+          "m3_per_Mg": 46.23082188462795,
+          "predicted_volume_m3": 242.44538297043744,
+          "observed_volume_m3": 1000,
+          "observed_scale": 0,
+          "log_overpred": -0.6153860819941335
+        },
+        {
+          "name": "Watson Brake",
+          "n_agg": 8,
+          "eps": 0.43,
+          "M_g": 41.54143104486696,
+          "m3_per_Mg": 1046.0840849423319,
+          "predicted_volume_m3": 43455.82988176463,
+          "observed_volume_m3": 7000,
+          "observed_scale": 2,
+          "log_overpred": 0.7929500081038805
+        },
+        {
+          "name": "Caney",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 516.8763019485652,
+          "predicted_volume_m3": 13425.38192467942,
+          "observed_volume_m3": 5000,
+          "observed_scale": 2,
+          "log_overpred": 0.4289566450017906
+        },
+        {
+          "name": "Frenchman's Bend",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 516.8763019485652,
+          "predicted_volume_m3": 13425.38192467942,
+          "observed_volume_m3": 2000,
+          "observed_scale": 1,
+          "log_overpred": 0.8268966536738283
+        },
+        {
+          "name": "Insley",
+          "n_agg": 6,
+          "eps": 0.43,
+          "M_g": 31.16258406502227,
+          "m3_per_Mg": 679.4515440409933,
+          "predicted_volume_m3": 21173.465859286636,
+          "observed_volume_m3": 14000,
+          "observed_scale": 2,
+          "log_overpred": 0.17966391730404746
+        },
+        {
+          "name": "J.W. Copes",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 240.22239713952828,
+          "predicted_volume_m3": 3747.8133371305707,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 0.874807948031021
+        },
+        {
+          "name": "Cowpen Slough",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 240.22239713952828,
+          "predicted_volume_m3": 3747.8133371305707,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 0.874807948031021
+        },
+        {
+          "name": "Jaketown",
+          "n_agg": 8,
+          "eps": 0.4,
+          "M_g": 41.54172627847892,
+          "m3_per_Mg": 1046.0840849423319,
+          "predicted_volume_m3": 43456.13872094744,
+          "observed_volume_m3": 5000,
+          "observed_scale": 1,
+          "log_overpred": 0.9390811302880405
+        },
+        {
+          "name": "Claiborne",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 369.8465750770236,
+          "predicted_volume_m3": 7688.835066075703,
+          "observed_volume_m3": 3000,
+          "observed_scale": 1,
+          "log_overpred": 0.4087392901923771
+        },
+        {
+          "name": "Cedarland",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 369.8465750770236,
+          "predicted_volume_m3": 7688.835066075703,
+          "observed_volume_m3": 1000,
+          "observed_scale": 1,
+          "log_overpred": 0.8858605449120395
+        }
+      ],
+      "mean_log_overpred": 0.5087616366858102,
+      "std_log_overpred": 0.49239783595342373,
+      "spearman_rho_volume": 0.8847926267281105,
+      "spearman_p_volume": 0.0002957009973791468,
+      "spearman_rho_scale": 0.8477988160551113,
+      "spearman_p_scale": 0.0009791873543320932
+    },
+    {
+      "alpha": 1.75,
+      "rows": [
+        {
+          "name": "Poverty Point",
+          "n_agg": 25,
+          "eps": 0.49,
+          "M_g": 129.7835460285217,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 750000.0,
+          "observed_volume_m3": 750000,
+          "observed_scale": 3,
+          "log_overpred": 0.0
+        },
+        {
+          "name": "Lower Jackson",
+          "n_agg": 1,
+          "eps": 0.48,
+          "M_g": 5.24423692002439,
+          "m3_per_Mg": 20.675052077942606,
+          "predicted_volume_m3": 108.42487143057359,
+          "observed_volume_m3": 1000,
+          "observed_scale": 0,
+          "log_overpred": -0.964871084162143
+        },
+        {
+          "name": "Watson Brake",
+          "n_agg": 8,
+          "eps": 0.43,
+          "M_g": 41.54143104486696,
+          "m3_per_Mg": 786.7814090925166,
+          "predicted_volume_m3": 32684.025653200042,
+          "observed_volume_m3": 7000,
+          "observed_scale": 2,
+          "log_overpred": 0.6692375026838571
+        },
+        {
+          "name": "Caney",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 345.6560158001687,
+          "predicted_volume_m3": 8978.094002735059,
+          "observed_volume_m3": 5000,
+          "observed_scale": 2,
+          "log_overpred": 0.2542141439177859
+        },
+        {
+          "name": "Frenchman's Bend",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 345.6560158001687,
+          "predicted_volume_m3": 8978.094002735059,
+          "observed_volume_m3": 2000,
+          "observed_scale": 1,
+          "log_overpred": 0.6521541525898236
+        },
+        {
+          "name": "Insley",
+          "n_agg": 6,
+          "eps": 0.43,
+          "M_g": 31.16258406502227,
+          "m3_per_Mg": 475.56655038482376,
+          "predicted_volume_m3": 14819.882604879718,
+          "observed_volume_m3": 14000,
+          "observed_scale": 2,
+          "log_overpred": 0.02471672773194887
+        },
+        {
+          "name": "J.W. Copes",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 141.38678134373313,
+          "predicted_volume_m3": 2205.836221450368,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 0.6446032595429272
+        },
+        {
+          "name": "Cowpen Slough",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 141.38678134373313,
+          "predicted_volume_m3": 2205.836221450368,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 0.6446032595429272
+        },
+        {
+          "name": "Jaketown",
+          "n_agg": 8,
+          "eps": 0.4,
+          "M_g": 41.54172627847892,
+          "m3_per_Mg": 786.7814090925166,
+          "predicted_volume_m3": 32684.257937517268,
+          "observed_volume_m3": 5000,
+          "observed_scale": 1,
+          "log_overpred": 0.815368624868017
+        },
+        {
+          "name": "Claiborne",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 233.9115124111718,
+          "predicted_volume_m3": 4862.8462724340925,
+          "observed_volume_m3": 3000,
+          "observed_scale": 1,
+          "log_overpred": 0.20976928585635826
+        },
+        {
+          "name": "Cedarland",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 233.9115124111718,
+          "predicted_volume_m3": 4862.8462724340925,
+          "observed_volume_m3": 1000,
+          "observed_scale": 1,
+          "log_overpred": 0.6868905405760207
+        }
+      ],
+      "mean_log_overpred": 0.33060785574068385,
+      "std_log_overpred": 0.5175667319490261,
+      "spearman_rho_volume": 0.8847926267281105,
+      "spearman_p_volume": 0.0002957009973791468,
+      "spearman_rho_scale": 0.8477988160551113,
+      "spearman_p_scale": 0.0009791873543320932
+    },
+    {
+      "alpha": 2.0,
+      "rows": [
+        {
+          "name": "Poverty Point",
+          "n_agg": 25,
+          "eps": 0.49,
+          "M_g": 129.7835460285217,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 750000.0,
+          "observed_volume_m3": 750000,
+          "observed_scale": 3,
+          "log_overpred": 0.0
+        },
+        {
+          "name": "Lower Jackson",
+          "n_agg": 1,
+          "eps": 0.48,
+          "M_g": 5.24423692002439,
+          "m3_per_Mg": 9.24616437692559,
+          "predicted_volume_m3": 48.489076594087486,
+          "observed_volume_m3": 1000,
+          "observed_scale": 0,
+          "log_overpred": -1.3143560863301522
+        },
+        {
+          "name": "Watson Brake",
+          "n_agg": 8,
+          "eps": 0.43,
+          "M_g": 41.54143104486696,
+          "m3_per_Mg": 591.7545201232377,
+          "predicted_volume_m3": 24582.32959318782,
+          "observed_volume_m3": 7000,
+          "observed_scale": 2,
+          "log_overpred": 0.5455249972638335
+        },
+        {
+          "name": "Caney",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 231.1541094231398,
+          "predicted_volume_m3": 6004.01332149603,
+          "observed_volume_m3": 5000,
+          "observed_scale": 2,
+          "log_overpred": 0.0794716428337813
+        },
+        {
+          "name": "Frenchman's Bend",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 231.1541094231398,
+          "predicted_volume_m3": 6004.01332149603,
+          "observed_volume_m3": 2000,
+          "observed_scale": 1,
+          "log_overpred": 0.4774116515058189
+        },
+        {
+          "name": "Insley",
+          "n_agg": 6,
+          "eps": 0.43,
+          "M_g": 31.16258406502227,
+          "m3_per_Mg": 332.86191756932124,
+          "predicted_volume_m3": 10372.837488298486,
+          "observed_volume_m3": 14000,
+          "observed_scale": 2,
+          "log_overpred": -0.13023046184014947
+        },
+        {
+          "name": "J.W. Copes",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 83.21547939233031,
+          "predicted_volume_m3": 1298.280623438883,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 0.4143985710548334
+        },
+        {
+          "name": "Cowpen Slough",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 83.21547939233031,
+          "predicted_volume_m3": 1298.280623438883,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": 0.4143985710548334
+        },
+        {
+          "name": "Jaketown",
+          "n_agg": 8,
+          "eps": 0.4,
+          "M_g": 41.54172627847892,
+          "m3_per_Mg": 591.7545201232377,
+          "predicted_volume_m3": 24582.504299012187,
+          "observed_volume_m3": 5000,
+          "observed_scale": 1,
+          "log_overpred": 0.6916561194479934
+        },
+        {
+          "name": "Claiborne",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 147.93863003080943,
+          "predicted_volume_m3": 3075.5340264302813,
+          "observed_volume_m3": 3000,
+          "observed_scale": 1,
+          "log_overpred": 0.010799281520339415
+        },
+        {
+          "name": "Cedarland",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 147.93863003080943,
+          "predicted_volume_m3": 3075.5340264302813,
+          "observed_volume_m3": 1000,
+          "observed_scale": 1,
+          "log_overpred": 0.48792053624000187
+        }
+      ],
+      "mean_log_overpred": 0.15245407479555761,
+      "std_log_overpred": 0.5550392746007428,
+      "spearman_rho_volume": 0.8847926267281105,
+      "spearman_p_volume": 0.0002957009973791468,
+      "spearman_rho_scale": 0.8477988160551113,
+      "spearman_p_scale": 0.0009791873543320932
+    },
+    {
+      "alpha": 2.5,
+      "rows": [
+        {
+          "name": "Poverty Point",
+          "n_agg": 25,
+          "eps": 0.49,
+          "M_g": 129.7835460285217,
+          "m3_per_Mg": 5778.852735578494,
+          "predicted_volume_m3": 750000.0,
+          "observed_volume_m3": 750000,
+          "observed_scale": 3,
+          "log_overpred": 0.0
+        },
+        {
+          "name": "Lower Jackson",
+          "n_agg": 1,
+          "eps": 0.48,
+          "M_g": 5.24423692002439,
+          "m3_per_Mg": 1.8492328753851182,
+          "predicted_volume_m3": 9.697815318817499,
+          "observed_volume_m3": 1000,
+          "observed_scale": 0,
+          "log_overpred": -2.013326090666171
+        },
+        {
+          "name": "Watson Brake",
+          "n_agg": 8,
+          "eps": 0.43,
+          "M_g": 41.54143104486696,
+          "m3_per_Mg": 334.7469071815462,
+          "predicted_volume_m3": 13905.865562164681,
+          "observed_volume_m3": 7000,
+          "observed_scale": 2,
+          "log_overpred": 0.2980999864237865
+        },
+        {
+          "name": "Caney",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 103.37526038971305,
+          "predicted_volume_m3": 2685.076384935884,
+          "observed_volume_m3": 5000,
+          "observed_scale": 2,
+          "log_overpred": -0.2700133593342282
+        },
+        {
+          "name": "Frenchman's Bend",
+          "n_agg": 5,
+          "eps": 0.43,
+          "M_g": 25.974071308874574,
+          "m3_per_Mg": 103.37526038971305,
+          "predicted_volume_m3": 2685.076384935884,
+          "observed_volume_m3": 2000,
+          "observed_scale": 1,
+          "log_overpred": 0.12792664933780945
+        },
+        {
+          "name": "Insley",
+          "n_agg": 6,
+          "eps": 0.43,
+          "M_g": 31.16258406502227,
+          "m3_per_Mg": 163.0683705698384,
+          "predicted_volume_m3": 5081.631806228793,
+          "observed_volume_m3": 14000,
+          "observed_scale": 2,
+          "log_overpred": -0.4401248409843465
+        },
+        {
+          "name": "J.W. Copes",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 28.826687656743392,
+          "predicted_volume_m3": 449.7376004556685,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": -0.04601080592135424
+        },
+        {
+          "name": "Cowpen Slough",
+          "n_agg": 3,
+          "eps": 0.42,
+          "M_g": 15.601431763890567,
+          "m3_per_Mg": 28.826687656743392,
+          "predicted_volume_m3": 449.7376004556685,
+          "observed_volume_m3": 500,
+          "observed_scale": 0,
+          "log_overpred": -0.04601080592135424
+        },
+        {
+          "name": "Jaketown",
+          "n_agg": 8,
+          "eps": 0.4,
+          "M_g": 41.54172627847892,
+          "m3_per_Mg": 334.7469071815462,
+          "predicted_volume_m3": 13905.96439070318,
+          "observed_volume_m3": 5000,
+          "observed_scale": 1,
+          "log_overpred": 0.44423110860794646
+        },
+        {
+          "name": "Claiborne",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 59.17545201232378,
+          "predicted_volume_m3": 1230.2136105721127,
+          "observed_volume_m3": 3000,
+          "observed_scale": 1,
+          "log_overpred": -0.3871407271516981
+        },
+        {
+          "name": "Cedarland",
+          "n_agg": 4,
+          "eps": 0.3,
+          "M_g": 20.789255827161412,
+          "m3_per_Mg": 59.17545201232378,
+          "predicted_volume_m3": 1230.2136105721127,
+          "observed_volume_m3": 1000,
+          "observed_scale": 1,
+          "log_overpred": 0.08998052756796432
+        }
+      ],
+      "mean_log_overpred": -0.20385348709469506,
+      "std_log_overpred": 0.6578570425917752,
+      "spearman_rho_volume": 0.8847926267281105,
+      "spearman_p_volume": 0.0002957009973791468,
+      "spearman_rho_scale": 0.8477988160551113,
+      "spearman_p_scale": 0.0009791873543320932
+    }
+  ],
+  "best_alpha": 2.0,
+  "N_AGG_REF": 25
+}

@@ -1,0 +1,362 @@
+{
+  "low": [
+    {
+      "monument_units": 2606.865694876846,
+      "exotics_total": 5943,
+      "exotics_by_material": {
+        "novaculite": 3579,
+        "crystal_quartz": 1728,
+        "galena": 365,
+        "steatite": 227,
+        "copper": 44
+      }
+    },
+    {
+      "monument_units": 2558.5891845112214,
+      "exotics_total": 5615,
+      "exotics_by_material": {
+        "novaculite": 3340,
+        "crystal_quartz": 1659,
+        "galena": 343,
+        "steatite": 220,
+        "copper": 53
+      }
+    },
+    {
+      "monument_units": 2627.84782797468,
+      "exotics_total": 5755,
+      "exotics_by_material": {
+        "novaculite": 3425,
+        "crystal_quartz": 1719,
+        "galena": 323,
+        "steatite": 243,
+        "copper": 45
+      }
+    },
+    {
+      "monument_units": 2753.086805825023,
+      "exotics_total": 6049,
+      "exotics_by_material": {
+        "novaculite": 3647,
+        "crystal_quartz": 1765,
+        "galena": 356,
+        "steatite": 235,
+        "copper": 46
+      }
+    },
+    {
+      "monument_units": 3831.751637704826,
+      "exotics_total": 8330,
+      "exotics_by_material": {
+        "novaculite": 4970,
+        "crystal_quartz": 2476,
+        "galena": 502,
+        "steatite": 320,
+        "copper": 62
+      }
+    },
+    {
+      "monument_units": 3065.0654387818463,
+      "exotics_total": 6718,
+      "exotics_by_material": {
+        "novaculite": 4018,
+        "crystal_quartz": 1968,
+        "galena": 412,
+        "steatite": 247,
+        "copper": 73
+      }
+    },
+    {
+      "monument_units": 3608.004136812614,
+      "exotics_total": 7833,
+      "exotics_by_material": {
+        "novaculite": 4677,
+        "crystal_quartz": 2359,
+        "galena": 466,
+        "steatite": 278,
+        "copper": 53
+      }
+    },
+    {
+      "monument_units": 2998.339992289085,
+      "exotics_total": 6612,
+      "exotics_by_material": {
+        "novaculite": 3948,
+        "crystal_quartz": 1938,
+        "galena": 406,
+        "steatite": 264,
+        "copper": 56
+      }
+    }
+  ],
+  "poverty_point": [
+    {
+      "monument_units": 8640.088101781339,
+      "exotics_total": 18990,
+      "exotics_by_material": {
+        "novaculite": 11388,
+        "crystal_quartz": 5568,
+        "galena": 1107,
+        "steatite": 759,
+        "copper": 168
+      }
+    },
+    {
+      "monument_units": 9444.685649616802,
+      "exotics_total": 20808,
+      "exotics_by_material": {
+        "novaculite": 12390,
+        "crystal_quartz": 6241,
+        "galena": 1236,
+        "steatite": 770,
+        "copper": 171
+      }
+    },
+    {
+      "monument_units": 10533.624360241156,
+      "exotics_total": 23246,
+      "exotics_by_material": {
+        "novaculite": 13795,
+        "crystal_quartz": 6895,
+        "galena": 1447,
+        "steatite": 939,
+        "copper": 170
+      }
+    },
+    {
+      "monument_units": 10229.240332999583,
+      "exotics_total": 22541,
+      "exotics_by_material": {
+        "novaculite": 13596,
+        "crystal_quartz": 6575,
+        "galena": 1307,
+        "steatite": 881,
+        "copper": 182
+      }
+    },
+    {
+      "monument_units": 9823.839138201762,
+      "exotics_total": 21676,
+      "exotics_by_material": {
+        "novaculite": 12904,
+        "crystal_quartz": 6452,
+        "galena": 1264,
+        "steatite": 897,
+        "copper": 159
+      }
+    },
+    {
+      "monument_units": 9662.90303628268,
+      "exotics_total": 21328,
+      "exotics_by_material": {
+        "novaculite": 12594,
+        "crystal_quartz": 6431,
+        "galena": 1290,
+        "steatite": 848,
+        "copper": 165
+      }
+    },
+    {
+      "monument_units": 10496.683737233197,
+      "exotics_total": 23134,
+      "exotics_by_material": {
+        "novaculite": 13811,
+        "crystal_quartz": 6872,
+        "galena": 1311,
+        "steatite": 915,
+        "copper": 225
+      }
+    },
+    {
+      "monument_units": 9016.117431569824,
+      "exotics_total": 20031,
+      "exotics_by_material": {
+        "novaculite": 11980,
+        "crystal_quartz": 6013,
+        "galena": 1160,
+        "steatite": 693,
+        "copper": 185
+      }
+    }
+  ],
+  "critical": [
+    {
+      "monument_units": 10965.816394982301,
+      "exotics_total": 24120,
+      "exotics_by_material": {
+        "novaculite": 14327,
+        "crystal_quartz": 7169,
+        "galena": 1442,
+        "steatite": 949,
+        "copper": 233
+      }
+    },
+    {
+      "monument_units": 11193.256804607105,
+      "exotics_total": 24709,
+      "exotics_by_material": {
+        "novaculite": 14709,
+        "crystal_quartz": 7449,
+        "galena": 1439,
+        "steatite": 931,
+        "copper": 181
+      }
+    },
+    {
+      "monument_units": 11238.043952273601,
+      "exotics_total": 24761,
+      "exotics_by_material": {
+        "novaculite": 14799,
+        "crystal_quartz": 7268,
+        "galena": 1508,
+        "steatite": 1001,
+        "copper": 185
+      }
+    },
+    {
+      "monument_units": 10811.102110666752,
+      "exotics_total": 23998,
+      "exotics_by_material": {
+        "novaculite": 14196,
+        "crystal_quartz": 7217,
+        "galena": 1434,
+        "steatite": 949,
+        "copper": 202
+      }
+    },
+    {
+      "monument_units": 10959.850379044436,
+      "exotics_total": 24066,
+      "exotics_by_material": {
+        "novaculite": 14212,
+        "crystal_quartz": 7217,
+        "galena": 1480,
+        "steatite": 949,
+        "copper": 208
+      }
+    },
+    {
+      "monument_units": 11166.173434382279,
+      "exotics_total": 24547,
+      "exotics_by_material": {
+        "novaculite": 14540,
+        "crystal_quartz": 7426,
+        "galena": 1388,
+        "steatite": 996,
+        "copper": 197
+      }
+    },
+    {
+      "monument_units": 11044.432266869813,
+      "exotics_total": 24300,
+      "exotics_by_material": {
+        "novaculite": 14414,
+        "crystal_quartz": 7267,
+        "galena": 1408,
+        "steatite": 998,
+        "copper": 213
+      }
+    },
+    {
+      "monument_units": 10212.793168056707,
+      "exotics_total": 23521,
+      "exotics_by_material": {
+        "novaculite": 14084,
+        "crystal_quartz": 6954,
+        "galena": 1404,
+        "steatite": 890,
+        "copper": 189
+      }
+    }
+  ],
+  "high": [
+    {
+      "monument_units": 11259.176606567755,
+      "exotics_total": 24777,
+      "exotics_by_material": {
+        "novaculite": 14760,
+        "crystal_quartz": 7355,
+        "galena": 1497,
+        "steatite": 958,
+        "copper": 207
+      }
+    },
+    {
+      "monument_units": 8278.998232417378,
+      "exotics_total": 21808,
+      "exotics_by_material": {
+        "novaculite": 12768,
+        "crystal_quartz": 6658,
+        "galena": 1339,
+        "steatite": 846,
+        "copper": 197
+      }
+    },
+    {
+      "monument_units": 11324.161290930655,
+      "exotics_total": 24970,
+      "exotics_by_material": {
+        "novaculite": 14841,
+        "crystal_quartz": 7438,
+        "galena": 1508,
+        "steatite": 1001,
+        "copper": 182
+      }
+    },
+    {
+      "monument_units": 11284.124880753478,
+      "exotics_total": 24871,
+      "exotics_by_material": {
+        "novaculite": 14755,
+        "crystal_quartz": 7451,
+        "galena": 1507,
+        "steatite": 960,
+        "copper": 198
+      }
+    },
+    {
+      "monument_units": 11130.744969676982,
+      "exotics_total": 24443,
+      "exotics_by_material": {
+        "novaculite": 14459,
+        "crystal_quartz": 7429,
+        "galena": 1435,
+        "steatite": 928,
+        "copper": 192
+      }
+    },
+    {
+      "monument_units": 11184.669680425943,
+      "exotics_total": 24617,
+      "exotics_by_material": {
+        "novaculite": 14832,
+        "crystal_quartz": 7263,
+        "galena": 1439,
+        "steatite": 903,
+        "copper": 180
+      }
+    },
+    {
+      "monument_units": 10979.333435347282,
+      "exotics_total": 24374,
+      "exotics_by_material": {
+        "novaculite": 14650,
+        "crystal_quartz": 7224,
+        "galena": 1401,
+        "steatite": 916,
+        "copper": 183
+      }
+    },
+    {
+      "monument_units": 11220.133623230462,
+      "exotics_total": 24736,
+      "exotics_by_material": {
+        "novaculite": 14679,
+        "crystal_quartz": 7380,
+        "galena": 1515,
+        "steatite": 943,
+        "copper": 219
+      }
+    }
+  ]
+}

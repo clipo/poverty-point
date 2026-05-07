@@ -1,0 +1,156 @@
+{
+  "sites": [
+    {
+      "name": "Poverty Point",
+      "smithsonian": "16WC5",
+      "H": 0.7119791110181244,
+      "epsilon_gis": 0.22118874717612846,
+      "n_classes": 4,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 1069.4,
+        "Pleistocene": 883.1,
+        "Holocene": 7.9,
+        "Outside (upland/non-LMV)": 0.0
+      }
+    },
+    {
+      "name": "Lower Jackson",
+      "smithsonian": "16WC10",
+      "H": 0.7062997980974859,
+      "epsilon_gis": 0.21942436941518423,
+      "n_classes": 4,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 1092.3,
+        "Pleistocene": 861.4,
+        "Holocene": 6.6,
+        "Outside (upland/non-LMV)": 0.0
+      }
+    },
+    {
+      "name": "Watson Brake",
+      "smithsonian": "16OU175",
+      "H": 1.0242819619066812,
+      "epsilon_gis": 0.3182110828859393,
+      "n_classes": 3,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 909.0,
+        "Pleistocene": 330.2,
+        "Outside (upland/non-LMV)": 721.1
+      }
+    },
+    {
+      "name": "Caney",
+      "smithsonian": "16CT5",
+      "H": 1.0008661118786284,
+      "epsilon_gis": 0.31093654006352034,
+      "n_classes": 3,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 1059.7,
+        "Pleistocene": 531.1,
+        "Outside (upland/non-LMV)": 369.5
+      }
+    },
+    {
+      "name": "Frenchman's Bend",
+      "smithsonian": "16OU259",
+      "H": 0.9734501194919101,
+      "epsilon_gis": 0.30241928314577615,
+      "n_classes": 3,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 1036.6,
+        "Pleistocene": 659.6,
+        "Outside (upland/non-LMV)": 264.1
+      }
+    },
+    {
+      "name": "Insley",
+      "smithsonian": "16FR3",
+      "H": 0.6851233000138071,
+      "epsilon_gis": 0.21284552038967205,
+      "n_classes": 3,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 1104.2,
+        "Pleistocene": 856.2,
+        "Outside (upland/non-LMV)": 0.0
+      }
+    },
+    {
+      "name": "J.W. Copes",
+      "smithsonian": "16MA147",
+      "H": 0.6632313647514764,
+      "epsilon_gis": 0.20604440830787032,
+      "n_classes": 3,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 1279.9,
+        "Pleistocene": 674.5,
+        "Holocene": 6.0
+      }
+    },
+    {
+      "name": "Cowpen Slough",
+      "smithsonian": "16CT147",
+      "H": 0.62607384677202,
+      "epsilon_gis": 0.19450077630678878,
+      "n_classes": 4,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 1407.9,
+        "Pleistocene": 541.4,
+        "Holocene": 4.6,
+        "Outside (upland/non-LMV)": 6.4
+      }
+    },
+    {
+      "name": "Jaketown",
+      "smithsonian": "22HU505",
+      "H": 0.05721192995788719,
+      "epsilon_gis": 0.017773885378206466,
+      "n_classes": 2,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 1940.2,
+        "Pleistocene": 20.1
+      }
+    },
+    {
+      "name": "Claiborne",
+      "smithsonian": "22HA501",
+      "H": 0.713251434013125,
+      "epsilon_gis": 0.22158401653854715,
+      "n_classes": 4,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 2.4,
+        "Pleistocene": 114.6,
+        "Holocene (Deltaic and Chenier Plains)": 384.2,
+        "Outside (upland/non-LMV)": 1459.2
+      }
+    },
+    {
+      "name": "Cedarland",
+      "smithsonian": "22HA506",
+      "H": 0.7122545147415448,
+      "epsilon_gis": 0.2212743061533629,
+      "n_classes": 4,
+      "areas_km2": {
+        "Holocene (Alluvial Valley)": 2.6,
+        "Pleistocene": 117.5,
+        "Holocene (Deltaic and Chenier Plains)": 375.9,
+        "Outside (upland/non-LMV)": 1464.3
+      }
+    }
+  ],
+  "qualitative_epsilon": {
+    "Poverty Point": 0.49,
+    "Lower Jackson": 0.48,
+    "Watson Brake": 0.43,
+    "Caney": 0.43,
+    "Frenchman's Bend": 0.43,
+    "Insley": 0.43,
+    "J.W. Copes": 0.42,
+    "Cowpen Slough": 0.42,
+    "Jaketown": 0.4,
+    "Claiborne": 0.3,
+    "Cedarland": 0.3
+  },
+  "spearman_rho": 0.21503780770194517,
+  "spearman_p": 0.5254349337887813,
+  "buffer_km": 25.0
+}

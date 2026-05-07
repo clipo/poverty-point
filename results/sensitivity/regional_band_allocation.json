@@ -1,0 +1,101 @@
+{
+  "parameters": {
+    "N_BANDS": 50,
+    "RNG_SEED": 42,
+    "CANOE_KM_PER_DAY": 30.0,
+    "C_TRAVEL_PER_DAY": 0.005,
+    "NETWORK_BONUS": 0.05,
+    "N_AGG_THRESHOLD": 5,
+    "sigma_regional": 0.64
+  },
+  "sites": [
+    {
+      "site": "Poverty Point",
+      "eps_water_route": 0.154,
+      "endogenized_n_agg": 43,
+      "literature_n_agg": 25,
+      "observed_scale_ordinal": 3
+    },
+    {
+      "site": "Lower Jackson",
+      "eps_water_route": 0.145,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 1,
+      "observed_scale_ordinal": 0
+    },
+    {
+      "site": "Watson Brake",
+      "eps_water_route": 0.115,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 8,
+      "observed_scale_ordinal": 2
+    },
+    {
+      "site": "Frenchman's Bend",
+      "eps_water_route": 0.115,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 5,
+      "observed_scale_ordinal": 1
+    },
+    {
+      "site": "Caney",
+      "eps_water_route": 0.07,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 5,
+      "observed_scale_ordinal": 2
+    },
+    {
+      "site": "Insley",
+      "eps_water_route": 0.083,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 6,
+      "observed_scale_ordinal": 2
+    },
+    {
+      "site": "Cowpen Slough",
+      "eps_water_route": 0.068,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 3,
+      "observed_scale_ordinal": 0
+    },
+    {
+      "site": "J.W. Copes",
+      "eps_water_route": 0.068,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 3,
+      "observed_scale_ordinal": 0
+    },
+    {
+      "site": "Jaketown",
+      "eps_water_route": 0.151,
+      "endogenized_n_agg": 7,
+      "literature_n_agg": 8,
+      "observed_scale_ordinal": 1
+    },
+    {
+      "site": "Claiborne",
+      "eps_water_route": 0.05,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 4,
+      "observed_scale_ordinal": 1
+    },
+    {
+      "site": "Cedarland",
+      "eps_water_route": 0.05,
+      "endogenized_n_agg": 0,
+      "literature_n_agg": 4,
+      "observed_scale_ordinal": 1
+    }
+  ],
+  "spearman": {
+    "endog_vs_observed_scale": {
+      "rho": 0.38697864960166045,
+      "p": 0.23969405523220513
+    },
+    "endog_vs_literature_nagg": {
+      "rho": 0.646393126567783,
+      "p": 0.03163260710159567
+    }
+  },
+  "convergence_rounds": 3
+}

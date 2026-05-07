@@ -1,0 +1,284 @@
+{
+  "methodology": {
+    "buffer_km": 25.0,
+    "n_categories": 9,
+    "l4_to_category": {
+      "73a": "Alluvial Active",
+      "73f": "Alluvial Active",
+      "73h": "Alluvial Active",
+      "73k": "Alluvial Active",
+      "73g": "Alluvial Active",
+      "35g": "Alluvial Active",
+      "37b": "Alluvial Active",
+      "65p": "Alluvial Active",
+      "34c": "Alluvial Active",
+      "35b": "Alluvial Active",
+      "75i": "Alluvial Active",
+      "73d": "Backswamp",
+      "73i": "Backswamp",
+      "73m": "Backswamp",
+      "73n": "Backswamp",
+      "73c": "Backswamp",
+      "73b": "Pleistocene Terrace",
+      "73l": "Pleistocene Terrace",
+      "73j": "Pleistocene Terrace",
+      "35c": "Pleistocene Terrace",
+      "74d": "Pleistocene Terrace",
+      "74a": "Loess Upland",
+      "74b": "Loess Upland",
+      "74c": "Loess Upland",
+      "34j": "Loess Upland",
+      "35a": "Tertiary Upland",
+      "35d": "Tertiary Upland",
+      "35e": "Tertiary Upland",
+      "65d": "Tertiary Upland",
+      "65e": "Tertiary Upland",
+      "65i": "Tertiary Upland",
+      "65j": "Tertiary Upland",
+      "65q": "Tertiary Upland",
+      "73o": "Coastal Marsh",
+      "34g": "Coastal Marsh",
+      "75k": "Coastal Marsh",
+      "35f": "Coastal Plain Upland",
+      "65f": "Coastal Plain Upland",
+      "75a": "Coastal Plain Upland",
+      "73e": "Prairie",
+      "65a": "Prairie",
+      "35h": "Prairie",
+      "34a": "Prairie",
+      "65r": "Prairie",
+      "65b": "Prairie",
+      "36a": "Mountain Hills",
+      "36b": "Mountain Hills",
+      "36c": "Mountain Hills",
+      "36d": "Mountain Hills",
+      "36e": "Mountain Hills",
+      "37a": "Mountain Hills",
+      "37c": "Mountain Hills",
+      "37d": "Mountain Hills",
+      "38a": "Mountain Hills",
+      "38b": "Mountain Hills",
+      "39a": "Mountain Hills",
+      "39b": "Mountain Hills",
+      "39c": "Mountain Hills",
+      "39d": "Mountain Hills"
+    },
+    "category_list": [
+      "Alluvial Active",
+      "Backswamp",
+      "Coastal Marsh",
+      "Coastal Plain Upland",
+      "Loess Upland",
+      "Mountain Hills",
+      "Pleistocene Terrace",
+      "Prairie",
+      "Tertiary Upland"
+    ]
+  },
+  "sites": [
+    {
+      "site": "Poverty Point",
+      "smithsonian": "16WC5",
+      "qual_epsilon": 0.49,
+      "l4_n_classes": 4,
+      "l4_H": 1.0725,
+      "l4_epsilon": 0.3868,
+      "category_n": 3,
+      "category_H": 1.0601,
+      "category_epsilon": 0.2412,
+      "category_areas_km2": {
+        "Alluvial Active": 475.1,
+        "Backswamp": 577.8,
+        "Pleistocene Terrace": 907.5
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Lower Jackson",
+      "smithsonian": "16WC10",
+      "qual_epsilon": 0.48,
+      "l4_n_classes": 4,
+      "l4_H": 1.0891,
+      "l4_epsilon": 0.3928,
+      "category_n": 3,
+      "category_H": 1.0677,
+      "category_epsilon": 0.243,
+      "category_areas_km2": {
+        "Alluvial Active": 501.7,
+        "Backswamp": 575.0,
+        "Pleistocene Terrace": 883.6
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Watson Brake",
+      "smithsonian": "16OU175",
+      "qual_epsilon": 0.43,
+      "l4_n_classes": 7,
+      "l4_H": 1.7341,
+      "l4_epsilon": 0.4456,
+      "category_n": 4,
+      "category_H": 1.3141,
+      "category_epsilon": 0.299,
+      "category_areas_km2": {
+        "Tertiary Upland": 726.9,
+        "Alluvial Active": 319.8,
+        "Pleistocene Terrace": 298.8,
+        "Backswamp": 614.9
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Caney",
+      "smithsonian": "16CT5",
+      "qual_epsilon": 0.43,
+      "l4_n_classes": 6,
+      "l4_H": 1.6046,
+      "l4_epsilon": 0.4478,
+      "category_n": 4,
+      "category_H": 1.336,
+      "category_epsilon": 0.304,
+      "category_areas_km2": {
+        "Alluvial Active": 473.4,
+        "Pleistocene Terrace": 572.2,
+        "Tertiary Upland": 258.3,
+        "Backswamp": 656.5
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Frenchman's Bend",
+      "smithsonian": "16OU259",
+      "qual_epsilon": 0.43,
+      "l4_n_classes": 6,
+      "l4_H": 1.6621,
+      "l4_epsilon": 0.4638,
+      "category_n": 4,
+      "category_H": 1.3422,
+      "category_epsilon": 0.3054,
+      "category_areas_km2": {
+        "Tertiary Upland": 269.9,
+        "Alluvial Active": 511.4,
+        "Pleistocene Terrace": 657.3,
+        "Backswamp": 521.6
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Insley",
+      "smithsonian": "16FR3",
+      "qual_epsilon": 0.43,
+      "l4_n_classes": 3,
+      "l4_H": 1.0679,
+      "l4_epsilon": 0.486,
+      "category_n": 3,
+      "category_H": 1.0679,
+      "category_epsilon": 0.243,
+      "category_areas_km2": {
+        "Alluvial Active": 519.5,
+        "Backswamp": 554.1,
+        "Pleistocene Terrace": 886.7
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "J.W. Copes",
+      "smithsonian": "16MA147",
+      "qual_epsilon": 0.42,
+      "l4_n_classes": 3,
+      "l4_H": 1.0915,
+      "l4_epsilon": 0.4968,
+      "category_n": 3,
+      "category_H": 1.0915,
+      "category_epsilon": 0.2484,
+      "category_areas_km2": {
+        "Alluvial Active": 545.0,
+        "Backswamp": 710.1,
+        "Pleistocene Terrace": 705.3
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Cowpen Slough",
+      "smithsonian": "16CT147",
+      "qual_epsilon": 0.42,
+      "l4_n_classes": 5,
+      "l4_H": 1.2841,
+      "l4_epsilon": 0.3989,
+      "category_n": 3,
+      "category_H": 1.0856,
+      "category_epsilon": 0.247,
+      "category_areas_km2": {
+        "Pleistocene Terrace": 559.9,
+        "Alluvial Active": 803.5,
+        "Backswamp": 596.9
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Jaketown",
+      "smithsonian": "22HU505",
+      "qual_epsilon": 0.4,
+      "l4_n_classes": 3,
+      "l4_H": 0.5115,
+      "l4_epsilon": 0.2328,
+      "category_n": 3,
+      "category_H": 0.5115,
+      "category_epsilon": 0.1164,
+      "category_areas_km2": {
+        "Alluvial Active": 1609.1,
+        "Pleistocene Terrace": 21.6,
+        "Backswamp": 329.6
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Claiborne",
+      "smithsonian": "22HA501",
+      "qual_epsilon": 0.3,
+      "l4_n_classes": 5,
+      "l4_H": 1.2697,
+      "l4_epsilon": 0.3945,
+      "category_n": 3,
+      "category_H": 0.996,
+      "category_epsilon": 0.2267,
+      "category_areas_km2": {
+        "Coastal Plain Upland": 585.2,
+        "Coastal Marsh": 536.6,
+        "Alluvial Active": 177.0
+      },
+      "unmapped_area_km2": 0.0
+    },
+    {
+      "site": "Cedarland",
+      "smithsonian": "22HA506",
+      "qual_epsilon": 0.3,
+      "l4_n_classes": 5,
+      "l4_H": 1.2706,
+      "l4_epsilon": 0.3947,
+      "category_n": 3,
+      "category_H": 0.9988,
+      "category_epsilon": 0.2273,
+      "category_areas_km2": {
+        "Coastal Plain Upland": 603.7,
+        "Coastal Marsh": 533.4,
+        "Alluvial Active": 184.2
+      },
+      "unmapped_area_km2": 0.0
+    }
+  ],
+  "correlations": {
+    "qualitative_vs_l4": {
+      "rho": 0.03739787960033829,
+      "p": 0.9130718266501981
+    },
+    "qualitative_vs_category": {
+      "rho": 0.4427698941164954,
+      "p": 0.17262973800436313
+    },
+    "l4_vs_category": {
+      "rho": 0.7243754556493464,
+      "p": 0.011696567268823265
+    }
+  }
+}

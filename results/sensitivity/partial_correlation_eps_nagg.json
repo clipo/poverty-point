@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "predictor": "n_agg alone",
+      "rho_vs_ordinal_scale": 0.8665148593456509,
+      "p_vs_ordinal": 0.0005581142297637619,
+      "rho_vs_volume": 0.8937668177013303,
+      "p_vs_volume": 0.0002080571280633808
+    },
+    {
+      "predictor": "static epsilon alone",
+      "rho_vs_ordinal_scale": 0.387846410524698,
+      "p_vs_ordinal": 0.23855057107893163,
+      "rho_vs_volume": 0.43774522169965385,
+      "p_vs_volume": 0.17813312441861734
+    },
+    {
+      "predictor": "phenology epsilon alone",
+      "rho_vs_ordinal_scale": -0.2065770748432023,
+      "p_vs_ordinal": 0.5422355793173808,
+      "rho_vs_volume": -0.04541228503444074,
+      "p_vs_volume": 0.8945246790024939
+    },
+    {
+      "predictor": "water-route epsilon alone",
+      "rho_vs_ordinal_scale": 0.3462840234591299,
+      "p_vs_ordinal": 0.2968528098595879,
+      "rho_vs_volume": 0.5414746543778801,
+      "p_vs_volume": 0.0853723757396397
+    },
+    {
+      "predictor": "joint M_g(static_eps, n_agg)",
+      "rho_vs_ordinal_scale": 0.8477988160551113,
+      "p_vs_ordinal": 0.0009791873543320932,
+      "rho_vs_volume": 0.8847926267281105,
+      "p_vs_volume": 0.0002957009973791468
+    },
+    {
+      "predictor": "joint M_g(phen_eps, n_agg)",
+      "rho_vs_ordinal_scale": 0.88123313556151,
+      "p_vs_ordinal": 0.0003372921806161897,
+      "rho_vs_volume": 0.8986175115207372,
+      "p_vs_volume": 0.00016981753486773566
+    },
+    {
+      "predictor": "joint M_g(water-route_eps, n_agg)",
+      "rho_vs_ordinal_scale": 0.8958884090223824,
+      "p_vs_ordinal": 0.0001906033916850913,
+      "rho_vs_volume": 0.908048376402632,
+      "p_vs_volume": 0.00011098133305330393
+    }
+  ],
+  "marginal_contribution_eps": {
+    "static": -0.00897419097321972,
+    "phenology": 0.004850693819406948,
+    "water_route": 0.014281558701301766
+  },
+  "interpretation": "n_agg alone gives Spearman rho ~ +0.87 to +0.89 against observed monument scale and volume. Epsilon adds at most ~0.02 to the joint correlation. The framework's magnitude prediction is dominated by exogenous n_agg from the convergence-model literature; epsilon provides essentially no marginal predictive power for cross-site monument scale."
+}

@@ -1,0 +1,157 @@
+{
+  "baseline_sigma_star": 0.3996538568519438,
+  "epsilon_baseline": 0.35,
+  "n_agg_baseline": 25,
+  "rows": [
+    {
+      "param": "C_signal (signaling cost)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.2786367555930152,
+      "high_label": "+50%",
+      "high_sigma_star": 0.5036505369282254,
+      "delta_low": -0.12101710125892862,
+      "delta_high": 0.10399668007628154,
+      "swing": 0.22501378133521016
+    },
+    {
+      "param": "epsilon (ecotone advantage)",
+      "low_label": "0.10",
+      "low_sigma_star": 0.5080442559859404,
+      "high_label": "0.50",
+      "high_sigma_star": 0.35430023620137396,
+      "delta_low": 0.10839039913399656,
+      "delta_high": -0.04535362065056986,
+      "swing": 0.15374401978456642
+    },
+    {
+      "param": "C_opportunity (opportunity cost)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.3211180258741054,
+      "high_label": "+50%",
+      "high_sigma_star": 0.4706491632087179,
+      "delta_low": -0.07853583097783845,
+      "delta_high": 0.07099530635677409,
+      "swing": 0.14953113733461254
+    },
+    {
+      "param": "lambda_W (within-group reward)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.4681687626383017,
+      "high_label": "+50%",
+      "high_sigma_star": 0.33137240932741774,
+      "delta_low": 0.06851490578635788,
+      "delta_high": -0.06828144752452608,
+      "swing": 0.13679635331088397
+    },
+    {
+      "param": "C_travel_per_km (travel cost)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.3743703793382071,
+      "high_label": "+50%",
+      "high_sigma_star": 0.42410139268543984,
+      "delta_low": -0.02528347751373672,
+      "delta_high": 0.024447535833496015,
+      "swing": 0.04973101334723273
+    },
+    {
+      "param": "k_max (max network degree)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.42118472984887806,
+      "high_label": "+50%",
+      "high_sigma_star": 0.38311736367954785,
+      "delta_low": 0.021530872996934236,
+      "delta_high": -0.016536493172395972,
+      "swing": 0.03806736616933021
+    },
+    {
+      "param": "gamma (network buffering)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.41788961215275616,
+      "high_label": "+50%",
+      "high_sigma_star": 0.3862731673398517,
+      "delta_low": 0.01823575530081234,
+      "delta_high": -0.013380689512092148,
+      "swing": 0.03161644481290449
+    },
+    {
+      "param": "delta_net (network decay)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.392064684618963,
+      "high_label": "+50%",
+      "high_sigma_star": 0.40814709307768504,
+      "delta_low": -0.007589172232980834,
+      "delta_high": 0.008493236225741219,
+      "swing": 0.016082408458722053
+    },
+    {
+      "param": "k_0 (baseline degree)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.39642484423970425,
+      "high_label": "+50%",
+      "high_sigma_star": 0.40288394147784995,
+      "delta_low": -0.003229012612239568,
+      "delta_high": 0.0032300846259061267,
+      "swing": 0.006459097238145695
+    },
+    {
+      "param": "f_agg (aggregation fraction)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.40237681115612106,
+      "high_label": "+50%",
+      "high_sigma_star": 0.3970310718402455,
+      "delta_low": 0.0027229543041772386,
+      "delta_high": -0.0026227850116983253,
+      "swing": 0.005345739315875564
+    },
+    {
+      "param": "n_agg (aggregation size)",
+      "low_label": "n=5",
+      "low_sigma_star": 0.4022591467928636,
+      "high_label": "n=50",
+      "high_sigma_star": 0.3992692869492525,
+      "delta_low": 0.002605289940919797,
+      "delta_high": -0.00038456990269131186,
+      "swing": 0.002989859843611109
+    },
+    {
+      "param": "delta (monument depreciation)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.3992692869492525,
+      "high_label": "+50%",
+      "high_sigma_star": 0.40001926563318824,
+      "delta_low": -0.00038456990269131186,
+      "delta_high": 0.000365408781244414,
+      "swing": 0.0007499786839357259
+    },
+    {
+      "param": "M_half (network saturation)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.39930239873060075,
+      "high_label": "+50%",
+      "high_sigma_star": 0.40000047644284514,
+      "delta_low": -0.0003514581213430734,
+      "delta_high": 0.00034661959090132033,
+      "swing": 0.0006980777122443937
+    },
+    {
+      "param": "lambda_C (cooperation reward)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.39965403051248893,
+      "high_label": "+50%",
+      "high_sigma_star": 0.3996542041634877,
+      "delta_low": 1.7366054511080975e-07,
+      "delta_high": 3.4731154385791996e-07,
+      "swing": 1.736509987471102e-07
+    },
+    {
+      "param": "lambda_X (exotic reward)",
+      "low_label": "-50%",
+      "low_sigma_star": 0.3996541173414395,
+      "high_label": "+50%",
+      "high_sigma_star": 0.39965416074996035,
+      "delta_low": 2.6048949569590363e-07,
+      "delta_high": 3.038980165293026e-07,
+      "swing": 4.340852083339897e-08
+    }
+  ]
+}

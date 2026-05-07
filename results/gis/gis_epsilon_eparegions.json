@@ -1,0 +1,313 @@
+{
+  "sites": [
+    {
+      "name": "Poverty Point",
+      "smithsonian": "16WC5",
+      "H": 1.0724597705954027,
+      "n_l4_classes": 4,
+      "epsilon_gis_l4": 0.33317836069035545
+    },
+    {
+      "name": "Lower Jackson",
+      "smithsonian": "16WC10",
+      "H": 1.0891183113027343,
+      "n_l4_classes": 4,
+      "epsilon_gis_l4": 0.3383536273404797
+    },
+    {
+      "name": "Watson Brake",
+      "smithsonian": "16OU175",
+      "H": 1.734132951710121,
+      "n_l4_classes": 7,
+      "epsilon_gis_l4": 0.5
+    },
+    {
+      "name": "Caney",
+      "smithsonian": "16CT5",
+      "H": 1.6046096209806489,
+      "n_l4_classes": 6,
+      "epsilon_gis_l4": 0.4985000069228675
+    },
+    {
+      "name": "Frenchman's Bend",
+      "smithsonian": "16OU259",
+      "H": 1.6620935999473807,
+      "n_l4_classes": 6,
+      "epsilon_gis_l4": 0.5
+    },
+    {
+      "name": "Insley",
+      "smithsonian": "16FR3",
+      "H": 1.06792707292106,
+      "n_l4_classes": 3,
+      "epsilon_gis_l4": 0.3317701989839223
+    },
+    {
+      "name": "J.W. Copes",
+      "smithsonian": "16MA147",
+      "H": 1.0915060416040987,
+      "n_l4_classes": 3,
+      "epsilon_gis_l4": 0.33909541746575184
+    },
+    {
+      "name": "Cowpen Slough",
+      "smithsonian": "16CT147",
+      "H": 1.2841136986207338,
+      "n_l4_classes": 5,
+      "epsilon_gis_l4": 0.39893235044980735
+    },
+    {
+      "name": "Jaketown",
+      "smithsonian": "22HU505",
+      "H": 0.511514261224824,
+      "n_l4_classes": 3,
+      "epsilon_gis_l4": 0.1589108400122171
+    },
+    {
+      "name": "Claiborne",
+      "smithsonian": "22HA501",
+      "H": 1.2697145139846846,
+      "n_l4_classes": 5,
+      "epsilon_gis_l4": 0.39445899222803166
+    },
+    {
+      "name": "Cedarland",
+      "smithsonian": "22HA506",
+      "H": 1.270638646751633,
+      "n_l4_classes": 5,
+      "epsilon_gis_l4": 0.39474609021416984
+    }
+  ],
+  "top_classes_per_site": {
+    "Poverty Point": [
+      [
+        "73j: Macon Ridge",
+        907.5130777932058
+      ],
+      [
+        "73d: Northern Backswamps",
+        577.7575146884291
+      ],
+      [
+        "73a: Northern Holocene Meander Belts",
+        470.83346579034145
+      ],
+      [
+        "73h: Arkansas/Ouachita River Holocene Meander Belts",
+        4.238748319236193
+      ]
+    ],
+    "Lower Jackson": [
+      [
+        "73j: Macon Ridge",
+        883.6181772742632
+      ],
+      [
+        "73d: Northern Backswamps",
+        575.048329883064
+      ],
+      [
+        "73a: Northern Holocene Meander Belts",
+        493.4584810792796
+      ],
+      [
+        "73h: Arkansas/Ouachita River Holocene Meander Belts",
+        8.217818354604491
+      ]
+    ],
+    "Watson Brake": [
+      [
+        "73i: Arkansas/Ouachita River Backswamps",
+        614.8631383810267
+      ],
+      [
+        "35e: Southern Tertiary Uplands",
+        386.82306948423496
+      ],
+      [
+        "35a: Tertiary Uplands",
+        340.05540584750156
+      ],
+      [
+        "73h: Arkansas/Ouachita River Holocene Meander Belts",
+        282.9964054071316
+      ],
+      [
+        "73j: Macon Ridge",
+        153.8389789063062
+      ]
+    ],
+    "Caney": [
+      [
+        "73m: Southern Backswamps",
+        656.4904161829459
+      ],
+      [
+        "73k: Southern Holocene Meander Belts",
+        412.8641095013937
+      ],
+      [
+        "73l: Southern Pleistocene Valley Trains",
+        404.9178135736313
+      ],
+      [
+        "35e: Southern Tertiary Uplands",
+        258.2968765255414
+      ],
+      [
+        "35c: Pleistocene Fluvial Terraces",
+        167.2823732659463
+      ]
+    ],
+    "Frenchman's Bend": [
+      [
+        "35c: Pleistocene Fluvial Terraces",
+        538.6486692176633
+      ],
+      [
+        "73i: Arkansas/Ouachita River Backswamps",
+        521.6268236628032
+      ],
+      [
+        "73h: Arkansas/Ouachita River Holocene Meander Belts",
+        352.92111224634135
+      ],
+      [
+        "35a: Tertiary Uplands",
+        269.94862523288896
+      ],
+      [
+        "35b: Floodplains and Low Terraces",
+        158.51026388172556
+      ]
+    ],
+    "Insley": [
+      [
+        "73j: Macon Ridge",
+        886.7245028863649
+      ],
+      [
+        "73d: Northern Backswamps",
+        554.082478610344
+      ],
+      [
+        "73a: Northern Holocene Meander Belts",
+        519.5358250945028
+      ]
+    ],
+    "J.W. Copes": [
+      [
+        "73d: Northern Backswamps",
+        710.0792258073006
+      ],
+      [
+        "73j: Macon Ridge",
+        705.2620149231195
+      ],
+      [
+        "73a: Northern Holocene Meander Belts",
+        545.0015658607912
+      ]
+    ],
+    "Cowpen Slough": [
+      [
+        "73k: Southern Holocene Meander Belts",
+        788.2415913937347
+      ],
+      [
+        "73m: Southern Backswamps",
+        596.9044317586826
+      ],
+      [
+        "73l: Southern Pleistocene Valley Trains",
+        421.0995457644497
+      ],
+      [
+        "35c: Pleistocene Fluvial Terraces",
+        138.81995777084762
+      ],
+      [
+        "35g: Red River Bottomlands",
+        15.277279903496998
+      ]
+    ],
+    "Jaketown": [
+      [
+        "73a: Northern Holocene Meander Belts",
+        1609.127507045703
+      ],
+      [
+        "73d: Northern Backswamps",
+        329.6175409172678
+      ],
+      [
+        "73b: Northern Pleistocene Valley Trains",
+        21.597758628243078
+      ]
+    ],
+    "Claiborne": [
+      [
+        "75a: Gulf Coast Flatwoods",
+        585.1872348087293
+      ],
+      [
+        "73o: Deltaic Coastal Marshes and Barrier Islands",
+        334.4799805665876
+      ],
+      [
+        "75k: Gulf Barrier Islands and Coastal Marshes",
+        202.15841606604613
+      ],
+      [
+        "75i: Floodplains and Low Terraces",
+        176.98357439748332
+      ],
+      [
+        "65f: Southern Pine Plains and Hills",
+        1.307005005529564e-05
+      ]
+    ],
+    "Cedarland": [
+      [
+        "75a: Gulf Coast Flatwoods",
+        603.0065617936039
+      ],
+      [
+        "73o: Deltaic Coastal Marshes and Barrier Islands",
+        331.253693637631
+      ],
+      [
+        "75k: Gulf Barrier Islands and Coastal Marshes",
+        202.13044751790298
+      ],
+      [
+        "75i: Floodplains and Low Terraces",
+        184.22594890090215
+      ],
+      [
+        "65f: Southern Pine Plains and Hills",
+        0.676892083292899
+      ]
+    ]
+  },
+  "qualitative_epsilon": {
+    "Poverty Point": 0.49,
+    "Lower Jackson": 0.48,
+    "Watson Brake": 0.43,
+    "Caney": 0.43,
+    "Frenchman's Bend": 0.43,
+    "Insley": 0.43,
+    "J.W. Copes": 0.42,
+    "Cowpen Slough": 0.42,
+    "Jaketown": 0.4,
+    "Claiborne": 0.3,
+    "Cedarland": 0.3
+  },
+  "spearman_qual_vs_gis_l4": {
+    "rho": -0.018741582819745837,
+    "p": 0.9563835458292019,
+    "n": 11
+  },
+  "buffer_km": 25.0,
+  "data_source": "EPA Office of Research and Development, Ecoregions of the United States, Level IV"
+}

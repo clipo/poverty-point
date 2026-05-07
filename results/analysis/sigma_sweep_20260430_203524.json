@@ -1,0 +1,167 @@
+[
+  {
+    "target_sigma": 0.3,
+    "actual_sigma": 0.307,
+    "actual_sigma_std": 0.0,
+    "dominance": -0.23,
+    "dominance_std": 0.04,
+    "aggregation_size": 19.2,
+    "aggregation_size_std": 1.0,
+    "monument_level": 8411.5,
+    "monument_level_std": 648.5,
+    "total_exotics": 0.0,
+    "mean_population": 0.0,
+    "replicates": [
+      {
+        "target_sigma": 0.3,
+        "actual_sigma": 0.307,
+        "dominance": -0.19,
+        "aggregation_size": 20.2,
+        "monument_level": 9060.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      },
+      {
+        "target_sigma": 0.3,
+        "actual_sigma": 0.307,
+        "dominance": -0.27,
+        "aggregation_size": 18.2,
+        "monument_level": 7763.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      }
+    ]
+  },
+  {
+    "target_sigma": 0.378,
+    "actual_sigma": 0.359,
+    "actual_sigma_std": 0.0,
+    "dominance": -0.13,
+    "dominance_std": 0.07,
+    "aggregation_size": 21.75,
+    "aggregation_size_std": 1.75,
+    "monument_level": 9970.0,
+    "monument_level_std": 1417.0,
+    "total_exotics": 0.0,
+    "mean_population": 0.0,
+    "replicates": [
+      {
+        "target_sigma": 0.378,
+        "actual_sigma": 0.359,
+        "dominance": -0.06,
+        "aggregation_size": 23.5,
+        "monument_level": 11387.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      },
+      {
+        "target_sigma": 0.378,
+        "actual_sigma": 0.359,
+        "dominance": -0.2,
+        "aggregation_size": 20.0,
+        "monument_level": 8553.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      }
+    ]
+  },
+  {
+    "target_sigma": 0.456,
+    "actual_sigma": 0.438,
+    "actual_sigma_std": 0.0,
+    "dominance": 0.15,
+    "dominance_std": 0.12,
+    "aggregation_size": 28.75,
+    "aggregation_size_std": 3.0500000000000007,
+    "monument_level": 13714.0,
+    "monument_level_std": 1383.0,
+    "total_exotics": 0.0,
+    "mean_population": 0.0,
+    "replicates": [
+      {
+        "target_sigma": 0.456,
+        "actual_sigma": 0.438,
+        "dominance": 0.03,
+        "aggregation_size": 25.7,
+        "monument_level": 12331.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      },
+      {
+        "target_sigma": 0.456,
+        "actual_sigma": 0.438,
+        "dominance": 0.27,
+        "aggregation_size": 31.8,
+        "monument_level": 15097.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      }
+    ]
+  },
+  {
+    "target_sigma": 0.533,
+    "actual_sigma": 0.517,
+    "actual_sigma_std": 0.0,
+    "dominance": 0.32,
+    "dominance_std": 0.15,
+    "aggregation_size": 33.1,
+    "aggregation_size_std": 3.799999999999999,
+    "monument_level": 15589.0,
+    "monument_level_std": 1575.0,
+    "total_exotics": 0.0,
+    "mean_population": 0.0,
+    "replicates": [
+      {
+        "target_sigma": 0.533,
+        "actual_sigma": 0.517,
+        "dominance": 0.47,
+        "aggregation_size": 36.9,
+        "monument_level": 17164.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      },
+      {
+        "target_sigma": 0.533,
+        "actual_sigma": 0.517,
+        "dominance": 0.17,
+        "aggregation_size": 29.3,
+        "monument_level": 14014.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      }
+    ]
+  },
+  {
+    "target_sigma": 0.611,
+    "actual_sigma": 0.596,
+    "actual_sigma_std": 0.0,
+    "dominance": 0.6,
+    "dominance_std": 0.08,
+    "aggregation_size": 39.95,
+    "aggregation_size_std": 1.9499999999999993,
+    "monument_level": 18104.5,
+    "monument_level_std": 1148.5,
+    "total_exotics": 0.0,
+    "mean_population": 0.0,
+    "replicates": [
+      {
+        "target_sigma": 0.611,
+        "actual_sigma": 0.596,
+        "dominance": 0.52,
+        "aggregation_size": 38.0,
+        "monument_level": 16956.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      },
+      {
+        "target_sigma": 0.611,
+        "actual_sigma": 0.596,
+        "dominance": 0.67,
+        "aggregation_size": 41.9,
+        "monument_level": 19253.0,
+        "total_exotics": 0,
+        "mean_population": 0.0
+      }
+    ]
+  }
+]

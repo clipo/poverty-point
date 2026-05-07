@@ -1,0 +1,308 @@
+{
+  "sites": [
+    {
+      "site": "Poverty Point",
+      "access_vector": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "monument_scale": 3,
+      "site_mean_productivity": 2.519260377987398,
+      "site_sd_productivity": 0.9733880292279579,
+      "cv": 0.3863784933598583,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.3079245715629733,
+      "eps_water_route": 0.15396228578148666,
+      "independent_regimes": 4
+    },
+    {
+      "site": "Lower Jackson",
+      "access_vector": [
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "monument_scale": 0,
+      "site_mean_productivity": 1.7645165767941982,
+      "site_sd_productivity": 0.6990169023157177,
+      "cv": 0.39615207445979495,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.29041827801054493,
+      "eps_water_route": 0.14520913900527246,
+      "independent_regimes": 4
+    },
+    {
+      "site": "Watson Brake",
+      "access_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "monument_scale": 2,
+      "site_mean_productivity": 1.0064166498008296,
+      "site_sd_productivity": 0.43208174130857885,
+      "cv": 0.4293269009352022,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.23099602071397252,
+      "eps_water_route": 0.11549801035698626,
+      "independent_regimes": 2
+    },
+    {
+      "site": "Frenchman's Bend",
+      "access_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "monument_scale": 1,
+      "site_mean_productivity": 1.0064166498008296,
+      "site_sd_productivity": 0.43208174130857885,
+      "cv": 0.4293269009352022,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.23099602071397252,
+      "eps_water_route": 0.11549801035698626,
+      "independent_regimes": 2
+    },
+    {
+      "site": "Caney",
+      "access_vector": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "monument_scale": 2,
+      "site_mean_productivity": 0.7572154190330772,
+      "site_sd_productivity": 0.3635673899119909,
+      "cv": 0.4801373305052961,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.1399851326388925,
+      "eps_water_route": 0.06999256631944625,
+      "independent_regimes": 2
+    },
+    {
+      "site": "Insley",
+      "access_vector": [
+        0.5,
+        0.0,
+        0.5,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "monument_scale": 2,
+      "site_mean_productivity": 1.00922163768024,
+      "site_sd_productivity": 0.47032264470108465,
+      "cv": 0.46602512980414396,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.16526269729190968,
+      "eps_water_route": 0.08263134864595484,
+      "independent_regimes": 2
+    },
+    {
+      "site": "Cowpen Slough",
+      "access_vector": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "monument_scale": 0,
+      "site_mean_productivity": 0.7557903306061443,
+      "site_sd_productivity": 0.3648494270481316,
+      "cv": 0.48273894527801403,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.13532515883237964,
+      "eps_water_route": 0.06766257941618982,
+      "independent_regimes": 2
+    },
+    {
+      "site": "J.W. Copes",
+      "access_vector": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "monument_scale": 0,
+      "site_mean_productivity": 0.7557903306061443,
+      "site_sd_productivity": 0.3648494270481316,
+      "cv": 0.48273894527801403,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.13532515883237964,
+      "eps_water_route": 0.06766257941618982,
+      "independent_regimes": 2
+    },
+    {
+      "site": "Jaketown",
+      "access_vector": [
+        0.0,
+        0.5,
+        0.0,
+        1.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "monument_scale": 1,
+      "site_mean_productivity": 1.0085842832312737,
+      "site_sd_productivity": 0.3934115343156591,
+      "cv": 0.3900631219983504,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": 0.301324719378031,
+      "eps_water_route": 0.1506623596890155,
+      "independent_regimes": 3
+    },
+    {
+      "site": "Claiborne",
+      "access_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "monument_scale": 1,
+      "site_mean_productivity": 0.49684054751850437,
+      "site_sd_productivity": 0.2802482071522546,
+      "cv": 0.5640606600084649,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": -0.010337090828324624,
+      "eps_water_route": 0.0,
+      "independent_regimes": 1
+    },
+    {
+      "site": "Cedarland",
+      "access_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "monument_scale": 1,
+      "site_mean_productivity": 0.49684054751850437,
+      "site_sd_productivity": 0.2802482071522546,
+      "cv": 0.5640606600084649,
+      "baseline_cv": 0.5582895700147165,
+      "cv_reduction": -0.010337090828324624,
+      "eps_water_route": 0.0,
+      "independent_regimes": 1
+    }
+  ],
+  "drainage_names": [
+    "BayouMacon",
+    "Mississippi",
+    "Tensas",
+    "Yazoo",
+    "Upland",
+    "OuachitaSystem",
+    "PearlGulf"
+  ],
+  "correlation_matrix": [
+    [
+      1.0,
+      0.11,
+      0.9,
+      0.3,
+      0.45,
+      0.2,
+      0.0
+    ],
+    [
+      0.11,
+      1.0,
+      0.34,
+      0.11,
+      0.1,
+      0.2,
+      0.0
+    ],
+    [
+      0.9,
+      0.34,
+      1.0,
+      0.54,
+      0.45,
+      0.3,
+      0.0
+    ],
+    [
+      0.3,
+      0.11,
+      0.54,
+      1.0,
+      0.3,
+      0.15,
+      0.0
+    ],
+    [
+      0.45,
+      0.1,
+      0.45,
+      0.3,
+      1.0,
+      0.2,
+      0.0
+    ],
+    [
+      0.2,
+      0.2,
+      0.3,
+      0.15,
+      0.2,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "spearman": {
+    "eps_vs_ordinal_scale": {
+      "rho": 0.3462840234591299,
+      "p": 0.2968528098595879
+    },
+    "indep_regimes_vs_ordinal_scale": {
+      "rho": 0.07541656933212626,
+      "p": 0.8255745863262804
+    }
+  }
+}

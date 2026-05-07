@@ -1,0 +1,60 @@
+{
+  "parameters": {
+    "eps_PP": 0.49,
+    "n_agg": 25,
+    "sigma_PP": 0.64,
+    "sigma_eff_PP": 0.3264
+  },
+  "monthly_resource_availability": [
+    0.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    1.0,
+    1.0,
+    2.0,
+    3.0,
+    3.0,
+    2.0,
+    1.0
+  ],
+  "monthly_aggregation_share": [
+    0.16653308624261706,
+    0.9877463247977771,
+    0.9877463247977771,
+    0.9877463247977771,
+    0.9877463247977771,
+    0.8005283777518628,
+    0.8005283777518628,
+    0.9877463247977771,
+    0.9993827382860637,
+    0.9993827382860637,
+    0.9877463247977771,
+    0.8005283777518628
+  ],
+  "months": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "top3_predicted_aggregation_months": [
+    "Oct",
+    "Sep",
+    "Nov"
+  ],
+  "fall_winter_share": 0.8235532650270269,
+  "spring_summer_share": 0.925340342449139,
+  "fw_vs_ss_ratio": 0.8900003893132901,
+  "verdict": "Predicted seasonal peak NOT in fall-winter; framework prediction does not match published evidence.",
+  "archaeological_reference": "Thomas and Campbell 1978; Jackson 1986: PP population peaks in fall and winter, tied to the nut-mast harvest."
+}

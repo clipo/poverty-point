@@ -1,0 +1,31 @@
+# Poverty Point Costly Signaling Project — Pinned Dependencies
+#
+# Tested with Python 3.12.2. Use a fresh virtual environment:
+#   python3 -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Cartopy and geopandas have C/Fortran/PROJ dependencies. On macOS they are
+# easiest to install via conda-forge:
+#   conda install -c conda-forge cartopy geopandas rasterio shapely fiona pyproj
+# and then `pip install -r requirements.txt --no-deps` for the remaining
+# pure-Python packages.
+
+# Core scientific stack
+numpy==2.4.3
+scipy==1.17.1
+pandas==3.0.1
+matplotlib==3.10.8
+seaborn==0.13.2
+networkx==3.3
+tqdm==4.66.5
+PyYAML==6.0.1
+
+# Geospatial (Figure 1 and GIS-epsilon analyses; Saucier 1994 + EPA L4 ecoregions)
+geopandas==1.1.0
+Cartopy==0.25.0
+shapely==2.1.1
+pyproj==3.6.1
+rasterio==1.4.2
+
+# Document generation (manuscript docx export pipeline)
+python-docx==1.1.0
