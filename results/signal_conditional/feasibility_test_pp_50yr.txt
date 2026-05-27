@@ -1,0 +1,17 @@
+Comparing signal-blind vs signal-conditional partner formation
+  PP scenario, 50 simulated years, 3 replicates per mode
+
+  Mode: blind
+    seed=1001  units=   2271  exotics= 4942  obligs/band=13.1  (130.7s)
+    seed=1002  units=   2300  exotics= 5012  obligs/band=13.7  (135.5s)
+    mean units=2285+/-15, exotics=4977+/-35, obligs=13.4+/-0.3
+
+  Mode: conditional
+    seed=1001  units=   2256  exotics= 4852  obligs/band=17.3  (131.4s)
+    seed=1002  units=   2311  exotics= 5076  obligs/band=16.8  (136.4s)
+    mean units=2283+/-27, exotics=4964+/-112, obligs=17.1+/-0.2
+
+Comparison (conditional / blind):
+  monument units: 1.00x
+  total exotics: 1.00x
+  obligations/band: 1.28x

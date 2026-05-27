@@ -293,14 +293,26 @@ def create_panel_c_hurricanes(ax, hurricane_data):
     ax.set_title('C. Hurricane Activity (Liu & Fearn)', fontweight='bold')
     ax.grid(True, alpha=0.3)
 
-    # Legend
+    # Headroom above the activity curve so legends and annotations
+    # do not crowd the title or the activity peak.
+    ax.set_ylim(0, 7.2)
+
+    # Legend (moved to the lower right of the panel, below the activity
+    # peak, where the curve is flat and there is no other content).
     ax.plot([], [], color=CB_COLORS['red'], linewidth=1.5, label='Lake Shelby events')
     ax.plot([], [], color=CB_COLORS['blue'], linewidth=1.5, linestyle='--', label='Western Lake events')
-    ax.legend(loc='upper right', fontsize=8)
+    ax.legend(loc='lower left', fontsize=8, framealpha=0.92)
 
-    # Annotate
-    ax.annotate('HYPERACTIVE\n(5× baseline)', xy=(2.4, 5.2), fontsize=9,
-               ha='center', color=CB_COLORS['purple'], fontweight='bold')
+    # HYPERACTIVE annotation placed clearly above the activity curve
+    # (which peaks at ~5.0) with a thin connector to the curve. The
+    # Poverty Point annotation (added separately in main()) sits at the
+    # top of the panel, so we put HYPERACTIVE on the left side at a
+    # different y so the two do not collide.
+    ax.annotate('Hyperactive interval\n(~5× baseline activity)',
+               xy=(2.4, 5.0), xytext=(4.8, 6.5), fontsize=9,
+               ha='center', color=CB_COLORS['purple'], fontweight='bold',
+               arrowprops=dict(arrowstyle='->', color=CB_COLORS['purple'],
+                               lw=1.0))
 
 
 def create_panel_d_sigma(ax):
@@ -329,7 +341,8 @@ def create_panel_d_sigma(ax):
                    ha='center', fontsize=10, fontweight='bold')
 
     # Critical threshold line
-    ax.axhline(y=SIGMA_CRITICAL, color=CB_COLORS['red'], linestyle='--', linewidth=2, label=f'σ* = {SIGMA_CRITICAL}')
+    ax.axhline(y=SIGMA_CRITICAL, color=CB_COLORS['red'], linestyle='--',
+               linewidth=2, label=f'σ* ≈ {SIGMA_CRITICAL:.2f}')
 
     ax.set_ylabel('Component Value')
     ax.set_title('D. Uncertainty Index Components', fontweight='bold')
@@ -354,7 +367,8 @@ def create_panel_e_comparison(ax):
     bars = ax.bar(x, sigmas, yerr=sigma_err, capsize=4, color=colors, alpha=0.8, edgecolor='black')
 
     # Critical threshold
-    ax.axhline(y=SIGMA_CRITICAL, color=CB_COLORS['red'], linestyle='--', linewidth=2, label=f'σ* = {SIGMA_CRITICAL}')
+    ax.axhline(y=SIGMA_CRITICAL, color=CB_COLORS['red'], linestyle='--',
+               linewidth=2, label=f'σ* ≈ {SIGMA_CRITICAL:.2f}')
 
     # Shading for prediction zones
     ax.axhspan(0, SIGMA_CRITICAL, alpha=0.1, color=CB_COLORS['blue'], label='Low σ: Reproduction favored')
@@ -383,18 +397,29 @@ def create_panel_f_phase_space(ax):
     # Critical threshold contour
     ax.contour(F, M, S, levels=[SIGMA_CRITICAL], colors=[CB_COLORS['red']], linewidths=2, linestyles='--')
 
-    # Plot LMV site positions in shortfall-frequency × magnitude space
-    sites = {
-        'Poverty Point': (10, 0.45, CB_COLORS['orange']),
-        'Watson Brake': (12, 0.40, CB_COLORS['orange']),
-        'Jaketown': (11, 0.42, CB_COLORS['orange']),
-        'Lower Jackson': (10, 0.40, CB_COLORS['orange']),
-    }
+    # Plot LMV site positions in shortfall-frequency × magnitude space.
+    # The four sites cluster in a small region of phase space (freq 10-12 yr,
+    # magnitude 0.40-0.45), so inline labels overlap. We use offset
+    # callouts with leader lines that fan outward to give each label
+    # clear visual separation.
+    sites = [
+        # (name, freq, mag, label_offset_xy)
+        ('Poverty Point',  10, 0.45, (-3.5, 0.18)),
+        ('Watson Brake',   12, 0.40, ( 3.5, -0.05)),
+        ('Jaketown',       11, 0.42, ( 3.5,  0.12)),
+        ('Lower Jackson',  10, 0.40, (-3.5, -0.05)),
+    ]
 
-    for name, (freq, mag, color) in sites.items():
-        ax.scatter(freq, mag, s=100, c=color, edgecolors='black', linewidths=1.5, zorder=5)
-        ax.annotate(name, xy=(freq, mag), xytext=(5, 5), textcoords='offset points',
-                   fontsize=8, fontweight='bold')
+    for name, freq, mag, (dx, dy) in sites:
+        ax.scatter(freq, mag, s=110, c=CB_COLORS['orange'],
+                   edgecolors='black', linewidths=1.5, zorder=5)
+        ax.annotate(name, xy=(freq, mag), xytext=(freq + dx, mag + dy),
+                   fontsize=8, fontweight='bold',
+                   ha='center', va='center',
+                   arrowprops=dict(arrowstyle='-', color='#444444',
+                                   lw=0.7, alpha=0.75),
+                   bbox=dict(boxstyle='round,pad=0.18', facecolor='white',
+                             edgecolor='#888888', alpha=0.85))
 
     ax.set_xlabel('Shortfall Frequency (years)')
     ax.set_ylabel('Shortfall Magnitude')
@@ -404,8 +429,9 @@ def create_panel_f_phase_space(ax):
     cbar = plt.colorbar(contour, ax=ax, shrink=0.8)
     cbar.set_label('σ', fontsize=10)
 
-    # Add annotation for threshold
-    ax.annotate(f'σ* = {SIGMA_CRITICAL}', xy=(8, 0.35), fontsize=9,
+    # Threshold annotation: shortened to two decimals and tucked into
+    # the lower-left of the panel where the contour is sparse.
+    ax.annotate(f'σ* ≈ {SIGMA_CRITICAL:.2f}', xy=(6.5, 0.24), fontsize=9,
                color=CB_COLORS['red'], fontweight='bold')
 
 
@@ -466,9 +492,13 @@ def main():
     # Main title
     # No figure title per CLAUDE.md style guide
 
-    # Save figure
-    output_png = os.path.join(OUTPUT_DIR, 'figure_10_paleoclimate_proxy.png')
-    output_pdf = os.path.join(OUTPUT_DIR, 'figure_10_paleoclimate_proxy.pdf')
+    # Save figure (writes to figures/manuscript/ with current Figure 11
+    # numbering; script filename retained as create_figure_10_* for
+    # backward compatibility but output is figure_11_*).
+    output_dir = os.path.join(PROJECT_ROOT, 'figures', 'manuscript')
+    os.makedirs(output_dir, exist_ok=True)
+    output_png = os.path.join(output_dir, 'figure_11_paleoclimate_proxy.png')
+    output_pdf = os.path.join(output_dir, 'figure_11_paleoclimate_proxy.pdf')
 
     plt.savefig(output_png, dpi=300, bbox_inches='tight', facecolor='white')
     plt.savefig(output_pdf, bbox_inches='tight', facecolor='white')

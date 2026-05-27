@@ -29,7 +29,7 @@ from matplotlib.gridspec import GridSpec
 import os
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, 'figures', 'final')
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, 'figures', 'manuscript')
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Publication formatting
@@ -64,6 +64,18 @@ wb_occupation = (5500, 4800)  # approximate occupation span
 wb_construction = [(5500, 5300), (5100, 4900)]  # episodic, with 200+ yr hiatuses
 wb_label = 'Watson Brake'
 
+# Frenchman's Bend (Saunders et al. 2005; Greenlee personal communication 2026)
+# Most dates have large SDs (+/-120 to +/-230); two reliable dates
+# (Campeloma shell +/-40; charcoal +/-60) span 5600-5320 BP (2sigma)
+fmb_occupation = (5600, 5320)
+fmb_label = "Frenchman's Bend"
+
+# Lower Jackson (Saunders et al. 2001; conventional MA assignment provisional
+# under Kidder and Grooms 2024 chronological hygiene criteria — submound,
+# multi-entity sample)
+lj_event = 5500  # single isolated mound, single-event construction
+lj_label = 'Lower Jackson'
+
 # Jaketown (Grooms et al. 2023; Ward et al. 2022)
 jt_phase1 = (4570, 3820)   # initial occupation with PPOs and imports
 jt_phase2 = (3585, 3395)   # intensive occupation, Appalachian soapstone
@@ -95,8 +107,31 @@ gs = GridSpec(2, 1, height_ratios=[1, 1.2], hspace=0.35)
 # ------ Panel A: Full regional timeline ------
 ax1 = fig.add_subplot(gs[0])
 
-y_positions = {'Watson Brake': 2.5, 'Jaketown': 1.5, 'Poverty Point': 0.5}
+y_positions = {
+    "Frenchman's Bend": 4.5,
+    'Lower Jackson': 3.5,
+    'Watson Brake': 2.5,
+    'Jaketown': 1.5,
+    'Poverty Point': 0.5,
+}
 bar_height = 0.6
+
+# Frenchman's Bend (Middle Archaic; two reliable dates span 5600-5320 BP,
+# many other dates have large SDs in this range or older). Solid band shows
+# the reliable cluster; light extension to older dates indicates the broader
+# uncertainty envelope.
+ax1.barh(y_positions[fmb_label], 400, left=5350, height=bar_height,
+         color=CB['purple'], alpha=0.18, edgecolor='none')
+ax1.barh(y_positions[fmb_label], fmb_occupation[0] - fmb_occupation[1],
+         left=fmb_occupation[1], height=bar_height, color=CB['purple'],
+         alpha=0.7, edgecolor=CB['purple'], linewidth=1.0)
+
+# Lower Jackson (single isolated mound construction event; provisional MA
+# chronology under Kidder and Grooms 2024 hygiene criteria)
+ax1.plot(lj_event, y_positions[lj_label], marker='D', color=CB['gray'],
+         markersize=10, markeredgecolor='black', markeredgewidth=0.8, zorder=6)
+ax1.errorbar(lj_event, y_positions[lj_label], xerr=150, fmt='none',
+             ecolor=CB['gray'], capsize=4, linewidth=1, alpha=0.7, zorder=5)
 
 # Watson Brake
 ax1.barh(y_positions[wb_label], wb_occupation[0] - wb_occupation[1],
@@ -132,10 +167,11 @@ ax1.barh(y_positions[pp_label], pp_construction[0] - pp_construction[1],
          left=pp_construction[1], height=bar_height, color=CB['orange'],
          alpha=0.85, edgecolor='black', linewidth=0.8)
 
-# Flood event line
+# Flood event line (limited to the LA period y-range; the flood marks
+# the end of LA at PP and Jaketown but is irrelevant to the MA sites above)
 ax1.axvline(x=flood_event, color=CB['red'], linewidth=2, linestyle='-',
-            alpha=0.8, zorder=5)
-ax1.text(flood_event - 30, 3.05, 'Flood\n3310 BP', fontsize=7,
+            alpha=0.8, zorder=5, ymin=0.03, ymax=0.39)
+ax1.text(flood_event - 30, 2.05, 'Flood\n3310 BP', fontsize=7,
          color=CB['red'], ha='right', va='bottom', fontweight='bold')
 
 # 1300-year gap annotation
@@ -143,16 +179,18 @@ gap_mid = (gap_wb_pp[0] + gap_wb_pp[1]) / 2
 ax1.annotate('', xy=(gap_wb_pp[1], 1.85), xytext=(gap_wb_pp[0], 1.85),
              arrowprops=dict(arrowstyle='<->', color=CB['gray'],
                              lw=1.0, ls='--'))
-ax1.text(gap_mid, 1.95, '~1,300 yr gap', fontsize=7, ha='center',
+ax1.text(gap_mid, 1.95, '~1,050 yr gap', fontsize=7, ha='center',
          color=CB['gray'], style='italic')
 
 # Labels
-ax1.set_yticks([0.5, 1.5, 2.5])
-ax1.set_yticklabels(['Poverty Point', 'Jaketown', 'Watson Brake'])
+ax1.set_yticks([0.5, 1.5, 2.5, 3.5, 4.5])
+ax1.set_yticklabels(['Poverty Point', 'Jaketown', 'Watson Brake',
+                     'Lower Jackson', "Frenchman's Bend"])
 ax1.set_xlabel('Calendar years BP')
 ax1.set_xlim(5800, 2200)
 ax1.invert_xaxis()
-ax1.set_ylim(-0.1, 3.4)
+ax1.set_xlim(2200, 5800)  # re-enforce after invert; ensures FMB at 5600 is visible
+ax1.set_ylim(-0.1, 5.4)
 ax1.spines['top'].set_visible(False)
 ax1.spines['right'].set_visible(False)
 
@@ -167,11 +205,11 @@ legend_elements = [
     plt.Line2D([0], [0], color=CB['red'], linewidth=2,
                label='Crevasse splay (3310 BP)'),
 ]
-ax1.legend(handles=legend_elements, loc='upper right', framealpha=0.9,
+ax1.legend(handles=legend_elements, loc='upper left', framealpha=0.9,
            fontsize=7, ncol=2)
 
-ax1.text(0.02, 0.95, 'A', transform=ax1.transAxes, fontsize=14,
-         fontweight='bold', va='top')
+ax1.text(0.98, 0.95, 'A', transform=ax1.transAxes, fontsize=14,
+         fontweight='bold', va='top', ha='right')
 
 # ------ Panel B: Expanded construction window ------
 ax2 = fig.add_subplot(gs[1])
@@ -186,11 +224,18 @@ ax2.barh(3, jt_phase2[0] - jt_phase2[1], left=jt_phase2[1], height=0.5,
 ax2.barh(3, jt_phase3[0] - jt_phase3[1], left=jt_phase3[1], height=0.5,
          color=CB['blue'], alpha=0.85, edgecolor='black', linewidth=0.8)
 
-# Jaketown feasting event
+# Jaketown feasting event (Grooms et al. 2023:1464, citing Ward et al.
+# 2022:769). Marker sits on the Jaketown row (y=3) at 3430 cal BP, just
+# before Jaketown earthwork construction (jt_phase3, 3425-3365 cal BP).
+# The label is placed on the older-BP side of the marker (visually left
+# of the construction bar with the inverted x-axis), vertically centered
+# on the Jaketown row, so its attribution to Jaketown is unambiguous and
+# it does not overlap the construction bar.
 ax2.plot(jt_feasting, 3, marker='v', color=CB['green'], markersize=10,
          zorder=5)
-ax2.text(jt_feasting - 15, 2.55, 'Fall feasting', fontsize=7,
-         color=CB['green'], ha='right', va='top')
+ax2.text(jt_feasting + 20, 3.0, 'Fall feasting\n(Jaketown)', fontsize=7,
+         color=CB['green'], ha='left', va='center', fontweight='bold',
+         linespacing=1.05)
 
 # Poverty Point occupation
 ax2.barh(2, pp_occupation[0] - pp_occupation[1], left=pp_occupation[1],
@@ -259,11 +304,11 @@ ax2.text(0.02, 0.95, 'B', transform=ax2.transAxes, fontsize=14,
          fontweight='bold', va='top')
 
 # Save
-plt.savefig(os.path.join(OUTPUT_DIR, 'figure_09_regional_chronology.png'),
-            dpi=300, bbox_inches='tight', facecolor='white')
-plt.savefig(os.path.join(OUTPUT_DIR, 'figure_09_regional_chronology.pdf'),
-            bbox_inches='tight', facecolor='white')
+plt.savefig(os.path.join(OUTPUT_DIR, 'figure_10_regional_chronology.png'),
+            dpi=300, bbox_inches='tight', pad_inches=0.2, facecolor='white')
+plt.savefig(os.path.join(OUTPUT_DIR, 'figure_10_regional_chronology.pdf'),
+            bbox_inches='tight', pad_inches=0.2, facecolor='white')
 plt.close()
 
-print("Figure saved to figures/manuscript/figure_09_regional_chronology.png")
-print("Figure saved to figures/manuscript/figure_09_regional_chronology.pdf")
+print("Figure saved to figures/manuscript/figure_10_regional_chronology.png")
+print("Figure saved to figures/manuscript/figure_10_regional_chronology.pdf")

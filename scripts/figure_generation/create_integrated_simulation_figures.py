@@ -381,16 +381,22 @@ def create_calibration_figure(calibration: dict, scenarios: dict) -> plt.Figure:
 
     bars = ax1.bar(categories, [monument_model, monument_arch],
                    color=['#fdae61', '#8c510a'], edgecolor='black', linewidth=2)
+    monument_err = calibration['monument_std'] * scaling_factor
     ax1.errorbar(0, monument_model,
-                 yerr=calibration['monument_std'] * scaling_factor,
+                 yerr=monument_err,
                  fmt='none', color='black', capsize=10, linewidth=2)
     ax1.set_ylabel('Monument Volume (m³)', fontsize=12)
     ax1.set_title('A. Monument Construction', fontsize=12)
     ax1.ticklabel_format(style='scientific', axis='y', scilimits=(0, 0))
 
-    # Add value labels
-    ax1.text(0, monument_model * 1.05, f'{monument_model:,.0f}', ha='center', fontsize=10)
-    ax1.text(1, monument_arch * 1.05, f'{monument_arch:,.0f}', ha='center', fontsize=10)
+    # Add value labels with explicit y-axis headroom so the labels do
+    # not crowd the panel title or the error-bar caps.
+    a_max = max(monument_model + monument_err, monument_arch)
+    ax1.set_ylim(0, a_max * 1.22)
+    ax1.text(0, monument_model + monument_err * 1.08 + a_max * 0.02,
+             f'{monument_model:,.0f}', ha='center', va='bottom', fontsize=10)
+    ax1.text(1, monument_arch + a_max * 0.02,
+             f'{monument_arch:,.0f}', ha='center', va='bottom', fontsize=10)
 
     # Panel B: Exotic goods comparison
     ax2 = axes[1]
@@ -402,8 +408,14 @@ def create_calibration_figure(calibration: dict, scenarios: dict) -> plt.Figure:
     ax2.set_ylabel('Exotic Goods Count', fontsize=12)
     ax2.set_title('B. Exotic Goods Accumulation', fontsize=12)
 
-    ax2.text(0, model_exotics * 1.05, f'{model_exotics:,.0f}', ha='center', fontsize=10)
-    ax2.text(1, arch_exotics * 1.05, f'{arch_exotics:,.0f}', ha='center', fontsize=10)
+    # Explicit headroom + va='bottom' so labels sit just above each bar
+    # without overlapping the title or the axes frame.
+    b_max = max(model_exotics, arch_exotics)
+    ax2.set_ylim(0, b_max * 1.22)
+    ax2.text(0, model_exotics + b_max * 0.02,
+             f'{model_exotics:,.0f}', ha='center', va='bottom', fontsize=10)
+    ax2.text(1, arch_exotics + b_max * 0.02,
+             f'{arch_exotics:,.0f}', ha='center', va='bottom', fontsize=10)
 
     # Panel C: Model validation summary
     ax3 = axes[2]

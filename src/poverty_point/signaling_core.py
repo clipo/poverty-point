@@ -275,6 +275,61 @@ def monument_stock_step(
     return (1.0 - delta) * M_g + I_g
 
 
+def maintenance_to_new_ratio(
+    M_g: float | NDArray, I_g: float, delta: float
+) -> float | NDArray:
+    """Ratio of maintenance/signal-renewal labor to net-new-construction labor.
+
+    Decomposing each period's investment flow under the geometric depreciation
+    recurrence M_g(t+1) = (1 - delta) * M_g(t) + I_g:
+        maintenance      = delta * M_g           (offset of depreciation)
+        new construction = I_g - delta * M_g     (net stock growth)
+        R(M_g) = maintenance / new = delta * M_g / (I_g - delta * M_g)
+
+    R rises monotonically with accumulated stock M_g and diverges as M_g
+    approaches the steady state M_g* = I_g / delta (at saturation, all
+    investment is maintenance and net new construction vanishes). Defined
+    on the growth regime 0 <= delta * M_g < I_g; at or beyond steady state
+    np.inf is returned.
+
+    The framework reading: under the signal-half-life argument (manuscript
+    §2.2), the value of a completed earthwork as an honest signal of
+    *current* cooperative capacity decays at the social timescale of band
+    turnover, so a system that depends on continuous re-signaling must
+    devote a rising share of its labor to maintenance/renewal as
+    accumulated stock approaches saturation. Mapping the model's
+    maintenance flow to archaeologically observed renovation labor (and
+    net stock growth to initial construction) is an interpretive
+    assumption, not part of the derivation; see §6.8.
+
+    Parameters
+    ----------
+    M_g : float or array
+        Accumulated effective monument stock. Must be >= 0.
+    I_g : float
+        Per-period investment flow. Must be > 0.
+    delta : float
+        Signal depreciation rate in (0, 1].
+
+    Returns
+    -------
+    float or array
+        R(M_g) >= 0; np.inf at or beyond steady state.
+    """
+    if delta <= 0 or delta > 1:
+        raise ValueError(f"delta must be in (0, 1], got {delta}")
+    if I_g <= 0:
+        raise ValueError(f"I_g must be > 0, got {I_g}")
+    M_g_arr = np.asarray(M_g, dtype=float)
+    if np.any(M_g_arr < 0):
+        raise ValueError("M_g must be >= 0")
+    maintenance = delta * M_g_arr
+    new_construction = I_g - maintenance
+    with np.errstate(divide="ignore", invalid="ignore"):
+        R = np.where(new_construction > 0, maintenance / new_construction, np.inf)
+    return float(R) if R.ndim == 0 else R
+
+
 # ═══════════════════════════════════════════════════════════════════════
 # Layer 2: Intergroup Assessment and Conflict
 # ═══════════════════════════════════════════════════════════════════════

@@ -125,20 +125,20 @@
       "access_vector": [
         0.0,
         0.0,
-        1.0,
+        0.0,
         0.0,
         0.5,
-        0.0,
+        1.0,
         0.0
       ],
       "monument_scale": 0,
-      "site_mean_productivity": 0.7557903306061443,
-      "site_sd_productivity": 0.3648494270481316,
-      "cv": 0.48273894527801403,
+      "site_mean_productivity": 0.7535364806474928,
+      "site_sd_productivity": 0.33597660435769083,
+      "cv": 0.44586640857652377,
       "baseline_cv": 0.5582895700147165,
-      "cv_reduction": 0.13532515883237964,
-      "eps_water_route": 0.06766257941618982,
-      "independent_regimes": 2
+      "cv_reduction": 0.20137069985962525,
+      "eps_water_route": 0.10068534992981262,
+      "independent_regimes": 1
     },
     {
       "site": "J.W. Copes",
@@ -198,7 +198,7 @@
       "baseline_cv": 0.5582895700147165,
       "cv_reduction": -0.010337090828324624,
       "eps_water_route": 0.0,
-      "independent_regimes": 1
+      "independent_regimes": 2
     },
     {
       "site": "Cedarland",
@@ -218,7 +218,7 @@
       "baseline_cv": 0.5582895700147165,
       "cv_reduction": -0.010337090828324624,
       "eps_water_route": 0.0,
-      "independent_regimes": 1
+      "independent_regimes": 2
     }
   ],
   "drainage_names": [
@@ -297,8 +297,8 @@
   ],
   "spearman": {
     "eps_vs_ordinal_scale": {
-      "rho": 0.3462840234591299,
-      "p": 0.2968528098595879
+      "rho": 0.21205869256114904,
+      "p": 0.5313255455551966
     },
     "indep_regimes_vs_ordinal_scale": {
       "rho": 0.07541656933212626,

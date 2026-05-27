@@ -50,7 +50,7 @@ Re-running any of the scripts below should produce numerically identical outputs
 
 The order below mirrors the manuscript's logical flow. Each step is independent: you can regenerate any subset by running the indicated script.
 
-### 4.1 Calibration replicates (Figure 11; manuscript §6.1 summary statistics)
+### 4.1 Calibration replicates (Figure 12; manuscript §6.1 summary statistics)
 
 ```bash
 python scripts/figure_generation/create_figure_11_calibration.py

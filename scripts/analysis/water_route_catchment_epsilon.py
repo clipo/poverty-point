@@ -50,7 +50,7 @@ SITE_ACCESS = {
     "Frenchman's Bend": {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 1.0},  # Ouachita tributary
     'Caney':            {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 1.0},  # Sicily Island Hills
     'Insley':           {'BayouMacon': 0.5, 'Mississippi': 0.0, 'Tensas': 0.5, 'Yazoo': 0.0, 'Upland': 1.0},
-    'Cowpen Slough':    {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 1.0, 'Yazoo': 0.0, 'Upland': 0.5},
+    'Cowpen Slough':    {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 0.5},  # Red/Black River system (drains Ouachita Mountains) — see OuachitaSystem assignment below
     'J.W. Copes':       {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 1.0, 'Yazoo': 0.0, 'Upland': 0.5},
     'Jaketown':         {'BayouMacon': 0.0, 'Mississippi': 0.5, 'Tensas': 0.0, 'Yazoo': 1.0, 'Upland': 0.5},
     'Claiborne':        {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 0.0},  # Pearl River + Gulf
@@ -64,6 +64,12 @@ SITE_ACCESS = {
 SITE_ACCESS['Watson Brake']['OuachitaSystem'] = 1.0
 SITE_ACCESS["Frenchman's Bend"]['OuachitaSystem'] = 1.0
 SITE_ACCESS['Caney']['Tensas'] = 0.5  # via small tributaries
+# Cowpen Slough sits near the Red/Black River confluence in Catahoula
+# Parish (Greenlee personal communication 2026, correcting Diana's
+# v2 comments 28 and 56). The Red/Black system drains the Ouachita
+# Mountains, so its shortfall regime is more correlated with the
+# OuachitaSystem than with the Tensas swale.
+SITE_ACCESS['Cowpen Slough']['OuachitaSystem'] = 1.0
 SITE_ACCESS['Claiborne']['PearlGulf'] = 1.0
 SITE_ACCESS['Cedarland']['PearlGulf'] = 1.0
 

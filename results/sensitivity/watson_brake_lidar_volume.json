@@ -1,0 +1,76 @@
+{
+  "site": "Watson Brake (16OU175)",
+  "dem_source": "watsonbrake_tile.tif",
+  "dem_resolution_m": 1.0,
+  "site_polygon_source": "wb_polygon.geojson",
+  "polygon_area_m2": 146284.8399999662,
+  "polygon_area_ha": 14.62848399999662,
+  "buffer_ring_width_m": 250,
+  "elevation_range_inside_polygon_m": {
+    "min": 18.282480239868164,
+    "median": 21.843006134033203,
+    "max": 31.022869110107422
+  },
+  "baseline_elevation_summary": {
+    "ring_median_m": 21.106374740600586,
+    "ring_p10_m": 18.946016311645508,
+    "ring_p90_m": 24.709354400634766,
+    "ring_std_m": 1.865848572157322,
+    "intra_polygon_p10_m": 20.39362564086914,
+    "terrace_only_median_m": 22.089244842529297,
+    "terrace_threshold_p50_m": 21.106374740600586,
+    "inner_ring_100m_median_m": 20.92257595062256,
+    "inner_ring_n_pixels": 185878
+  },
+  "volume_estimates_m3": {
+    "constant_ring_median_250m": {
+      "volume_m3": 134986.24981117249,
+      "max_height_m": 9.916494369506836
+    },
+    "planar_ring_fit_250m": {
+      "volume_m3": 114496.98355429928,
+      "max_height_m": 9.725409264820243
+    },
+    "quadratic_ring_fit_250m": {
+      "volume_m3": 124870.43611089734,
+      "max_height_m": 10.431216230982336
+    },
+    "constant_intra_p10": {
+      "volume_m3": 220076.29695129412,
+      "max_height_m": 10.629243469238283
+    },
+    "terrace_only_constant": {
+      "volume_m3": 50180.57155227661,
+      "max_height_m": 8.933624267578125
+    },
+    "terrace_only_planar_fit": {
+      "volume_m3": 14783.672527244795,
+      "max_height_m": 8.132131170994398
+    },
+    "inner_ring_100m_median": {
+      "volume_m3": 155114.49759483337,
+      "max_height_m": 10.100293159484863
+    }
+  },
+  "interpretation": "Seven baseline-estimation methods are computed independently and their spread indicates sensitivity of the volume estimate to baseline-surface choice. WB sits on a Pleistocene terrace above the floodplain, so a baseline drawn from the full 250 m surrounding ring averages across both upland-terrace and lowland-floodplain pixels and biases the baseline elevation low (inflating volume). The terrace-only and inner-ring methods restrict the baseline to elevations consistent with the terrace surface the site actually sits on. The defensible central estimate for earthwork volume is the terrace-only planar fit (f) or the inner-ring (g) median; the spread across the seven methods serves as a sensitivity range.",
+  "recommended_central_estimate_m3": 27064.85,
+  "recommended_sensitivity_range_m3": [
+    14784.0,
+    27064.85
+  ],
+  "refined_per_mound_estimate_m3": {
+    "total_m3": 27064.85,
+    "method": "Per-mound volume integration against local natural-surface baselines. Each mound or mound+ridge group has a baseline drawn from the local minimum elevation in its immediate vicinity (22 m for the K/A/B/C/D, E, and F clusters; 21.5 m for G, H, I, and J + ridge). This avoids the polygon-wide baseline ambiguity of the seven prior methods and assumes the mounds and ridges were built directly on natural ground (no pre-mound surface raising).",
+    "per_mound_breakdown_m3": {
+      "mounds_K_A_B_C_D_plus_ridge_base_22m": 17986.34,
+      "mound_E_plus_ridge_base_22m": 6266.6,
+      "mound_F_base_22m": 163.0,
+      "mounds_G_H_base_21.5m": 192.39,
+      "mound_I_base_21.5m": 517.5,
+      "mound_J_plus_ridge_base_21.5m": 1939.02
+    },
+    "supersedes": "The prior 15,000-120,000 m\u00b3 baseline-method range remains documented below as a sensitivity envelope; the per-mound estimate is the authoritative central value because it uses local rather than polygon-wide baselines and treats the mounds and ridges as resting on natural ground rather than on a constructed inter-mound surface."
+  },
+  "recommended_central_estimate_source": "Per-mound LiDAR analysis with local natural-surface baselines; see refined_per_mound_estimate_m3 below.",
+  "recommended_sensitivity_range_source": "Lower bound from terrace-only planar fit (method f above); central from per-mound refined analysis. The full-ring 115k-220k m\u00b3 envelope reflects baseline-method ambiguity that the per-mound analysis resolves by using local rather than polygon-wide baselines."
+}

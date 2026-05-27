@@ -1,0 +1,237 @@
+{
+  "sites": [
+    {
+      "name": "Poverty Point",
+      "access_flags": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "flag_sum": 5.0,
+      "n_agg": 25,
+      "observed_scale": 3,
+      "mean_total_productivity": 2.470053184921256,
+      "sd_total_productivity": 0.9029410569161104,
+      "cv_observed": 0.36555530967034444,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.33668452471059,
+      "eps_var": 0.168342262355295,
+      "snr": 2.7355641500647163
+    },
+    {
+      "name": "Lower Jackson",
+      "access_flags": [
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "flag_sum": 3.5,
+      "n_agg": 1,
+      "observed_scale": 0,
+      "mean_total_productivity": 1.728460769965103,
+      "sd_total_productivity": 0.6405693942972948,
+      "cv_observed": 0.3706010604511595,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.327528797823771,
+      "eps_var": 0.1637643989118855,
+      "snr": 2.6983193161472006
+    },
+    {
+      "name": "Watson Brake",
+      "access_flags": [
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "flag_sum": 3.0,
+      "n_agg": 8,
+      "observed_scale": 2,
+      "mean_total_productivity": 1.474589542823115,
+      "sd_total_productivity": 0.5494805730522376,
+      "cv_observed": 0.3726328968807497,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.3238419452152851,
+      "eps_var": 0.16192097260764254,
+      "snr": 2.6836063277580693
+    },
+    {
+      "name": "Frenchman's Bend",
+      "access_flags": [
+        1.0,
+        0.5,
+        0.5,
+        0.0,
+        0.5
+      ],
+      "flag_sum": 2.5,
+      "n_agg": 5,
+      "observed_scale": 1,
+      "mean_total_productivity": 1.2304777085544811,
+      "sd_total_productivity": 0.4782912007344093,
+      "cv_observed": 0.3887036696473663,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.294680852505212,
+      "eps_var": 0.147340426252606,
+      "snr": 2.572653869996145
+    },
+    {
+      "name": "Caney",
+      "access_flags": [
+        1.0,
+        0.0,
+        0.5,
+        0.0,
+        0.5
+      ],
+      "flag_sum": 2.0,
+      "n_agg": 5,
+      "observed_scale": 2,
+      "mean_total_productivity": 0.9789466587210548,
+      "sd_total_productivity": 0.4083530283520384,
+      "cv_observed": 0.417135116315256,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.24309079742795506,
+      "eps_var": 0.12154539871397753,
+      "snr": 2.3973047602260253
+    },
+    {
+      "name": "Insley",
+      "access_flags": [
+        1.0,
+        0.5,
+        0.5,
+        0.0,
+        0.5
+      ],
+      "flag_sum": 2.5,
+      "n_agg": 6,
+      "observed_scale": 2,
+      "mean_total_productivity": 1.2304777085544811,
+      "sd_total_productivity": 0.4782912007344093,
+      "cv_observed": 0.3887036696473663,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.294680852505212,
+      "eps_var": 0.147340426252606,
+      "snr": 2.572653869996145
+    },
+    {
+      "name": "Cowpen Slough",
+      "access_flags": [
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5
+      ],
+      "flag_sum": 3.5,
+      "n_agg": 3,
+      "observed_scale": 0,
+      "mean_total_productivity": 1.7325071731481476,
+      "sd_total_productivity": 0.6508238342457394,
+      "cv_observed": 0.3756543374438815,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.318359414309087,
+      "eps_var": 0.1591797071545435,
+      "snr": 2.6620217053912993
+    },
+    {
+      "name": "J.W. Copes",
+      "access_flags": [
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        0.5
+      ],
+      "flag_sum": 3.5,
+      "n_agg": 3,
+      "observed_scale": 0,
+      "mean_total_productivity": 1.7325071731481476,
+      "sd_total_productivity": 0.6508238342457394,
+      "cv_observed": 0.3756543374438815,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.318359414309087,
+      "eps_var": 0.1591797071545435,
+      "snr": 2.6620217053912993
+    },
+    {
+      "name": "Jaketown",
+      "access_flags": [
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "flag_sum": 4.0,
+      "n_agg": 8,
+      "observed_scale": 1,
+      "mean_total_productivity": 1.9799918197985293,
+      "sd_total_productivity": 0.7306347908008646,
+      "cv_observed": 0.3690089946306996,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.33041766817650287,
+      "eps_var": 0.16520883408825143,
+      "snr": 2.7099610430927026
+    },
+    {
+      "name": "Claiborne",
+      "access_flags": [
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        1.0
+      ],
+      "flag_sum": 2.0,
+      "n_agg": 4,
+      "observed_scale": 1,
+      "mean_total_productivity": 1.005223034971495,
+      "sd_total_productivity": 0.41320282565303673,
+      "cv_observed": 0.4110558664871362,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.2541218517786053,
+      "eps_var": 0.12706092588930265,
+      "snr": 2.432759343750406
+    },
+    {
+      "name": "Cedarland",
+      "access_flags": [
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        1.0
+      ],
+      "flag_sum": 2.0,
+      "n_agg": 4,
+      "observed_scale": 1,
+      "mean_total_productivity": 1.005223034971495,
+      "sd_total_productivity": 0.41320282565303673,
+      "cv_observed": 0.4110558664871362,
+      "cv_single_zone_baseline": 0.5511032431602017,
+      "cv_reduction_vs_baseline": 0.2541218517786053,
+      "eps_var": 0.12706092588930265,
+      "snr": 2.432759343750406
+    }
+  ],
+  "regional_rho": 0.3,
+  "spearman": {
+    "eps_var_vs_scale": {
+      "rho": -0.02149349111125634,
+      "p": 0.9499856120138243
+    },
+    "flag_sum_vs_scale": {
+      "rho": -0.123516014003684,
+      "p": 0.7174890531696144
+    }
+  },
+  "n_years": 1000,
+  "rng_seed": 42
+}

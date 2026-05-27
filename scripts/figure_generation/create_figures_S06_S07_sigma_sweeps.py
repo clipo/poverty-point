@@ -109,33 +109,30 @@ def create_sigma_vs_n_figure():
     """
     Create theoretical figure showing σ vs aggregation size (n).
     """
-    from src.poverty_point.parameters import default_parameters, critical_threshold
+    from src.poverty_point.parameters import default_parameters, critical_threshold, W_aggregator, W_independent
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
     params = default_parameters()
+    n_optimal = 25  # PP-calibrated aggregation size; used for visual annotation
 
-    # Grid for σ and n
-    sigma_vals = np.linspace(0.2, 0.9, 100)
-    n_vals = np.linspace(5, 40, 100)
+    # Grid for σ and n; coarser than the analytical formula because the MLS
+    # W_aggregator/W_independent calls solve the lambda-sigma feedback loop
+    # at each (σ, n), so we balance resolution and runtime here.
+    sigma_vals = np.linspace(0.2, 0.9, 40)
+    n_vals = np.linspace(5, 40, 30)
 
-    # Calculate fitness difference grid
+    # Calculate fitness difference grid using the current MLS framework
     epsilon = 0.35  # Fixed ecotone advantage (Poverty Point estimate)
     fitness_diff = np.zeros((len(n_vals), len(sigma_vals)))
 
     for i, n in enumerate(n_vals):
         for j, sig in enumerate(sigma_vals):
-            # Aggregator fitness
-            C_total = params.costs.C_total
-            sigma_eff = sig * (1 - epsilon)
-            f_n = 1 + params.cooperation.b_coop * np.log(n)
-            if n > params.cooperation.n_optimal:
-                f_n -= params.cooperation.c_crowd * (n - params.cooperation.n_optimal)**2
-            W_agg = (1 - C_total) * (1 - params.vulnerability.alpha_agg * sigma_eff) * f_n * (1 + params.cooperation.B_recip)
-
-            # Independent fitness
-            W_ind = params.cooperation.R_ind * (1 - params.vulnerability.beta_ind * sig)
-
-            fitness_diff[i, j] = W_agg - W_ind
+            try:
+                W_agg = W_aggregator(sig, epsilon, n, params)
+                W_ind = W_independent(sig, params)
+                fitness_diff[i, j] = W_agg - W_ind
+            except Exception:
+                fitness_diff[i, j] = np.nan
 
     # Custom colormap
     colors = ['#7b3294', '#c2a5cf', '#f7f7f7', '#fdae61', '#e66101']
@@ -161,8 +158,8 @@ def create_sigma_vs_n_figure():
     ax1.plot(sigma_stars, n_line, 'w--', linewidth=1.5)
 
     # Mark optimal n
-    ax1.axhline(params.cooperation.n_optimal, color='gray', linestyle=':', linewidth=1, alpha=0.7)
-    ax1.text(0.25, params.cooperation.n_optimal + 1, f'n* = {params.cooperation.n_optimal}', fontsize=9)
+    ax1.axhline(n_optimal, color='gray', linestyle=':', linewidth=1, alpha=0.7)
+    ax1.text(0.25, n_optimal + 1, f'n* = {n_optimal}', fontsize=9)
 
     ax1.set_xlabel('Environmental Uncertainty (σ)', fontsize=12)
     ax1.set_ylabel('Aggregation Size (n bands)', fontsize=12)
@@ -188,8 +185,8 @@ def create_sigma_vs_n_figure():
         sigma_stars_eps = [critical_threshold(eps, n, params) for n in n_range]
         ax2.plot(n_range, sigma_stars_eps, '-', linewidth=2.5, color=color, label=label)
 
-    ax2.axvline(params.cooperation.n_optimal, color='gray', linestyle=':', linewidth=1, alpha=0.7)
-    ax2.text(params.cooperation.n_optimal + 0.5, 0.75, f'n* = {params.cooperation.n_optimal}', fontsize=9)
+    ax2.axvline(n_optimal, color='gray', linestyle=':', linewidth=1, alpha=0.7)
+    ax2.text(n_optimal + 0.5, 0.75, f'n* = {n_optimal}', fontsize=9)
 
     ax2.set_xlabel('Aggregation Size (n bands)', fontsize=12)
     ax2.set_ylabel('Critical Threshold (σ*)', fontsize=12)
@@ -199,11 +196,13 @@ def create_sigma_vs_n_figure():
     ax2.set_ylim(0.4, 0.8)
     ax2.grid(True, alpha=0.3)
 
-    # Add annotation
-    ax2.annotate('Larger aggregations\nlower the threshold',
-                xy=(30, 0.52), xytext=(35, 0.65),
-                fontsize=10, ha='center',
-                arrowprops=dict(arrowstyle='->', color='black', lw=1.5))
+    # Annotation: under the current MLS formulation, sigma* is essentially
+    # insensitive to aggregation size n_agg over the plausible range
+    # (see manuscript §4.4 sensitivity table)
+    ax2.text(25, 0.70,
+             'σ* nearly insensitive to n\nunder MLS formulation\n(consistent with §4.4 sensitivity)',
+             fontsize=9, ha='center', va='center',
+             bbox=dict(boxstyle='round', facecolor='white', alpha=0.85, edgecolor='gray'))
 
     plt.tight_layout()
     return fig
@@ -213,14 +212,17 @@ def create_sigma_vs_cost_figure():
     """
     Create theoretical figure showing σ vs signaling cost.
     """
-    from src.poverty_point.parameters import default_parameters, critical_threshold
+    import copy
+    from src.poverty_point.parameters import default_parameters, critical_threshold, W_aggregator, W_independent
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
     params = default_parameters()
+    C_signal_default = params.aggregation.C_signal
 
-    # Grid for σ and cost
-    sigma_vals = np.linspace(0.2, 0.9, 100)
-    cost_vals = np.linspace(0.05, 0.40, 100)  # C_signal ranges from 5% to 40%
+    # Grid for σ and cost (coarser than the original to keep runtime bounded
+    # under the lambda-sigma feedback loop in W_aggregator)
+    sigma_vals = np.linspace(0.2, 0.9, 40)
+    cost_vals = np.linspace(0.05, 0.40, 30)  # C_signal ranges from 5% to 40%
 
     # Calculate fitness difference grid
     epsilon = 0.35  # Fixed ecotone advantage
@@ -228,17 +230,16 @@ def create_sigma_vs_cost_figure():
     fitness_diff = np.zeros((len(cost_vals), len(sigma_vals)))
 
     for i, C_signal in enumerate(cost_vals):
+        import dataclasses
+        p_mod = copy.deepcopy(params)
+        p_mod.aggregation = dataclasses.replace(p_mod.aggregation, C_signal=float(C_signal))
         for j, sig in enumerate(sigma_vals):
-            # Aggregator fitness with varying signal cost
-            C_total = params.costs.C_travel + C_signal + params.costs.C_opportunity
-            sigma_eff = sig * (1 - epsilon)
-            f_n = 1 + params.cooperation.b_coop * np.log(n)
-            W_agg = (1 - C_total) * (1 - params.vulnerability.alpha_agg * sigma_eff) * f_n * (1 + params.cooperation.B_recip)
-
-            # Independent fitness
-            W_ind = params.cooperation.R_ind * (1 - params.vulnerability.beta_ind * sig)
-
-            fitness_diff[i, j] = W_agg - W_ind
+            try:
+                W_agg = W_aggregator(sig, epsilon, n, p_mod)
+                W_ind = W_independent(sig, p_mod)
+                fitness_diff[i, j] = W_agg - W_ind
+            except Exception:
+                fitness_diff[i, j] = np.nan
 
     # Custom colormap
     colors = ['#7b3294', '#c2a5cf', '#f7f7f7', '#fdae61', '#e66101']
@@ -251,26 +252,24 @@ def create_sigma_vs_cost_figure():
                      aspect='auto', cmap=cmap, vmin=-0.3, vmax=0.3,
                      interpolation='bilinear')
 
-    # Calculate and plot critical threshold line
-    cost_line = np.linspace(0.05, 0.35, 50)
+    # Calculate and plot critical threshold line via the current critical_threshold()
+    cost_line = np.linspace(0.05, 0.35, 30)
     sigma_stars = []
     for C_sig in cost_line:
-        # Recalculate critical threshold with modified C_signal
-        C_total = params.costs.C_travel + C_sig + params.costs.C_opportunity
-        agg_base = (1 - C_total) * (1 + params.cooperation.b_coop * np.log(n)) * (1 + params.cooperation.B_recip)
-        numerator = params.cooperation.R_ind - agg_base
-        denominator = params.cooperation.R_ind * params.vulnerability.beta_ind - agg_base * params.vulnerability.alpha_agg * (1 - epsilon)
-        if denominator > 0:
-            sigma_stars.append(numerator / denominator)
-        else:
+        import dataclasses
+        p_mod = copy.deepcopy(params)
+        p_mod.aggregation = dataclasses.replace(p_mod.aggregation, C_signal=float(C_sig))
+        try:
+            sigma_stars.append(critical_threshold(epsilon, n, p_mod))
+        except Exception:
             sigma_stars.append(np.nan)
 
     ax1.plot(sigma_stars, cost_line, 'k-', linewidth=2.5, label='Critical threshold σ*')
     ax1.plot(sigma_stars, cost_line, 'w--', linewidth=1.5)
 
     # Mark default cost
-    ax1.axhline(params.costs.C_signal, color='gray', linestyle=':', linewidth=1, alpha=0.7)
-    ax1.text(0.25, params.costs.C_signal + 0.01, f'Default C_signal = {params.costs.C_signal}', fontsize=9)
+    ax1.axhline(C_signal_default, color='gray', linestyle=':', linewidth=1, alpha=0.7)
+    ax1.text(0.25, C_signal_default + 0.01, f'Default C_signal = {C_signal_default:.2f}', fontsize=9)
 
     ax1.set_xlabel('Environmental Uncertainty (σ)', fontsize=12)
     ax1.set_ylabel('Signaling Cost (C_signal)', fontsize=12)
@@ -296,18 +295,17 @@ def create_sigma_vs_cost_figure():
                                (0.50, '#2b83ba', 'ε = 0.50 (high)')]:
         sigma_stars_eps = []
         for C_sig in cost_range:
-            C_total = params.costs.C_travel + C_sig + params.costs.C_opportunity
-            agg_base = (1 - C_total) * (1 + params.cooperation.b_coop * np.log(n)) * (1 + params.cooperation.B_recip)
-            numerator = params.cooperation.R_ind - agg_base
-            denominator = params.cooperation.R_ind * params.vulnerability.beta_ind - agg_base * params.vulnerability.alpha_agg * (1 - eps)
-            if denominator > 0:
-                sigma_stars_eps.append(max(0, min(1, numerator / denominator)))
-            else:
+            import dataclasses
+            p_mod = copy.deepcopy(params)
+            p_mod.aggregation = dataclasses.replace(p_mod.aggregation, C_signal=float(C_sig))
+            try:
+                sigma_stars_eps.append(critical_threshold(eps, n, p_mod))
+            except Exception:
                 sigma_stars_eps.append(1.0)
         ax2.plot(cost_range, sigma_stars_eps, '-', linewidth=2.5, color=color, label=label)
 
-    ax2.axvline(params.costs.C_signal, color='gray', linestyle=':', linewidth=1, alpha=0.7)
-    ax2.text(params.costs.C_signal + 0.01, 0.75, f'Default\nC = {params.costs.C_signal}', fontsize=9)
+    ax2.axvline(C_signal_default, color='gray', linestyle=':', linewidth=1, alpha=0.7)
+    ax2.text(C_signal_default + 0.01, 0.75, f'Default\nC = {C_signal_default:.2f}', fontsize=9)
 
     ax2.set_xlabel('Signaling Cost (C_signal)', fontsize=12)
     ax2.set_ylabel('Critical Threshold (σ*)', fontsize=12)

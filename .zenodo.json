@@ -1,0 +1,50 @@
+{
+  "title": "Poverty Point Costly Signaling: Agent-Based Model and Analysis Code",
+  "description": "<p>Agent-based model, analytical equilibrium analyses, GIS analyses, and figure-generation pipeline accompanying the manuscript on Poverty Point (ca. 1700-1100 BCE) as an adaptive costly-signaling system among Late Archaic mobile hunter-gatherers in the Lower Mississippi Valley. Implements coupled signaling rules under environmental uncertainty, multi-drainage shortfall buffering, and a Bayesian posterior predictive check against monument and exotic-goods records.</p><p>The release includes: (1) the core simulation under <code>src/poverty_point/</code>; (2) figure-generation scripts under <code>scripts/figure_generation/</code>; (3) analysis scripts (GIS-epsilon, sigma comparison, tier-3 extensions, distance decay) under <code>scripts/analysis/</code>; (4) verified reference materials and claims extractions under <code>docs/references/</code>; (5) the AA-formatted manuscript and JAS-formatted v2.0 manuscript with supplemental, including the source markdown and rendered docx; and (6) full reproducibility documentation in <code>REPRODUCE.md</code> and <code>Makefile</code>.</p><p>External datasets included by reference are public-domain: USGS Saucier (1994) Lower Mississippi Valley geomorphology and EPA Office of Research and Development Level IV ecoregions.</p>",
+  "creators": [
+    {
+      "name": "Lipo, Carl P.",
+      "affiliation": "Department of Anthropology and Environmental Studies Program, Binghamton University",
+      "orcid": "0000-0003-4391-3590"
+    },
+    {
+      "name": "Greenlee, Diana M.",
+      "affiliation": "University of Louisiana at Monroe and Poverty Point World Heritage Site"
+    },
+    {
+      "name": "DiNapoli, Robert J.",
+      "affiliation": "Department of Anthropology and Environmental Studies Program, Binghamton University",
+      "orcid": "0000-0003-2180-2195"
+    }
+  ],
+  "keywords": [
+    "archaeology",
+    "costly signaling",
+    "agent-based model",
+    "hunter-gatherers",
+    "Poverty Point",
+    "Lower Mississippi Valley",
+    "Late Archaic",
+    "monumental architecture",
+    "multilevel selection",
+    "Bayesian inference"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "language": "eng",
+  "communities": [
+    {
+      "identifier": "archaeology"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5066/F7N878QN",
+      "relation": "references",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Code is released under the MIT License. Manuscript content under docs/manuscript_AA/ and docs/manuscript_v2.0/ is licensed CC-BY-4.0. External public-domain datasets retain their upstream licenses."
+}

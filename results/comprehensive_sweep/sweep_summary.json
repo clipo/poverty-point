@@ -1,0 +1,164 @@
+{
+  "timestamp": "2026-02-20T21:25:00.764501",
+  "total_elapsed_seconds": 1109.0,
+  "oat": {
+    "sigma": {
+      "n_points": 10,
+      "range": [
+        0.1,
+        0.8
+      ],
+      "dominance_range": [
+        -0.96176,
+        -0.20778666666666668
+      ],
+      "transition_value": 0.6833333333333333
+    },
+    "epsilon": {
+      "n_points": 8,
+      "range": [
+        0.0,
+        0.5
+      ],
+      "dominance_range": [
+        -0.8910933333333334,
+        -0.8328000000000001
+      ],
+      "transition_value": null
+    },
+    "C_travel": {
+      "n_points": 7,
+      "range": [
+        0.0,
+        0.3
+      ],
+      "dominance_range": [
+        -0.9752000000000001,
+        -0.4121066666666667
+      ],
+      "transition_value": null
+    },
+    "C_signal": {
+      "n_points": 7,
+      "range": [
+        0.0,
+        0.4
+      ],
+      "dominance_range": [
+        -0.9837866666666667,
+        -0.08405333333333333
+      ],
+      "transition_value": null
+    },
+    "C_opportunity": {
+      "n_points": 7,
+      "range": [
+        0.0,
+        0.3
+      ],
+      "dominance_range": [
+        -0.9752000000000001,
+        -0.4121066666666667
+      ],
+      "transition_value": null
+    },
+    "alpha_agg": {
+      "n_points": 7,
+      "range": [
+        0.1,
+        0.7
+      ],
+      "dominance_range": [
+        -0.8796266666666668,
+        -0.7789866666666666
+      ],
+      "transition_value": null
+    },
+    "beta_ind": {
+      "n_points": 7,
+      "range": [
+        0.3,
+        0.9
+      ],
+      "dominance_range": [
+        -0.9637866666666667,
+        -0.7377600000000001
+      ],
+      "transition_value": null
+    },
+    "b_coop": {
+      "n_points": 7,
+      "range": [
+        0.0,
+        0.3
+      ],
+      "dominance_range": [
+        -0.9165866666666668,
+        -0.06869333333333333
+      ],
+      "transition_value": 0.21249999999999997
+    },
+    "n_optimal": {
+      "n_points": 6,
+      "range": [
+        3.0,
+        30.0
+      ],
+      "dominance_range": [
+        -0.8851733333333334,
+        -0.8384533333333334
+      ],
+      "transition_value": null
+    },
+    "R_ind": {
+      "n_points": 8,
+      "range": [
+        0.9,
+        1.6
+      ],
+      "dominance_range": [
+        -0.9963733333333332,
+        -0.31616000000000005
+      ],
+      "transition_value": null
+    }
+  },
+  "pairwise": {},
+  "null_models": {
+    "no_uncertainty": {
+      "strategy_dominance_mean": -0.9655466666666667,
+      "aggregation_emerged_fraction": 0.0,
+      "passed": true
+    },
+    "no_ecotone": {
+      "strategy_dominance_mean": -0.8910933333333334,
+      "aggregation_emerged_fraction": 0.0,
+      "passed": true
+    },
+    "high_cost": {
+      "strategy_dominance_mean": -0.9966400000000001,
+      "aggregation_emerged_fraction": 0.0,
+      "passed": true
+    },
+    "no_cooperation": {
+      "strategy_dominance_mean": -0.9165866666666668,
+      "aggregation_emerged_fraction": 0.0,
+      "passed": true
+    },
+    "high_ind_advantage": {
+      "strategy_dominance_mean": -0.9906666666666665,
+      "aggregation_emerged_fraction": 0.0,
+      "passed": true
+    },
+    "low_vulnerability_diff": {
+      "strategy_dominance_mean": -0.9008533333333334,
+      "aggregation_emerged_fraction": 0.0,
+      "passed": true
+    }
+  },
+  "robustness": {
+    "n_configs": 16,
+    "mean_dominance_std": 0.00315517610095388
+  },
+  "phase_boundary": {}
+}

@@ -1,0 +1,418 @@
+[
+  {
+    "overrides": {
+      "R_ind": 0.9
+    },
+    "n_replicates": 3,
+    "strategy_dominance_mean": -0.31616000000000005,
+    "strategy_dominance_std": 0.023542302351299473,
+    "mean_aggregation_size_mean": 17.096,
+    "mean_aggregation_size_std": 0.5885575587824855,
+    "final_monument_level_mean": 26615.339736853795,
+    "final_monument_level_std": 1285.0074842918207,
+    "total_exotics_mean": 8957.666666666666,
+    "total_exotics_std": 345.60703439343104,
+    "mean_population_mean": 352.39466666666664,
+    "mean_population_std": 34.35123696301036,
+    "mean_effective_sigma_mean": 0.2803689917585093,
+    "mean_effective_sigma_std": 0.0014914058584049137,
+    "aggregation_emerged_fraction": 1.0,
+    "sigma_star_theoretical": 0.289341035023668,
+    "individual_runs": [
+      {
+        "strategy_dominance": -0.31456000000000006,
+        "mean_aggregation_size": 17.136,
+        "final_monument_level": 28198.23111296777,
+        "total_exotics": 8907,
+        "mean_population": 319.856,
+        "mean_effective_sigma": 0.27945550404002806,
+        "sigma_star_theoretical": 0.289341035023668,
+        "aggregation_emerged": true
+      },
+      {
+        "strategy_dominance": -0.34576000000000007,
+        "mean_aggregation_size": 16.356,
+        "final_monument_level": 26597.009512745757,
+        "total_exotics": 8562,
+        "mean_population": 337.424,
+        "mean_effective_sigma": 0.28247212326738314,
+        "sigma_star_theoretical": 0.3049004892690853,
+        "aggregation_emerged": true
+      },
+      {
+        "strategy_dominance": -0.28816,
+        "mean_aggregation_size": 17.796,
+        "final_monument_level": 25050.77858484786,
+        "total_exotics": 9404,
+        "mean_population": 399.904,
+        "mean_effective_sigma": 0.2791793479681168,
+        "sigma_star_theoretical": 0.2775639028124106,
+        "aggregation_emerged": true
+      }
+    ]
+  },
+  {
+    "overrides": {
+      "R_ind": 1.0
+    },
+    "n_replicates": 3,
+    "strategy_dominance_mean": -0.6360533333333334,
+    "strategy_dominance_std": 0.010760388262305147,
+    "mean_aggregation_size_mean": 9.098666666666666,
+    "mean_aggregation_size_std": 0.26900970655763035,
+    "final_monument_level_mean": 11619.069368416827,
+    "final_monument_level_std": 1466.181450519201,
+    "total_exotics_mean": 4525.333333333333,
+    "total_exotics_std": 129.77501899655246,
+    "mean_population_mean": 334.7386666666667,
+    "mean_population_std": 15.90008614931239,
+    "mean_effective_sigma_mean": 0.2803689917585093,
+    "mean_effective_sigma_std": 0.0014914058584049137,
+    "aggregation_emerged_fraction": 0.0,
+    "sigma_star_theoretical": 0.46769446778337026,
+    "individual_runs": [
+      {
+        "strategy_dominance": -0.64528,
+        "mean_aggregation_size": 8.868,
+        "final_monument_level": 13201.382428309824,
+        "total_exotics": 4539,
+        "mean_population": 357.156,
+        "mean_effective_sigma": 0.27945550404002806,
+        "sigma_star_theoretical": 0.46769446778337026,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.6419199999999999,
+        "mean_aggregation_size": 8.952,
+        "final_monument_level": 11988.406743727448,
+        "total_exotics": 4360,
+        "mean_population": 325.052,
+        "mean_effective_sigma": 0.28247212326738314,
+        "sigma_star_theoretical": 0.48216566203732886,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.6209600000000001,
+        "mean_aggregation_size": 9.476,
+        "final_monument_level": 9667.418933213205,
+        "total_exotics": 4677,
+        "mean_population": 322.008,
+        "mean_effective_sigma": 0.2791793479681168,
+        "sigma_star_theoretical": 0.45140552072345086,
+        "aggregation_emerged": false
+      }
+    ]
+  },
+  {
+    "overrides": {
+      "R_ind": 1.1
+    },
+    "n_replicates": 3,
+    "strategy_dominance_mean": -0.8406399999999999,
+    "strategy_dominance_std": 0.012240435722092057,
+    "mean_aggregation_size_mean": 3.984,
+    "mean_aggregation_size_std": 0.3060108930523009,
+    "final_monument_level_mean": 5456.198696144175,
+    "final_monument_level_std": 923.4954665052162,
+    "total_exotics_mean": 1928.3333333333333,
+    "total_exotics_std": 79.51659505341567,
+    "mean_population_mean": 369.82933333333335,
+    "mean_population_std": 34.589861224866965,
+    "mean_effective_sigma_mean": 0.2803689917585093,
+    "mean_effective_sigma_std": 0.0014914058584049137,
+    "aggregation_emerged_fraction": 0.0,
+    "sigma_star_theoretical": 0.6123412673486252,
+    "individual_runs": [
+      {
+        "strategy_dominance": -0.8395199999999999,
+        "mean_aggregation_size": 4.012,
+        "final_monument_level": 5551.076585878702,
+        "total_exotics": 1884,
+        "mean_population": 374.1,
+        "mean_effective_sigma": 0.27945550404002806,
+        "sigma_star_theoretical": 0.6123412673486252,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.85616,
+        "mean_aggregation_size": 3.596,
+        "final_monument_level": 6536.817575376888,
+        "total_exotics": 1861,
+        "mean_population": 409.896,
+        "mean_effective_sigma": 0.28247212326738314,
+        "sigma_star_theoretical": 0.635583330145178,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.82624,
+        "mean_aggregation_size": 4.344,
+        "final_monument_level": 4280.701927176936,
+        "total_exotics": 2040,
+        "mean_population": 325.492,
+        "mean_effective_sigma": 0.2791793479681168,
+        "sigma_star_theoretical": 0.5948101880210119,
+        "aggregation_emerged": false
+      }
+    ]
+  },
+  {
+    "overrides": {
+      "R_ind": 1.2000000000000002
+    },
+    "n_replicates": 3,
+    "strategy_dominance_mean": -0.92416,
+    "strategy_dominance_std": 0.0069974471535458405,
+    "mean_aggregation_size_mean": 1.896,
+    "mean_aggregation_size_std": 0.17493617883864587,
+    "final_monument_level_mean": 2302.7039163059276,
+    "final_monument_level_std": 199.4997866159959,
+    "total_exotics_mean": 855.3333333333334,
+    "total_exotics_std": 71.67674347761313,
+    "mean_population_mean": 351.5226666666667,
+    "mean_population_std": 5.203917840328453,
+    "mean_effective_sigma_mean": 0.2803689917585093,
+    "mean_effective_sigma_std": 0.0014914058584049137,
+    "aggregation_emerged_fraction": 0.0,
+    "sigma_star_theoretical": 0.7234060306305136,
+    "individual_runs": [
+      {
+        "strategy_dominance": -0.9236800000000001,
+        "mean_aggregation_size": 1.908,
+        "final_monument_level": 2574.4606409591283,
+        "total_exotics": 893,
+        "mean_population": 344.36,
+        "mean_effective_sigma": 0.27945550404002806,
+        "sigma_star_theoretical": 0.7234060306305136,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.93296,
+        "mean_aggregation_size": 1.676,
+        "final_monument_level": 2232.4872570037337,
+        "total_exotics": 755,
+        "mean_population": 353.64,
+        "mean_effective_sigma": 0.28247212326738314,
+        "sigma_star_theoretical": 0.7467301103768934,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.91584,
+        "mean_aggregation_size": 2.104,
+        "final_monument_level": 2101.1638509549216,
+        "total_exotics": 918,
+        "mean_population": 356.568,
+        "mean_effective_sigma": 0.2791793479681168,
+        "sigma_star_theoretical": 0.7054554439533985,
+        "aggregation_emerged": false
+      }
+    ]
+  },
+  {
+    "overrides": {
+      "R_ind": 1.3
+    },
+    "n_replicates": 3,
+    "strategy_dominance_mean": -0.9627733333333334,
+    "strategy_dominance_std": 0.0060692302275952206,
+    "mean_aggregation_size_mean": 0.9306666666666666,
+    "mean_aggregation_size_std": 0.1517307556898806,
+    "final_monument_level_mean": 1336.7670086682836,
+    "final_monument_level_std": 158.43239343625527,
+    "total_exotics_mean": 409.0,
+    "total_exotics_std": 58.92933621437345,
+    "mean_population_mean": 397.468,
+    "mean_population_std": 33.98744803600294,
+    "mean_effective_sigma_mean": 0.2803689917585093,
+    "mean_effective_sigma_std": 0.0014914058584049137,
+    "aggregation_emerged_fraction": 0.0,
+    "sigma_star_theoretical": 0.8084927315034643,
+    "individual_runs": [
+      {
+        "strategy_dominance": -0.9606399999999999,
+        "mean_aggregation_size": 0.984,
+        "final_monument_level": 1379.1942815758387,
+        "total_exotics": 444,
+        "mean_population": 420.132,
+        "mean_effective_sigma": 0.27945550404002806,
+        "sigma_star_theoretical": 0.8084927315034643,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.97104,
+        "mean_aggregation_size": 0.724,
+        "final_monument_level": 1125.0246871822214,
+        "total_exotics": 326,
+        "mean_population": 349.428,
+        "mean_effective_sigma": 0.28247212326738314,
+        "sigma_star_theoretical": 0.8241879429723304,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.95664,
+        "mean_aggregation_size": 1.084,
+        "final_monument_level": 1506.0820572467903,
+        "total_exotics": 457,
+        "mean_population": 422.844,
+        "mean_effective_sigma": 0.2791793479681168,
+        "sigma_star_theoretical": 0.792400182025544,
+        "aggregation_emerged": false
+      }
+    ]
+  },
+  {
+    "overrides": {
+      "R_ind": 1.4
+    },
+    "n_replicates": 3,
+    "strategy_dominance_mean": -0.9805866666666666,
+    "strategy_dominance_std": 0.00400603988441899,
+    "mean_aggregation_size_mean": 0.48533333333333334,
+    "mean_aggregation_size_std": 0.10015099711047425,
+    "final_monument_level_mean": 657.0526419478405,
+    "final_monument_level_std": 58.48209969696492,
+    "total_exotics_mean": 187.33333333333334,
+    "total_exotics_std": 26.83695627716046,
+    "mean_population_mean": 386.488,
+    "mean_population_std": 24.097669486211043,
+    "mean_effective_sigma_mean": 0.2803689917585093,
+    "mean_effective_sigma_std": 0.0014914058584049137,
+    "aggregation_emerged_fraction": 0.0,
+    "sigma_star_theoretical": 0.8508332998821339,
+    "individual_runs": [
+      {
+        "strategy_dominance": -0.98176,
+        "mean_aggregation_size": 0.456,
+        "final_monument_level": 731.6722489285025,
+        "total_exotics": 193,
+        "mean_population": 419.44,
+        "mean_effective_sigma": 0.27945550404002806,
+        "sigma_star_theoretical": 0.8508332998821339,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.9848,
+        "mean_aggregation_size": 0.38,
+        "final_monument_level": 650.6324753603166,
+        "total_exotics": 152,
+        "mean_population": 377.54,
+        "mean_effective_sigma": 0.28247212326738314,
+        "sigma_star_theoretical": 0.8659942296445243,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.9752,
+        "mean_aggregation_size": 0.62,
+        "final_monument_level": 588.8532015547023,
+        "total_exotics": 217,
+        "mean_population": 362.484,
+        "mean_effective_sigma": 0.2791793479681168,
+        "sigma_star_theoretical": 0.8390197122766576,
+        "aggregation_emerged": false
+      }
+    ]
+  },
+  {
+    "overrides": {
+      "R_ind": 1.5
+    },
+    "n_replicates": 3,
+    "strategy_dominance_mean": -0.9906666666666665,
+    "strategy_dominance_std": 0.0016541933247222994,
+    "mean_aggregation_size_mean": 0.2333333333333333,
+    "mean_aggregation_size_std": 0.04135483311805554,
+    "final_monument_level_mean": 286.6911152637449,
+    "final_monument_level_std": 39.49201053282196,
+    "total_exotics_mean": 80.33333333333333,
+    "total_exotics_std": 13.12334645668635,
+    "mean_population_mean": 436.21599999999995,
+    "mean_population_std": 13.705450399992941,
+    "mean_effective_sigma_mean": 0.2803689917585093,
+    "mean_effective_sigma_std": 0.0014914058584049137,
+    "aggregation_emerged_fraction": 0.0,
+    "sigma_star_theoretical": 0.8868523476434327,
+    "individual_runs": [
+      {
+        "strategy_dominance": -0.9891199999999999,
+        "mean_aggregation_size": 0.272,
+        "final_monument_level": 333.84120428298206,
+        "total_exotics": 87,
+        "mean_population": 430.312,
+        "mean_effective_sigma": 0.27945550404002806,
+        "sigma_star_theoretical": 0.8868523476434327,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.9929600000000001,
+        "mean_aggregation_size": 0.176,
+        "final_monument_level": 289.0405798718568,
+        "total_exotics": 62,
+        "mean_population": 423.18,
+        "mean_effective_sigma": 0.28247212326738314,
+        "sigma_star_theoretical": 0.9014559831092719,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.9899199999999999,
+        "mean_aggregation_size": 0.252,
+        "final_monument_level": 237.19156163639587,
+        "total_exotics": 92,
+        "mean_population": 455.156,
+        "mean_effective_sigma": 0.2791793479681168,
+        "sigma_star_theoretical": 0.8754460513053192,
+        "aggregation_emerged": false
+      }
+    ]
+  },
+  {
+    "overrides": {
+      "R_ind": 1.6
+    },
+    "n_replicates": 3,
+    "strategy_dominance_mean": -0.9963733333333332,
+    "strategy_dominance_std": 0.00030169889330622184,
+    "mean_aggregation_size_mean": 0.09066666666666667,
+    "mean_aggregation_size_std": 0.007542472332656507,
+    "final_monument_level_mean": 167.5113080460122,
+    "final_monument_level_std": 30.47477193483548,
+    "total_exotics_mean": 35.666666666666664,
+    "total_exotics_std": 12.657891697365017,
+    "mean_population_mean": 461.7346666666667,
+    "mean_population_std": 27.222806582390113,
+    "mean_effective_sigma_mean": 0.2803689917585093,
+    "mean_effective_sigma_std": 0.0014914058584049137,
+    "aggregation_emerged_fraction": 0.0,
+    "sigma_star_theoretical": 0.9178672524574866,
+    "individual_runs": [
+      {
+        "strategy_dominance": -0.99616,
+        "mean_aggregation_size": 0.096,
+        "final_monument_level": 202.53502253711935,
+        "total_exotics": 47,
+        "mean_population": 443.5,
+        "mean_effective_sigma": 0.27945550404002806,
+        "sigma_star_theoretical": 0.9178672524574866,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.9967999999999999,
+        "mean_aggregation_size": 0.08,
+        "final_monument_level": 128.2492288670067,
+        "total_exotics": 18,
+        "mean_population": 441.488,
+        "mean_effective_sigma": 0.28247212326738314,
+        "sigma_star_theoretical": 0.931915613204884,
+        "aggregation_emerged": false
+      },
+      {
+        "strategy_dominance": -0.9961599999999999,
+        "mean_aggregation_size": 0.096,
+        "final_monument_level": 171.74967273391056,
+        "total_exotics": 42,
+        "mean_population": 500.216,
+        "mean_effective_sigma": 0.2791793479681168,
+        "sigma_star_theoretical": 0.9068722837853137,
+        "aggregation_emerged": false
+      }
+    ]
+  }
+]

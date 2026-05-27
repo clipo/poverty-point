@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this software, model, or its derived results, please cite it as below."
+type: software
+title: "Poverty Point Costly Signaling: Agent-Based Model and Analysis Code"
+abstract: >-
+  Agent-based model, analytical equilibrium analyses, GIS analyses, and figure-generation
+  pipeline for an investigation of Poverty Point (ca. 1700-1100 BCE) as an adaptive
+  costly-signaling system among Late Archaic mobile hunter-gatherers in the Lower
+  Mississippi Valley. Implements coupled signaling rules under environmental uncertainty,
+  multi-drainage shortfall buffering, and a Bayesian posterior predictive check against
+  monument and exotic-goods records.
+authors:
+  - family-names: Lipo
+    given-names: Carl P.
+    orcid: "https://orcid.org/0000-0003-4391-3590"
+    affiliation: "Department of Anthropology and Environmental Studies Program, Binghamton University"
+    email: clipo@binghamton.edu
+  - family-names: Greenlee
+    given-names: Diana M.
+    affiliation: "University of Louisiana at Monroe and Poverty Point World Heritage Site"
+  - family-names: DiNapoli
+    given-names: Robert J.
+    orcid: "https://orcid.org/0000-0003-2180-2195"
+    affiliation: "Department of Anthropology and Environmental Studies Program, Binghamton University"
+version: "1.0.0"
+date-released: "2026-04-30"
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+repository-code: "https://github.com/clipo/poverty-point-signaling"
+keywords:
+  - archaeology
+  - costly signaling
+  - agent-based model
+  - hunter-gatherers
+  - Poverty Point
+  - Lower Mississippi Valley
+  - Late Archaic
+  - monumental architecture
+  - multilevel selection
+  - Bayesian inference
+preferred-citation:
+  type: article
+  title: "Why Build Mounds When You Move? Costly Signaling and Cooperation Among Mobile Hunter-Gatherers at Poverty Point"
+  authors:
+    - family-names: Lipo
+      given-names: Carl P.
+      orcid: "https://orcid.org/0000-0003-4391-3590"
+    - family-names: Greenlee
+      given-names: Diana M.
+    - family-names: DiNapoli
+      given-names: Robert J.
+      orcid: "https://orcid.org/0000-0003-2180-2195"
+  year: 2026
+  status: in-preparation

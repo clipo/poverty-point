@@ -1,0 +1,106 @@
+{
+  "gauge_ids": [
+    "07289000",
+    "07287150",
+    "07369500",
+    "07370000"
+  ],
+  "gauge_labels": [
+    "Mississippi River at Vicksburg, MS",
+    "Yazoo River at Greenwood, MS",
+    "Tensas River at Tendal, LA",
+    "Bayou Macon near Delhi, LA"
+  ],
+  "date_range": [
+    "1985-01-01",
+    "2024-12-31"
+  ],
+  "aligned_n_months": 59,
+  "pearson_matrix": [
+    [
+      1.0,
+      0.11268398022613291,
+      0.33263254714797563
+    ],
+    [
+      0.11268398022613291,
+      1.0,
+      0.54512353912313
+    ],
+    [
+      0.33263254714797563,
+      0.54512353912313,
+      1.0
+    ]
+  ],
+  "spearman_matrix": [
+    [
+      1.0,
+      0.11852717708942141,
+      0.2895967270601988
+    ],
+    [
+      0.11852717708942141,
+      1.0,
+      0.6569257744009352
+    ],
+    [
+      0.2895967270601988,
+      0.6569257744009352,
+      1.0
+    ]
+  ],
+  "mean_offdiag_pearson": 0.3301466888324129,
+  "mean_offdiag_spearman": 0.3550165595168518,
+  "low_coincidence_observed": {
+    "0": 0.5423728813559322,
+    "1": 0.2542372881355932,
+    "2": 0.1016949152542373,
+    "3": 0.1016949152542373
+  },
+  "low_coincidence_independent": {
+    "0": 0.31640625,
+    "1": 0.421875,
+    "2": 0.2109375,
+    "3": 0.046875,
+    "4": 0.00390625
+  },
+  "pairwise_overlaps": [
+    {
+      "a": "Mississippi River at Vicksburg, MS",
+      "b": "Yazoo River at Greenwood, MS",
+      "n": 59,
+      "pearson_r": 0.11268398022613291,
+      "pearson_p": 0.3954730593553838,
+      "spearman_rho": 0.11852717708942141,
+      "spearman_p": 0.371267113227227
+    },
+    {
+      "a": "Mississippi River at Vicksburg, MS",
+      "b": "Tensas River at Tendal, LA",
+      "n": 204,
+      "pearson_r": 0.33870443048623405,
+      "pearson_p": 7.226037641662312e-07,
+      "spearman_rho": 0.28307666211985216,
+      "spearman_p": 4.086602708904909e-05
+    },
+    {
+      "a": "Tensas River at Tendal, LA",
+      "b": "Yazoo River at Greenwood, MS",
+      "n": 231,
+      "pearson_r": 0.540722398410833,
+      "pearson_p": 6.112197811982984e-19,
+      "spearman_rho": 0.6481338830910752,
+      "spearman_p": 6.504037387756824e-29
+    },
+    {
+      "a": "Bayou Macon near Delhi, LA",
+      "b": "Tensas River at Tendal, LA",
+      "n": 93,
+      "pearson_r": 0.9016793245134979,
+      "pearson_p": 6.779441475212448e-35,
+      "spearman_rho": 0.8961385813613439,
+      "spearman_p": 7.235523954557233e-34
+    }
+  ]
+}

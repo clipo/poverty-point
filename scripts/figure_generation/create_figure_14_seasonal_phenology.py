@@ -83,8 +83,8 @@ SITES = [
     ('Frenchman\'s Bend', 'OU',     1, (1.0, 0.5, 0.5, 0.0, 0.5)),  # Ouachita tributary near Monroe
     ('Caney',             'CT',     1, (1.0, 0.0, 0.5, 0.0, 0.5)),  # Sicily Island Hills, small tributary
     ('Insley',            'FR',     1, (1.0, 0.5, 0.5, 0.0, 0.5)),  # Macon Ridge / Boeuf margin
-    ('Cowpen Slough',     'CT',     1, (0.5, 1.0, 1.0, 0.5, 0.5)),  # Boeuf River margin (aquatic-focused)
-    ('J.W. Copes',        'MA',     1, (0.5, 1.0, 1.0, 0.5, 0.5)),  # Tensas Basin
+    ('Cowpen Slough',     'CT',     1, (0.0, 1.0, 1.0, 0.5, 0.5)),  # Red/Black confluence floodplain only; no upland (§6.5)
+    ('J.W. Copes',        'MA',     1, (1.0, 1.0, 1.0, 0.5, 0.5)),  # Tensas Basin + Macon Ridge upland (§6.5)
     ('Jaketown',          'HU',     1, (1.0, 1.0, 0.5, 0.5, 1.0)),  # Yazoo Basin meander belt + Loess Hills
     ('Claiborne',         'HA',     1, (0.0, 0.5, 0.5, 0.0, 1.0)),  # Pearl River mouth (marine-estuarine)
     ('Cedarland',         'HA',     1, (0.0, 0.5, 0.5, 0.0, 1.0)),  # adjacent to Claiborne
@@ -147,24 +147,30 @@ def _draw_site_matrix(ax, sites, peaks):
 
 
 def _draw_independence_bars(ax, sites):
-    """Right panel: independent peak count per site (full access only).
+    """Right panel: weighted peak-access sum per site.
 
     The y-axis is shared with the site x month matrix; the matrix uses
     imshow extent to put row 0 at the top, so we must NOT call
     invert_yaxis here (that would double-invert the shared axis).
+
+    Metric is the sum of per-peak access fractions (each in {0.0, 0.5,
+    1.0}) across the five peak windows, max value 5.0. The weighted
+    sum preserves graded discrimination between sites that all clear a
+    binary access threshold; full access contributes 1.0 per peak,
+    partial (single-drainage) access contributes 0.5.
     """
-    counts = []
-    for _, _, _, flags in sites:
-        counts.append(sum(1 for f in flags if f >= 0.75))
-    bars = ax.barh(range(len(sites)), counts, color='#888888', edgecolor='black')
-    for i, count in enumerate(counts):
-        ax.text(count + 0.1, i, str(count), va='center', fontsize=9)
+    weighted = [sum(flags) for _, _, _, flags in sites]
+    bars = ax.barh(range(len(sites)), weighted, color='#888888',
+                   edgecolor='black')
+    for i, w in enumerate(weighted):
+        ax.text(w + 0.08, i, f'{w:.1f}', va='center', fontsize=9)
     pp_idx = next(i for i, s in enumerate(sites) if s[0] == 'Poverty Point')
     bars[pp_idx].set_color('#d62728')
     ax.set_yticks([])
-    ax.set_xlim(0, 5.8)
-    ax.set_xticks(range(0, 6))
-    ax.set_xlabel('Independent peak\nwindows (full access)', fontsize=9)
+    ax.set_xlim(0, 5.6)
+    ax.set_xticks([0, 1, 2, 3, 4, 5])
+    ax.set_xlabel('Weighted peak-access sum\n(full = 1.0, partial = 0.5; max 5.0)',
+                  fontsize=9)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     ax.spines['left'].set_visible(False)

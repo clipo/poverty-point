@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "name": "watson_brake_site_polygon",
+  "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::26915"}},
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "site": "Watson Brake",
+        "smithsonian": "16OU175",
+        "source": "User-supplied corners (Clipo), 2026-05-26",
+        "crs": "NAD83 UTM Zone 15N (EPSG:26915)",
+        "area_m2": 146285.0,
+        "area_ha": 14.63
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [581515.4, 3581786.9],
+          [581950.3, 3581757.0],
+          [581963.1, 3581411.7],
+          [581549.5, 3581439.4],
+          [581515.4, 3581786.9]
+        ]]
+      }
+    }
+  ]
+}

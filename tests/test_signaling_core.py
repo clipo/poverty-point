@@ -28,6 +28,7 @@ from src.poverty_point.signaling_core import (
     independent_expected_fitness,
     initial_model_sigma_star,
     lambda_total_at_sigma,
+    maintenance_to_new_ratio,
     monument_stock_step,
     network_degree,
     network_degree_derivative,
@@ -152,6 +153,55 @@ class TestMonumentStock:
             M = monument_stock_step(M, I_g, delta)
         expected = effective_monument_stock(I_g, delta)
         assert M == pytest.approx(expected, rel=0.01)
+
+
+class TestMaintenanceToNewRatio:
+    def test_zero_at_M_g_zero(self):
+        assert maintenance_to_new_ratio(0.0, 10.0, 0.08) == pytest.approx(0.0)
+
+    def test_diverges_at_steady_state(self):
+        # M_g* = I_g / delta = 10 / 0.08 = 125
+        assert np.isinf(maintenance_to_new_ratio(125.0, 10.0, 0.08))
+        assert np.isinf(maintenance_to_new_ratio(200.0, 10.0, 0.08))
+
+    def test_monotonic_increase_with_M_g(self):
+        # R rises monotonically with accumulated stock
+        M_grid = np.linspace(0.0, 100.0, 11)  # 0..100, well below M_g* = 125
+        R = maintenance_to_new_ratio(M_grid, 10.0, 0.08)
+        assert np.all(np.diff(R) > 0)
+
+    def test_formula_at_half_saturation(self):
+        # At M_g = M_g*/2, maintenance = delta*M_g*/2, new = delta*M_g*/2, R = 1
+        delta = 0.08
+        I_g = 10.0
+        M_half_sat = I_g / delta / 2.0  # 62.5
+        assert maintenance_to_new_ratio(M_half_sat, I_g, delta) == pytest.approx(1.0)
+
+    def test_vectorized(self):
+        R = maintenance_to_new_ratio(np.array([0.0, 31.25, 62.5, 100.0]), 10.0, 0.08)
+        # M_g*/4 -> R = 1/3 ; M_g*/2 -> R = 1 ; deeper -> larger
+        assert R[0] == pytest.approx(0.0)
+        assert R[1] == pytest.approx(1.0 / 3.0)
+        assert R[2] == pytest.approx(1.0)
+        assert R[3] > R[2]
+
+    def test_raises_on_invalid_delta(self):
+        with pytest.raises(ValueError):
+            maintenance_to_new_ratio(50.0, 10.0, 0.0)
+        with pytest.raises(ValueError):
+            maintenance_to_new_ratio(50.0, 10.0, -0.1)
+        with pytest.raises(ValueError):
+            maintenance_to_new_ratio(50.0, 10.0, 1.5)
+
+    def test_raises_on_invalid_I_g(self):
+        with pytest.raises(ValueError):
+            maintenance_to_new_ratio(50.0, 0.0, 0.08)
+        with pytest.raises(ValueError):
+            maintenance_to_new_ratio(50.0, -1.0, 0.08)
+
+    def test_raises_on_negative_M_g(self):
+        with pytest.raises(ValueError):
+            maintenance_to_new_ratio(-1.0, 10.0, 0.08)
 
 
 # ── Layer 2: Intergroup Assessment ─────────────────────────────────────

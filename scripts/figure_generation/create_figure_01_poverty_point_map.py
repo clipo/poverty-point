@@ -137,8 +137,12 @@ def create_regional_map():
         # Coordinates derived from data/site utms.xlsx (NAD83, UTM Zone 15N for
         # interior LA/MS sites; Zone 16N for the coastal MS pair). See Table 1.
         ('Jaketown',         '22HU505', -90.4872, 33.2349,  0.22,  0.00, 'left'),
-        ('Watson Brake',     '16OU175', -92.1311, 32.3684, -0.18,  0.20, 'right'),
-        ("Frenchman's Bend", '16OU259', -92.0437, 32.6357, -0.18, -0.28, 'right'),
+        # Label dy offsets keep each label on the correct side of its marker so
+        # the visual N-S ordering of the LABELS matches the marker positions:
+        # Frenchman's Bend (32.64°N) is north of Watson Brake (32.37°N), so its
+        # label sits above its marker and Watson Brake's sits below its marker.
+        ('Watson Brake',     '16OU175', -92.1311, 32.3684, -0.18, -0.20, 'right'),
+        ("Frenchman's Bend", '16OU259', -92.0437, 32.6357, -0.18,  0.20, 'right'),
         ('Lower Jackson',    '16WC10',  -91.4108, 32.6105,  0.30,  0.05, 'left'),   # stacked between PP label (y=32.81) and J.W. Copes label (y=32.53), all anchored at x ~ -91.11
         ('Insley',           '16FR3',   -91.4791, 32.3893, -0.18,  0.00, 'right'),
         ('Caney',            '16CT5',   -92.0004, 31.4822, -0.18,  0.00, 'right'),

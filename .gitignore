@@ -1,10 +1,72 @@
+# Python
 __pycache__/
-*.pyc
-*.pyo
-.DS_Store
-.pytest_cache/
-.venv/
-.env
-*.egg-info/
+*.py[cod]
+*$py.class
+*.so
+.Python
 build/
+develop-eggs/
 dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.log
+*.tmp
+
+# Office lockfiles
+~$*
+
+# Local PDF stash (large; not redistributed)
+pdfs/
+docs/references/pdfs/
+
+# Working drafts / scratch
+docs/working/
+
+# Working manuscript intake leftovers
+docs/manuscript/Poverty_Point_JAS_Manuscript-2.docx
+docs/manuscript/Poverty_Point_JAS_Manuscript3.docx
+docs/manuscript/Poverty_Point_JAS_Manuscript_updated2.docx
+
+# Continental US ecoregions (large; not needed for AR+LA+MS analysis)
+data/ecoregions/us_eco_l4/
+
+# Local Claude Code settings (not redistributed)
+.claude/
+
+# LiDAR rasters (large; redownload from LA DOTD portal for reproducibility)
+data/lidar/**/*.tif
+data/lidar/**/*.tiff
+data/lidar/**/*.las
+data/lidar/**/*.laz

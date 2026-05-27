@@ -1,0 +1,36 @@
+MIT License
+
+Copyright (c) 2025-2026 Carl P. Lipo, Diana M. Greenlee, Robert J. DiNapoli
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+
+Manuscript content (under docs/manuscript_AA/, docs/manuscript_v2.0/, and
+related figures) is licensed separately under Creative Commons Attribution
+4.0 International (CC BY 4.0). Full license text:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+External datasets included in data/ retain their original public-domain or
+upstream licenses:
+- USGS Saucier (1994) Lower Mississippi Valley geomorphology shapefile:
+  public domain (USGS ScienceBase 59b7ddd6e4b08b1644df5cf6,
+  doi:10.5066/F7N878QN)
+- EPA Office of Research and Development Level IV ecoregion shapefiles:
+  public domain (Omernik and Griffith 2014)
