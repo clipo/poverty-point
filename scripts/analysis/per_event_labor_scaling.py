@@ -42,7 +42,7 @@ SITES = [
     # name, eps, n_agg, sigma, observed_volume_m3, observed_scale_ordinal
     ('Poverty Point',    0.49, 25, 0.64, 750000, 3),
     ('Lower Jackson',    0.48,  1, 0.56,   1000, 0),
-    ('Watson Brake',     0.43,  8, 0.56,   7000, 2),
+    ('Watson Brake',     0.43,  8, 0.56,  27065, 2),  # 27,065 m^3 per-mound LiDAR (§5.1)
     ('Caney',            0.43,  5, 0.56,   5000, 2),
     ("Frenchman's Bend", 0.43,  5, 0.56,   2000, 1),
     ('Insley',           0.43,  6, 0.56,  14000, 2),

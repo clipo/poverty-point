@@ -40,7 +40,7 @@ from poverty_point.signaling_core import critical_threshold as full_ct
 SITES = [
     ('Poverty Point',    0.49, 5, 25, 0.64, 3, 750000),  # very large
     ('Lower Jackson',    0.48, 2, 1, 0.56, 0, 1000),  # minimal: single mound
-    ('Watson Brake',     0.43, 1, 8, 0.56, 2, 7000),  # mid: ~7k m^3
+    ('Watson Brake',     0.43, 1, 8, 0.56, 2, 27065),  # 27,065 m^3 per-mound LiDAR (§5.1)
     ('Caney',            0.43, 1, 5, 0.56, 2, 5000),  # mid (estimated)
     ("Frenchman's Bend", 0.43, 1, 5, 0.56, 1, 2000),  # small (estimated)
     ('Insley',           0.43, 1, 6, 0.56, 2, 14000),  # mid: 2x WB per Sassaman 2005

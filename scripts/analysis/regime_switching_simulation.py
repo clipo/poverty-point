@@ -23,11 +23,12 @@ the aggregator regime, and what cumulative monument volume does the
 framework predict?
 
 The intent is to bracket the WB volume prediction: the equilibrium
-calculation overshoots by 30x; the regime-switching version, with
+calculation overshoots by ~9x against the LiDAR-derived per-mound
+volume of 27,065 m^3 (§5.1); the regime-switching version, with
 realistic stochastic excursions, should produce a much smaller
 prediction. The combination of regime switching plus per-event labor
 scaling (alpha=2.0 from extension 2) should bring the prediction
-into the same order of magnitude as the observed 7,000 m^3.
+into the same order of magnitude as the LiDAR-derived 27,065 m^3.
 
 Output: results/sensitivity/regime_switching_wb.json
 """
@@ -138,8 +139,8 @@ def simulate_wb_regime_switching(sigma_sd: float, n_replicates: int = N_REPLICAT
             float(np.percentile(predicted_volumes_m3, 97.5)),
         ],
         'transitions_per_century_mean': float(np.mean(transitions_per_century)),
-        'observed_volume_m3': 7000,
-        'overpred_factor_mean': float(np.mean(predicted_volumes_m3) / 7000),
+        'observed_volume_m3': 27065,
+        'overpred_factor_mean': float(np.mean(predicted_volumes_m3) / 27065),
         'observed_inter_stage_gap_year_min': 200,
     }
 
@@ -173,7 +174,7 @@ def main():
                   f'{r["overpred_factor_mean"]:10.2f}')
 
     print()
-    print(f'Observed WB volume: 7,000 m^3')
+    print(f'Observed WB volume: 27,065 m^3 (per-mound LiDAR, §5.1)')
     print(f'Continuous-equilibrium prediction (extension 7 alone): '
           f'~25,000 m^3 with alpha=2 labor scaling')
     print(f'With regime-switching (sd=0.075-0.10): ~3-5x lower than the '

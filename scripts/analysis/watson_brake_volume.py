@@ -16,10 +16,13 @@ per-cluster volumes from scratch, an analyst would digitize the eight
 cluster polygons against the published contour map and integrate the
 LiDAR DEM above each cluster's documented baseline.
 
-This script computes a SENSITIVITY ENVELOPE for an earlier polygon-wide
-analysis (range ~15,000-120,000 m³ across baseline-fit choices), retained
-as transparency documentation of the prior approach and as a check that
-the per-mound estimate sits inside the broader envelope.
+This script computes polygon-wide volume estimates under seven different
+baseline-fit choices as an internal diagnostic. The polygon-wide approach
+treats the entire WB earthwork polygon as a single integration window;
+the per-mound polygon analysis (above) is more accurate because it
+treats each mound or mound-and-ridge cluster against its own local-
+minimum natural-ground baseline. The polygon-wide outputs are retained
+in the JSON for diagnostic purposes but are not used in the manuscript.
 
 Inputs:
   - DEM tile (1 m UTM 15N): data/lidar/watson_brake/watsonbrake_tile.tif

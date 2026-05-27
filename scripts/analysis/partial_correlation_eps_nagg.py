@@ -31,7 +31,7 @@ from poverty_point.signaling_core import critical_threshold as full_ct
 SITES = [
     ('Poverty Point',    25, 3, 750000),
     ('Lower Jackson',     1, 0, 1000),
-    ('Watson Brake',      8, 2, 7000),
+    ('Watson Brake',      8, 2, 27065),  # 27,065 m^3 per-mound LiDAR (§5.1)
     ("Frenchman's Bend",  5, 1, 2000),
     ('Caney',             5, 2, 5000),
     ('Insley',            6, 2, 14000),

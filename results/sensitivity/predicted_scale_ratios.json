@@ -56,9 +56,9 @@
       "predicted_volume_static_m3": 240061.81243347478,
       "predicted_volume_phen_m3": 240079.1857030271,
       "observed_scale_ordinal": 2,
-      "observed_volume_m3": 7000,
-      "log_overpred_static": 1.5352250406240215,
-      "log_overpred_phen": 1.5352564693715427
+      "observed_volume_m3": 27065,
+      "log_overpred_static": 0.9479150492111982,
+      "log_overpred_phen": 0.9479464779587193
     },
     {
       "name": "Caney",
@@ -234,12 +234,12 @@
       "p": 0.0003372921806161897
     },
     "pred_static_vs_volume": {
-      "rho": 0.8847926267281105,
-      "p": 0.0002957009973791468
+      "rho": 0.8940092165898618,
+      "p": 0.0002060037500216059
     },
     "pred_phen_vs_volume": {
-      "rho": 0.8986175115207372,
-      "p": 0.00016981753486773566
+      "rho": 0.9170506912442397,
+      "p": 7.074186681122014e-05
     }
   }
 }
