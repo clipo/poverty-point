@@ -35,7 +35,7 @@ import numpy as np
 
 
 OUTPUT_DIR = Path(
-    "/Users/clipo/PycharmProjects/poverty-point-signaling/figures/manuscript"
+    "/Users/clipo/PycharmProjects/poverty-point/figures/manuscript"
 )
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

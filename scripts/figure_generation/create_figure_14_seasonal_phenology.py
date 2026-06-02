@@ -146,8 +146,40 @@ def _draw_site_matrix(ax, sites, peaks):
     return im, matrix
 
 
+def _mc_perturb_weights(sites, n_draws=1000, perturb_sd=0.10, rng=None):
+    """Monte Carlo perturbation of per-peak access weights.
+
+    For each draw, perturb each non-zero access flag by N(0, perturb_sd)
+    truncated to [0, 1]. Recompute the weighted sum and the per-site rank.
+    Return per-site (mean, sd) of the sum and (mean, lo, hi) of the rank.
+    """
+    import numpy as np
+    rng = rng or np.random.default_rng(42)
+    n_sites = len(sites)
+    sums = np.zeros((n_draws, n_sites))
+    ranks = np.zeros((n_draws, n_sites), dtype=int)
+    for d in range(n_draws):
+        for i, (_, _, _, flags) in enumerate(sites):
+            perturbed = []
+            for f in flags:
+                if f == 0:
+                    perturbed.append(0.0)
+                else:
+                    p = f + rng.normal(0.0, perturb_sd)
+                    perturbed.append(float(np.clip(p, 0.0, 1.0)))
+            sums[d, i] = sum(perturbed)
+        ranks[d] = (-sums[d]).argsort().argsort() + 1
+    return {
+        'mean': sums.mean(axis=0),
+        'sd': sums.std(axis=0, ddof=1),
+        'rank_mean': ranks.mean(axis=0),
+        'rank_lo': np.percentile(ranks, 2.5, axis=0),
+        'rank_hi': np.percentile(ranks, 97.5, axis=0),
+    }
+
+
 def _draw_independence_bars(ax, sites):
-    """Right panel: weighted peak-access sum per site.
+    """Right panel: weighted peak-access sum per site, with MC error bars.
 
     The y-axis is shared with the site x month matrix; the matrix uses
     imshow extent to put row 0 at the top, so we must NOT call
@@ -158,24 +190,33 @@ def _draw_independence_bars(ax, sites):
     sum preserves graded discrimination between sites that all clear a
     binary access threshold; full access contributes 1.0 per peak,
     partial (single-drainage) access contributes 0.5.
+
+    Error bars show ±1 SD across 1,000 Monte Carlo draws in which each
+    non-zero access flag is perturbed by N(0, 0.10) truncated to [0, 1],
+    bracketing the rank-order sensitivity to coding choices.
     """
     weighted = [sum(flags) for _, _, _, flags in sites]
+    mc = _mc_perturb_weights(sites)
     bars = ax.barh(range(len(sites)), weighted, color='#888888',
-                   edgecolor='black')
+                   edgecolor='black',
+                   xerr=mc['sd'], error_kw={'capsize': 3, 'elinewidth': 1.0,
+                                            'ecolor': '#444444'})
     for i, w in enumerate(weighted):
-        ax.text(w + 0.08, i, f'{w:.1f}', va='center', fontsize=9)
+        ax.text(w + mc['sd'][i] + 0.10, i, f'{w:.1f}', va='center', fontsize=9)
     pp_idx = next(i for i, s in enumerate(sites) if s[0] == 'Poverty Point')
     bars[pp_idx].set_color('#d62728')
     ax.set_yticks([])
     ax.set_xlim(0, 5.6)
     ax.set_xticks([0, 1, 2, 3, 4, 5])
-    ax.set_xlabel('Weighted peak-access sum\n(full = 1.0, partial = 0.5; max 5.0)',
+    ax.set_xlabel('Weighted peak-access sum\n(point estimate ± MC SD; max 5.0)',
                   fontsize=9)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     ax.spines['left'].set_visible(False)
     ax.grid(axis='x', linestyle=':', alpha=0.35)
     ax.set_axisbelow(True)
+    # Stash MC result on axes for downstream reporting
+    ax._mc_result = mc
 
 
 def main():

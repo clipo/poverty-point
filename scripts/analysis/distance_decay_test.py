@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 from scipy import stats
 from pathlib import Path
 
-PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point-signaling')
+PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point')
 OUTPUT_DIR = PROJECT_ROOT / 'figures' / 'final'
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

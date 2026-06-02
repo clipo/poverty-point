@@ -12,7 +12,7 @@ Sweep design:
 - Estimated runtime at ~9 min/sim: ~12.6 hours
 """
 import sys, os, time, json
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling/src')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point/src')
 import numpy as np
 from poverty_point.integrated_simulation import IntegratedSimulation
 from poverty_point.parameters import default_parameters
@@ -42,7 +42,7 @@ for se in sigma_effs:
 print(flush=True)
 
 # Output paths
-OUTDIR = '/Users/clipo/PycharmProjects/poverty-point-signaling/results/ablation'
+OUTDIR = '/Users/clipo/PycharmProjects/poverty-point/results/ablation'
 os.makedirs(OUTDIR, exist_ok=True)
 OUTFILE = os.path.join(OUTDIR, 'overnight_sweep.json')
 

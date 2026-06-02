@@ -20,7 +20,7 @@ from docx.oxml.ns import qn
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 # Paths
-PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point-signaling')
+PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point')
 MANUSCRIPT_DIR = PROJECT_ROOT / 'docs' / 'manuscript'
 FIGURES_DIR = PROJECT_ROOT / 'figures'
 MD_SOURCE = MANUSCRIPT_DIR / 'Poverty_Point_JAS_Manuscript.md'

@@ -16,7 +16,7 @@ Output: figures/supplemental/figure_S05_predictions_summary.png + .pdf
 """
 
 import sys
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point')
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -26,7 +26,7 @@ from pathlib import Path
 
 from src.poverty_point.parameters import critical_threshold, default_parameters
 
-PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point-signaling')
+PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point')
 OUTPUT_DIR = PROJECT_ROOT / 'figures' / 'final'
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

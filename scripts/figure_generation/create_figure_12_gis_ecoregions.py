@@ -25,10 +25,10 @@ import pandas as pd
 from shapely.geometry import Point
 
 DATA_DIR = Path(
-    '/Users/clipo/PycharmProjects/poverty-point-signaling/data/ecoregions'
+    '/Users/clipo/PycharmProjects/poverty-point/data/ecoregions'
 )
 OUTPUT_DIR = Path(
-    '/Users/clipo/PycharmProjects/poverty-point-signaling/figures/manuscript'
+    '/Users/clipo/PycharmProjects/poverty-point/figures/manuscript'
 )
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

@@ -8,7 +8,7 @@
 Then add joint propagation over the 6 σ*-defining parameters (each ±50%).
 """
 import sys, os
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling/src')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point/src')
 import numpy as np
 from poverty_point.signaling_core import (
     SignalingParams, NetworkParams, AggregationParams, ConflictParams,
@@ -110,7 +110,7 @@ out = {
     'sigma_eff_minus_sigma_star': {'mean': float(diff.mean()), 'q025': float(np.percentile(diff,2.5)), 'q975': float(np.percentile(diff,97.5))},
     'parameter_bounds_used': {k: [float(v[0]), float(v[1])] for k, v in prior_bounds.items()},
 }
-os.makedirs('/Users/clipo/PycharmProjects/poverty-point-signaling/results/bayesian', exist_ok=True)
-with open('/Users/clipo/PycharmProjects/poverty-point-signaling/results/bayesian/joint_parameter_uncertainty.json', 'w') as f:
+os.makedirs('/Users/clipo/PycharmProjects/poverty-point/results/bayesian', exist_ok=True)
+with open('/Users/clipo/PycharmProjects/poverty-point/results/bayesian/joint_parameter_uncertainty.json', 'w') as f:
     json.dump(out, f, indent=2)
 print('\nResults saved.')

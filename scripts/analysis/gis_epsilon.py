@@ -34,7 +34,7 @@ from shapely.geometry import Point
 
 
 SAUCIER_SHP = Path(
-    '/Users/clipo/PycharmProjects/poverty-point-signaling/'
+    '/Users/clipo/PycharmProjects/poverty-point/'
     'data/geology/Saucier_Geomorph_shapefile/Saucier_Geomorph.shp'
 )
 

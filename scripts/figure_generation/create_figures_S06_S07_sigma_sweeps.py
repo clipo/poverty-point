@@ -12,7 +12,7 @@ independent and aggregation strategies.
 """
 
 import sys
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point')
 
 import numpy as np
 import json
@@ -22,8 +22,8 @@ from pathlib import Path
 from scipy.ndimage import gaussian_filter
 
 # Directories
-RESULTS_DIR = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/results/analysis')
-OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/figures/supplemental')
+RESULTS_DIR = Path('/Users/clipo/PycharmProjects/poverty-point/results/analysis')
+OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point/figures/supplemental')
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 

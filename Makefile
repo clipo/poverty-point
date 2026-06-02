@@ -38,7 +38,9 @@ figures:
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_04_ecotone_seasonal.py
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_05_fitness_crossover.py
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_06_model_architecture.py
-	$(PYTHON) $(SCRIPTS_FIG)/create_integrated_simulation_figures.py  # Figures 7 + 8 (and S6/S7 indirectly via the sigma-sweeps script below)
+	$(PYTHON) $(SCRIPTS_FIG)/create_integrated_simulation_figures.py  # Figure 7 (phase transition)
+	$(PYTHON) $(SCRIPTS_FIG)/create_figure_08_temporal_dynamics_ensemble.py  # Figure 8 (depends on results/analysis/figure_8_ensemble_*.json; see analyses)
+	$(PYTHON) $(SCRIPTS_FIG)/create_figure_09_phase_space_replicated.py  # Figure 9 (depends on results/analysis/phase_space_replicated_*.json)
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_09_regional_chronology.py
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_10_paleoclimate.py
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_12_gis_ecoregions.py
@@ -50,6 +52,9 @@ figures:
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_S08_obligation_network.py
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_S09_exotic_distance_decay.py
 	$(PYTHON) $(SCRIPTS_FIG)/create_figure_S02_joint_mc_diagnostic.py
+	$(PYTHON) $(SCRIPTS_FIG)/create_figure_S03_price_decomposition.py   # depends on results/analysis/price_decomposition_*.json
+	$(PYTHON) $(SCRIPTS_FIG)/create_figure_S04_factorial_ablation.py     # depends on results/ablation/factorial_channel_ablation_*.json
+	$(PYTHON) $(SCRIPTS_FIG)/create_figure_S05_ablation_n20.py           # depends on results/ablation/overnight_sweep_n20_final.json
 
 # --- Calibration (slow; ~3 hours) -----------------------------------------
 # Figure 11 (calibration anchor) regenerates the Tier-3 replicates and emits
@@ -67,6 +72,13 @@ analyses:
 	$(PYTHON) $(SCRIPTS_ANA)/calculate_sigma_comparison.py
 	$(PYTHON) $(SCRIPTS_ANA)/distance_decay_test.py
 	$(PYTHON) $(SCRIPTS_ANA)/tier3_extensions.py
+	# Result generators feeding Figures 8, 9, S3, S4, S5 (stochastic; deterministic seeds):
+	$(PYTHON) $(SCRIPTS_ANA)/run_figure_8_ensemble.py
+	$(PYTHON) $(SCRIPTS_ANA)/run_phase_space_replicated.py
+	$(PYTHON) $(SCRIPTS_ANA)/run_price_decomposition.py
+	$(PYTHON) $(SCRIPTS_ANA)/run_factorial_channel_ablation.py
+	$(PYTHON) $(SCRIPTS_ANA)/run_ablation_pad.py
+	$(PYTHON) $(SCRIPTS_ANA)/run_morris_sa.py
 
 # --- Manuscript ------------------------------------------------------------
 

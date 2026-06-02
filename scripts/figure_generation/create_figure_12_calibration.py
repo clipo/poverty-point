@@ -44,7 +44,7 @@ import numpy as np
 from scipy.stats import spearmanr
 
 
-PROJECT_ROOT = Path("/Users/clipo/PycharmProjects/poverty-point-signaling")
+PROJECT_ROOT = Path("/Users/clipo/PycharmProjects/poverty-point")
 OUT_DIR = PROJECT_ROOT / "figures" / "manuscript"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

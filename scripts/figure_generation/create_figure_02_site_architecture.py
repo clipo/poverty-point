@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from pathlib import Path
 
-PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point-signaling')
+PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point')
 INPUT_IMAGE = PROJECT_ROOT / 'figures' / 'PovertyPoint-Mounds.png'
 OUTPUT_DIR = PROJECT_ROOT / 'figures' / 'final'
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

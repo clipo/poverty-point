@@ -36,11 +36,11 @@ from poverty_point.parameters import default_parameters
 
 
 OUTPUT_DIR = Path(
-    "/Users/clipo/PycharmProjects/poverty-point-signaling/figures/manuscript"
+    "/Users/clipo/PycharmProjects/poverty-point/figures/manuscript"
 )
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 RESULTS_DIR = Path(
-    "/Users/clipo/PycharmProjects/poverty-point-signaling/results/calibration_replicates"
+    "/Users/clipo/PycharmProjects/poverty-point/results/calibration_replicates"
 )
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -114,9 +114,9 @@ def run_scenarios():
         rows[scen.name] = reps
         if reps:
             mu_e = float(np.mean([r["exotics_total"] for r in reps]))
-            sd_e = float(np.std([r["exotics_total"] for r in reps]))
+            sd_e = float(np.std([r["exotics_total"] for r in reps], ddof=1))
             mu_m = float(np.mean([r["monument_units"] for r in reps]))
-            sd_m = float(np.std([r["monument_units"] for r in reps]))
+            sd_m = float(np.std([r["monument_units"] for r in reps], ddof=1))
             print(f"    monument units: {mu_m:.0f} ± {sd_m:.0f}")
             print(f"    exotics: {mu_e:.0f} ± {sd_e:.0f}")
     return rows
@@ -135,7 +135,7 @@ def make_figure(rows, scaling_factor):
         np.mean([r["monument_units"] for r in rows[s]]) for s in scen_names
     ])
     monument_sds_units = np.array([
-        np.std([r["monument_units"] for r in rows[s]]) for s in scen_names
+        np.std([r["monument_units"] for r in rows[s]], ddof=1) for s in scen_names
     ])
     monument_means_m3 = monument_means_units * scaling_factor
     monument_sds_m3 = monument_sds_units * scaling_factor
@@ -161,7 +161,7 @@ def make_figure(rows, scaling_factor):
         np.mean([r["exotics_total"] for r in rows[s]]) for s in scen_names
     ])
     exotic_sds = np.array([
-        np.std([r["exotics_total"] for r in rows[s]]) for s in scen_names
+        np.std([r["exotics_total"] for r in rows[s]], ddof=1) for s in scen_names
     ])
     all_exotic_means = list(exotic_means) + [ARCHAEOLOGICAL_EXOTICS]
     all_exotic_sds = list(exotic_sds) + [0]

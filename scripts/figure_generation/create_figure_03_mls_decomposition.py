@@ -23,6 +23,8 @@ without invoking the full feedback-loop equilibrium machinery.
 
 from __future__ import annotations
 
+import glob
+import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -31,8 +33,42 @@ import numpy as np
 from matplotlib.patches import FancyArrowPatch
 
 
-OUTPUT_DIR = Path(__file__).resolve().parents[2] / "figures" / "final"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+OUTPUT_DIR = PROJECT_ROOT / "figures" / "manuscript"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def load_empirical_price(burn_in: int = 50):
+    """Load the latest Price-decomposition output and aggregate per scenario.
+
+    Returns dict {scenario_name: {sigma_target, S_mean, S_sd}} pooling all
+    replicates' post-burn-in selection-term values. Returns empty dict if
+    no output file is present.
+    """
+    paths = sorted(glob.glob(str(PROJECT_ROOT / "results" / "analysis"
+                                 / "price_decomposition_*.json")))
+    if not paths:
+        return {}
+    with open(paths[-1]) as f:
+        data = json.load(f)
+    out = {}
+    for scen, payload in data.items():
+        S_pooled = []
+        for rep in payload.get("reps", []):
+            d = rep.get("decomposition", {})
+            for y, s in zip(d.get("year", []), d.get("selection", [])):
+                if y >= burn_in and s is not None and np.isfinite(s):
+                    S_pooled.append(s)
+        if S_pooled:
+            arr = np.array(S_pooled)
+            out[scen] = {
+                "sigma_target": payload["sigma_target"],
+                "S_mean": float(arr.mean()),
+                "S_sd": float(arr.std(ddof=1)) if len(arr) > 1 else 0.0,
+                "n": int(len(arr)),
+                "n_reps": len(payload.get("reps", [])),
+            }
+    return out
 
 
 # ── Style ──────────────────────────────────────────────────────────────────
@@ -185,33 +221,54 @@ def draw_panel_b(ax) -> None:
                     alpha=0.12, zorder=1)
 
     ax.plot(sigma_grid, within, color=C_WITHIN, linewidth=2.2,
-            label=r"Within-group: $-C$  (cooperation cost)")
+            label=r"Within-group $-C$ (illustrative)")
     ax.plot(sigma_grid, between, color=C_BETWEEN, linewidth=2.2,
-            label=r"Between-group: $B(\sigma) \cdot (1 + \varepsilon)$")
+            label=r"Between-group $B(\sigma)(1+\varepsilon)$ (illustrative)")
     ax.plot(sigma_grid, net, color=C_NET, linewidth=2.6,
-            label=r"Net: within + between")
+            label=r"Net: within + between (illustrative)")
+
+    # Empirical overlay: between-cohort selection S(t) from ABM Price
+    # decomposition (post-burn-in mean ± SD pooled across replicates).
+    emp = load_empirical_price()
+    if emp:
+        # Order by sigma for clean plotting
+        items = sorted(emp.items(), key=lambda kv: kv[1]["sigma_target"])
+        sigmas = [v["sigma_target"] for _, v in items]
+        S_means = [v["S_mean"] for _, v in items]
+        S_sds = [v["S_sd"] for _, v in items]
+        ax.errorbar(sigmas, S_means, yerr=S_sds,
+                    fmt="o", color="black", markersize=8,
+                    markerfacecolor="white", markeredgewidth=1.8,
+                    capsize=4, capthick=1.4, elinewidth=1.4, zorder=5,
+                    label=r"Empirical $S(t)$ from ABM (mean ± SD, post-burn-in)")
+        # Annotate each point with the sigma value
+        for sig, S in zip(sigmas, S_means):
+            ax.annotate(f"σ={sig:.2f}", xy=(sig, S),
+                        xytext=(8, -6 if S > 0 else 8),
+                        textcoords="offset points",
+                        fontsize=8, color="black", alpha=0.85)
 
     # Threshold marker
     ax.axvline(SIGMA_STAR, color=C_THRESH, linewidth=1.0, linestyle="--",
                zorder=1)
-    ax.text(SIGMA_STAR, ax.get_ylim()[1] if False else 0.16,
+    ax.text(SIGMA_STAR, 0.16,
             rf"  $\sigma^* \approx {SIGMA_STAR:.2f}$",
             ha="left", va="bottom", fontsize=9.5, color=C_THRESH,
             fontweight="bold")
 
     # Annotations for selection regimes
     ax.annotate("Independents favored\n(net selection < 0)",
-                xy=(0.18, -0.07), ha="center", va="center",
+                xy=(0.13, -0.075), ha="center", va="center",
                 fontsize=9, color=C_IND)
     ax.annotate("Aggregators favored\n(net selection > 0)",
-                xy=(0.62, 0.10), ha="center", va="center",
+                xy=(0.66, 0.105), ha="center", va="center",
                 fontsize=9, color=C_AGG)
 
     ax.set_xlim(0.0, 0.8)
     ax.set_ylim(-0.18, 0.20)
     ax.set_xlabel(r"Environmental uncertainty $\sigma$")
     ax.set_ylabel("Selection coefficient on aggregator strategy")
-    ax.legend(loc="lower right", framealpha=0.92)
+    ax.legend(loc="lower right", framealpha=0.92, fontsize=8)
 
     ax.text(-0.10, 0.225, "B", fontsize=14, fontweight="bold",
             transform=ax.transData)

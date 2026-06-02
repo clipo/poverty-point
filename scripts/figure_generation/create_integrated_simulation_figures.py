@@ -12,7 +12,7 @@ Designed to integrate with manuscript and validate theoretical predictions.
 """
 
 import sys
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point')
 
 import json
 import numpy as np
@@ -32,7 +32,7 @@ _params = default_parameters()
 SIGMA_STAR = compute_critical_threshold(0.35, 25, _params)
 
 # Output and input directories
-RESULTS_DIR = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/results/analysis')
+RESULTS_DIR = Path('/Users/clipo/PycharmProjects/poverty-point/results/analysis')
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 OUT_MS = PROJECT_ROOT / "figures" / "manuscript"
 OUT_SUPP = PROJECT_ROOT / "figures" / "supplemental"

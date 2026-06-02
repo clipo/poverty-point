@@ -14,7 +14,7 @@ Output: figures/supplemental/figure_S09_exotic_distance_decay.png + .pdf
 """
 
 import sys
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point')
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -25,7 +25,7 @@ from src.poverty_point.parameters import default_parameters
 from src.poverty_point.environmental_scenarios import get_scenario
 from src.poverty_point.agents import EXOTIC_SOURCES
 
-PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point-signaling')
+PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point')
 OUTPUT_DIR = PROJECT_ROOT / 'figures' / 'final'
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -132,7 +132,7 @@ def create_exotic_distance_decay_figure():
             sim_counts[mat].append(counts.get(mat, 0))
 
     sim_means = [np.mean(sim_counts[m]) for m in materials_sorted]
-    sim_stds = [np.std(sim_counts[m]) for m in materials_sorted]
+    sim_stds = [np.std(sim_counts[m], ddof=1) for m in materials_sorted]
 
     # Predicted relative frequencies from model
     raw_probs = np.array([np.exp(-EXOTIC_SOURCES[m] / DISTANCE_LAMBDA)

@@ -37,10 +37,10 @@ from shapely.geometry import Point
 
 
 DATA_DIR = Path(
-    '/Users/clipo/PycharmProjects/poverty-point-signaling/data/ecoregions'
+    '/Users/clipo/PycharmProjects/poverty-point/data/ecoregions'
 )
 OUTPUT_DIR = Path(
-    '/Users/clipo/PycharmProjects/poverty-point-signaling/results/gis'
+    '/Users/clipo/PycharmProjects/poverty-point/results/gis'
 )
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 STATES = ['ar', 'la', 'mexico_la' if False else 'ms']

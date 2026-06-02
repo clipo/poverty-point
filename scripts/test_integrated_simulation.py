@@ -10,7 +10,7 @@ conditions to verify that:
 """
 
 import sys
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point')
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -149,7 +149,7 @@ def main():
     # List available scenarios
     list_scenarios()
 
-    output_dir = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/figures/simulations')
+    output_dir = Path('/Users/clipo/PycharmProjects/poverty-point/figures/simulations')
 
     # Test each scenario
     scenarios_to_test = ['low', 'poverty_point', 'high']

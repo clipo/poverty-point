@@ -1,0 +1,37 @@
+[
+  {
+    "replicate": 0,
+    "mean_effective_sigma": 0.6191420269019164,
+    "final_monument_level": 12206.344909446852,
+    "mean_agg_size": 42.28,
+    "total_exotics": 26844
+  },
+  {
+    "replicate": 1,
+    "mean_effective_sigma": 0.6197463061833257,
+    "final_monument_level": 11989.62755467839,
+    "mean_agg_size": 41.755,
+    "total_exotics": 26483
+  },
+  {
+    "replicate": 2,
+    "mean_effective_sigma": 0.6194984099316336,
+    "final_monument_level": 11252.343706677673,
+    "mean_agg_size": 39.09,
+    "total_exotics": 24848
+  },
+  {
+    "replicate": 3,
+    "mean_effective_sigma": 0.6195684117477357,
+    "final_monument_level": 11791.239497193465,
+    "mean_agg_size": 40.725,
+    "total_exotics": 25941
+  },
+  {
+    "replicate": 4,
+    "mean_effective_sigma": 0.6195356550561183,
+    "final_monument_level": 12982.213353338762,
+    "mean_agg_size": 45.5,
+    "total_exotics": 28656
+  }
+]

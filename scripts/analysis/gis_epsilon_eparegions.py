@@ -36,7 +36,7 @@ from shapely.geometry import Point
 
 
 DATA_DIR = Path(
-    '/Users/clipo/PycharmProjects/poverty-point-signaling/data/ecoregions'
+    '/Users/clipo/PycharmProjects/poverty-point/data/ecoregions'
 )
 STATES = ['ar', 'la', 'ms']  # Arkansas, Louisiana, Mississippi
 

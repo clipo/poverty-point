@@ -12,7 +12,7 @@ Results are saved for manuscript integration.
 """
 
 import sys
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point')
 
 import numpy as np
 import json
@@ -32,7 +32,7 @@ from src.poverty_point.parameters import (
 from src.poverty_point.environment import EnvironmentConfig
 
 # Output directory
-OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/results/analysis')
+OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point/results/analysis')
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 

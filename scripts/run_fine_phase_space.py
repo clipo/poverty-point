@@ -7,7 +7,7 @@ show variation across both σ and ε axes.
 """
 
 import sys
-sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point-signaling')
+sys.path.insert(0, '/Users/clipo/PycharmProjects/poverty-point')
 
 import numpy as np
 import json
@@ -19,7 +19,7 @@ from src.poverty_point.environmental_scenarios import create_critical_threshold_
 from src.poverty_point.parameters import default_parameters, critical_threshold
 
 # Output directory
-OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/results/analysis')
+OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point/results/analysis')
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 

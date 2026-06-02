@@ -59,7 +59,7 @@ from rasterio.mask import mask as rio_mask
 from shapely.geometry import shape, mapping, Polygon
 
 
-PROJECT_ROOT = Path("/Users/clipo/PycharmProjects/poverty-point-signaling")
+PROJECT_ROOT = Path("/Users/clipo/PycharmProjects/poverty-point")
 DEM_PATH = PROJECT_ROOT / "data" / "lidar" / "watson_brake" / "watsonbrake_tile.tif"
 POLY_PATH = PROJECT_ROOT / "data" / "lidar" / "watson_brake" / "wb_polygon.geojson"
 OUT_PATH = PROJECT_ROOT / "results" / "sensitivity" / "watson_brake_lidar_volume.json"

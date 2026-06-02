@@ -149,6 +149,6 @@ doc.add_paragraph('First paragraph after heading.', 'First Paragraph')
 doc.add_paragraph('Caption text.', 'Caption')
 doc.add_paragraph('Image Caption text.', 'Image Caption')
 
-output_path = '/Users/clipo/PycharmProjects/poverty-point-signaling/docs/manuscript/reference_template.docx'
+output_path = '/Users/clipo/PycharmProjects/poverty-point/docs/manuscript/reference_template.docx'
 doc.save(output_path)
 print(f"Reference template saved to {output_path}")

@@ -23,11 +23,11 @@ import cartopy.feature as cfeature
 import geopandas as gpd
 from pathlib import Path
 
-OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/figures/manuscript')
+OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point/figures/manuscript')
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 SAUCIER_SHP = Path(
-    '/Users/clipo/PycharmProjects/poverty-point-signaling/data/geology/'
+    '/Users/clipo/PycharmProjects/poverty-point/data/geology/'
     'Saucier_Geomorph_shapefile/Saucier_Geomorph.shp'
 )
 

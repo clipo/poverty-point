@@ -3,8 +3,8 @@
 import subprocess
 from pathlib import Path
 
-V2_DIR = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/docs/manuscript_v2.0')
-TEMPLATE = Path('/Users/clipo/PycharmProjects/poverty-point-signaling/docs/jamt/reference_template.docx')
+V2_DIR = Path('/Users/clipo/PycharmProjects/poverty-point/docs/manuscript_v2.0')
+TEMPLATE = Path('/Users/clipo/PycharmProjects/poverty-point/docs/jamt/reference_template.docx')
 
 
 def build(md_path: Path, docx_path: Path, resource_dir: Path):

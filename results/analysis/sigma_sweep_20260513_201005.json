@@ -1,0 +1,130 @@
+[
+  {
+    "target_sigma": 0.25,
+    "actual_sigma": 0.22968690615953882,
+    "dominance": -0.5463529411764706,
+    "aggregation_size": 11.341176470588236,
+    "monument_level": 2415.794256272157,
+    "replicate": 0
+  },
+  {
+    "target_sigma": 0.25,
+    "actual_sigma": 0.22997318671609873,
+    "dominance": -0.5870588235294117,
+    "aggregation_size": 10.323529411764707,
+    "monument_level": 2263.9567861119717,
+    "replicate": 1
+  },
+  {
+    "target_sigma": 0.33571428571428574,
+    "actual_sigma": 0.3164043582857077,
+    "dominance": -0.2903529411764706,
+    "aggregation_size": 17.741176470588236,
+    "monument_level": 3750.81000653898,
+    "replicate": 0
+  },
+  {
+    "target_sigma": 0.33571428571428574,
+    "actual_sigma": 0.3167340261315869,
+    "dominance": -0.3087058823529412,
+    "aggregation_size": 17.28235294117647,
+    "monument_level": 3666.1145237982582,
+    "replicate": 1
+  },
+  {
+    "target_sigma": 0.42142857142857143,
+    "actual_sigma": 0.40329405866296564,
+    "dominance": 0.039764705882352945,
+    "aggregation_size": 25.99411764705882,
+    "monument_level": 6243.692975498842,
+    "replicate": 0
+  },
+  {
+    "target_sigma": 0.42142857142857143,
+    "actual_sigma": 0.4033816218519479,
+    "dominance": 0.0035294117647058816,
+    "aggregation_size": 25.08823529411765,
+    "monument_level": 6036.773223528225,
+    "replicate": 1
+  },
+  {
+    "target_sigma": 0.5071428571428571,
+    "actual_sigma": 0.49020410065245146,
+    "dominance": 0.3103529411764706,
+    "aggregation_size": 32.758823529411764,
+    "monument_level": 7746.1779103909375,
+    "replicate": 0
+  },
+  {
+    "target_sigma": 0.5071428571428571,
+    "actual_sigma": 0.4903068595838099,
+    "dominance": 0.28823529411764703,
+    "aggregation_size": 32.205882352941174,
+    "monument_level": 7556.540424233675,
+    "replicate": 1
+  },
+  {
+    "target_sigma": 0.5928571428571429,
+    "actual_sigma": 0.577043015416575,
+    "dominance": 0.58,
+    "aggregation_size": 39.5,
+    "monument_level": 9159.371875155011,
+    "replicate": 0
+  },
+  {
+    "target_sigma": 0.5928571428571429,
+    "actual_sigma": 0.5770896136261023,
+    "dominance": 0.5352941176470588,
+    "aggregation_size": 38.38235294117647,
+    "monument_level": 8972.798807419811,
+    "replicate": 1
+  },
+  {
+    "target_sigma": 0.6785714285714286,
+    "actual_sigma": 0.6637838943235955,
+    "dominance": 0.7861176470588235,
+    "aggregation_size": 44.65294117647059,
+    "monument_level": 10194.103442990108,
+    "replicate": 0
+  },
+  {
+    "target_sigma": 0.6785714285714286,
+    "actual_sigma": 0.6641578572247947,
+    "dominance": 0.7470588235294118,
+    "aggregation_size": 43.6764705882353,
+    "monument_level": 10023.281484545161,
+    "replicate": 1
+  },
+  {
+    "target_sigma": 0.7642857142857142,
+    "actual_sigma": 0.7507172826419024,
+    "dominance": 0.8854117647058822,
+    "aggregation_size": 47.13529411764706,
+    "monument_level": 10772.207187119879,
+    "replicate": 0
+  },
+  {
+    "target_sigma": 0.7642857142857142,
+    "actual_sigma": 0.7508627393325327,
+    "dominance": 0.8741176470588237,
+    "aggregation_size": 46.85294117647059,
+    "monument_level": 10685.823940920796,
+    "replicate": 1
+  },
+  {
+    "target_sigma": 0.85,
+    "actual_sigma": 0.8375724368364271,
+    "dominance": 0.9395294117647057,
+    "aggregation_size": 48.48823529411764,
+    "monument_level": 11066.592754726938,
+    "replicate": 0
+  },
+  {
+    "target_sigma": 0.85,
+    "actual_sigma": 0.8378968078876138,
+    "dominance": 0.9345882352941176,
+    "aggregation_size": 48.36470588235294,
+    "monument_level": 10997.980722018228,
+    "replicate": 1
+  }
+]
