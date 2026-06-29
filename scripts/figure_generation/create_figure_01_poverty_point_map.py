@@ -22,6 +22,7 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import geopandas as gpd
 from pathlib import Path
+import csv
 
 OUTPUT_DIR = Path('/Users/clipo/PycharmProjects/poverty-point/figures/manuscript')
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -37,8 +38,8 @@ plt.rcParams['font.size'] = 11
 plt.rcParams['hatch.linewidth'] = 0.4
 
 # Poverty Point coordinates
-PP_LAT = 32.6366
-PP_LON = -91.4074
+PP_LAT = 32.6362
+PP_LON = -91.4089
 
 
 def add_scale_bar(ax, lon, lat, length_km, transform):
@@ -132,26 +133,35 @@ def create_regional_map():
     # Other Late Archaic / Middle Archaic monument-building & PP-period sites.
     # Canonical source: data/sites/late_archaic_sites.csv (see
     # data/sites/README.md for trinomial corrections and source notes).
-    other_sites = [
-        # name, smithsonian, lon, lat, label_dx, label_dy, label_anchor
-        # Coordinates derived from data/site utms.xlsx (NAD83, UTM Zone 15N for
-        # interior LA/MS sites; Zone 16N for the coastal MS pair). See Table 1.
-        ('Jaketown',         '22HU505', -90.4872, 33.2349,  0.22,  0.00, 'left'),
-        # Label dy offsets keep each label on the correct side of its marker so
-        # the visual N-S ordering of the LABELS matches the marker positions:
-        # Frenchman's Bend (32.64°N) is north of Watson Brake (32.37°N), so its
-        # label sits above its marker and Watson Brake's sits below its marker.
-        ('Watson Brake',     '16OU175', -92.1311, 32.3684, -0.18, -0.20, 'right'),
-        ("Frenchman's Bend", '16OU259', -92.0437, 32.6357, -0.18,  0.20, 'right'),
-        ('Lower Jackson',    '16WC10',  -91.4108, 32.6105,  0.30,  0.05, 'left'),   # stacked between PP label (y=32.81) and J.W. Copes label (y=32.53), all anchored at x ~ -91.11
-        ('Insley',           '16FR3',   -91.4791, 32.3893, -0.18,  0.00, 'right'),
-        ('Caney',            '16CT5',   -92.0004, 31.4822, -0.18,  0.00, 'right'),
-        ('Cowpen Slough',    '16CT147', -91.9346, 31.3293,  0.20,  0.00, 'left'),
-        ('J.W. Copes',       '16MA147', -91.3894, 32.5339,  0.22,  0.00, 'left'),   # label to RIGHT, clear of Lower Jackson
-        ('Claiborne',        '22HA501', -89.5758, 30.2141,  0.20,  0.20, 'left'),
-        ('Cedarland',        '22HA506', -89.5804, 30.2186,  0.20, -0.20, 'left'),
-    ]
-    for name, smith, lon, lat, dx, dy, anchor in other_sites:
+    # Coordinates and trinomials are loaded from the canonical site table so the
+    # map cannot drift from it: data/sites/late_archaic_sites.csv (see
+    # data/sites/README.md for trinomial corrections and source notes).
+    sites_csv = Path(
+        '/Users/clipo/PycharmProjects/poverty-point/data/sites/'
+        'late_archaic_sites.csv'
+    )
+    site_coords = {}
+    with open(sites_csv, newline='') as f:
+        for row in csv.DictReader(f):
+            site_coords[row['name']] = (
+                float(row['longitude']), float(row['latitude']), row['trinomial'])
+
+    # Per-site label placement (dx, dy in degrees; horizontal anchor), hand-tuned
+    # for legibility; coordinates/trinomials come from the CSV above.
+    label_offsets = {
+        'Jaketown':         ( 0.22,  0.00, 'left'),
+        'Watson Brake':     (-0.18, -0.20, 'right'),
+        "Frenchman's Bend": (-0.18,  0.20, 'right'),
+        'Lower Jackson':    ( 0.30,  0.05, 'left'),
+        'Insley':           (-0.18,  0.00, 'right'),
+        'Caney':            (-0.18,  0.00, 'right'),
+        'Cowpen Slough':    ( 0.20,  0.00, 'left'),
+        'J.W. Copes':       ( 0.22,  0.00, 'left'),
+        'Claiborne':        ( 0.20,  0.20, 'left'),
+        'Cedarland':        ( 0.20, -0.20, 'left'),
+    }
+    for name, (dx, dy, anchor) in label_offsets.items():
+        lon, lat, smith = site_coords[name]
         ax_main.plot(lon, lat, marker='o', color='#ff7f0e', markersize=8,
                      markeredgecolor='black', markeredgewidth=1,
                      transform=proj, zorder=8)
@@ -237,11 +247,14 @@ def create_regional_map():
                    framealpha=0.9, edgecolor='black')
 
     # ===== Inset: SE US context =====
-    ax_inset = fig.add_axes([0.55, 0.72, 0.40, 0.26], projection=proj)
-    ax_inset.set_extent([-100, -75, 25, 42], crs=proj)
+    ax_inset = fig.add_axes([0.55, 0.70, 0.40, 0.28], projection=proj)
+    # Extend north to the Lake Superior copper district (Keweenaw, ~47 N) so the
+    # actual copper source is shown in place rather than clipped to the frame.
+    ax_inset.set_extent([-100, -75, 26, 49], crs=proj)
 
     ax_inset.add_feature(cfeature.LAND, facecolor='#f5f0e1')
     ax_inset.add_feature(cfeature.OCEAN, facecolor='#d4e6f1')
+    ax_inset.add_feature(cfeature.LAKES, facecolor='#d4e6f1', edgecolor='gray', linewidth=0.3)
     ax_inset.add_feature(cfeature.STATES, edgecolor='gray', linewidth=0.3)
     ax_inset.add_feature(cfeature.COASTLINE, linewidth=0.5)
 
@@ -261,7 +274,7 @@ def create_regional_map():
 
     # Material source locations on inset
     sources = {
-        'Copper': (-87.5, 41.0),
+        'Copper': (-88.3, 47.2),   # Keweenaw Peninsula / Lake Superior copper district
         'Galena': (-90.5, 38.0),
         'Steatite': (-82.5, 35.0),
         'Novaculite': (-93.5, 34.5),

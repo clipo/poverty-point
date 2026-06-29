@@ -12,7 +12,7 @@ Two panels:
      clustering at access >= 0.5). PP and Lower Jackson sit at the top of the
      LMV interior at 4 regimes each; Jaketown follows at 3; the remaining
      interior sites cluster at 2 (one primary canoe-day drainage plus the
-     Macon Ridge upland baseline). The coastal Pearl River pair sits at 1
+     Macon Ridge upland baseline). The coastal Pearl River pair sits at 2 (estuary + Gulf Flatwoods upland)
      regime (PearlGulf only).
 
 Data sources:
