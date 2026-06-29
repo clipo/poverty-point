@@ -1,0 +1,9 @@
+# Claims: Leone 2014 (Poverty Point macrobotanical, Project 1/09)
+
+**Full citation**: Leone, Karen L. 2014. *Paleoethnobotanical Analysis of Samples from Poverty Point (16WC5), Project 1/09, in West Carroll Parish, Louisiana*. Report prepared for the Poverty Point Station Archaeology Program (D. M. Greenlee), Poverty Point State Historic Site, Pioneer, Louisiana. Gray & Pape, Inc., Cincinnati, Ohio. (Gray & Pape Project No. 14-67701.001; report dated May 2, 2014.) Grey literature; no DOI. Source PDF: `docs/references/pdfs/Poverty Point Botanical Analysis_Project 1-09.pdf` (has text layer).
+
+## Claims
+- **Cultigen (early summer):** "One possible maygrass (*Phalaris caroliniana*) seed fragment (0.001 g) was the only seed recovered from Unit 2A Feature 34." "Maygrass is a starchy native cultigen that ripens in late spring/early summer. Seasonality cannot necessarily be inferred by its presence since it is a storable and transportable food source; however, given the presence of just a single maygrass seed in the entire assemblage, it is possible that it is merely an incidental environmental inclusion." → Early-summer cultigen is present at the type site but in a single, possibly-incidental find.
+- **Fall fruits:** persimmon (*Diospyros virginiana*, ripens fall), sweetgum (Sep-Nov), honeylocust (fall, persisting into winter) seeds recovered; all possibly environmental inclusions.
+- **Nuts (fall):** the assemblage "provide[s] evidence of concentrated nut harvesting/processing activity and, therefore, fall" use; nuts dominate.
+- **Relevance:** earliest of the type-site macrobotanical reports; documents fall-dominated nut/fruit use with a (weak) early-summer cultigen component. Used with Leone 2020 in §1.2/§6.7/§7.4 to revise the older "no spring/early-summer plant evidence" inference. Honest caveat carried into the manuscript: the early-summer evidence here is a single possible seed, and the seeds are storable.
