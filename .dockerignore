@@ -1,0 +1,18 @@
+# Keep the build context small and deterministic.
+.git
+.gitignore
+.github
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.DS_Store
+.venv
+venv
+env
+*.egg-info
+.pytest_cache
+.ipynb_checkpoints
+docs/_archive
+docs/jamt/_docx_backup
+# the container produces these; copies are still included as reference outputs,
+# so they are intentionally NOT ignored: figures/, results/, data/

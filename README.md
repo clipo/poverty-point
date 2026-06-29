@@ -182,6 +182,8 @@ make all         # analyses + figures + manuscript (skips slow calibration; run 
 make calibration # rerun the Tier-3 calibration replicates (~3 hours; produces Figure 12)
 ```
 
+**Container.** A `Dockerfile` provides a fully self-contained, cross-platform environment (Python 3.12.2, pinned dependencies, pandoc, and the figure fonts), which avoids the GEOS/PROJ/GDAL toolchain issues that make cartopy and geopandas hard to install natively. Build with `docker build -t poverty-point .` and run, e.g., `docker run --rm -v "$PWD/figures:/opt/poverty-point/figures" poverty-point make figures`. Podman and Apptainer/Singularity are also supported; see the "Reproducing in a container" section of `REPRODUCE.md`.
+
 Figure-to-script mappings live in `figures/manuscript/README.md`, `figures/supplemental/README.md`, and `scripts/figure_generation/README.md`. Each active figure-generation script is named to match the figure number it produces (e.g., `create_figure_07_phase_transition.py` → Figure 7), and writes its output directly into the corresponding `figures/manuscript/` or `figures/supplemental/` folder with a clean numbered filename. Legacy scripts from earlier drafts are kept in `scripts/figure_generation/_archive/` for reference. See `REPRODUCE.md` for the full step-by-step.
 
 External data dependencies:
