@@ -42,17 +42,17 @@ SAUCIER_SHP = Path(
 # data/sites/late_archaic_sites.csv (see data/sites/README.md for sources
 # and trinomial corrections).
 SITES = [
-    ('Poverty Point',     '16WC5',   -91.4074, 32.6366),  # West Carroll Parish, LA
-    ('Lower Jackson',     '16WC10',  -91.4108, 32.6105),  # West Carroll Parish; ~2 km S of PP
-    ('Watson Brake',      '16OU175', -92.1311, 32.3684),  # Ouachita Parish, LA
-    ('Caney',             '16CT5',   -92.0004, 31.4822),  # Catahoula Parish; Sicily Island Hills
-    ("Frenchman's Bend",  '16OU259', -92.0437, 32.6357),  # Ouachita Parish; Bayou Desiard
-    ('Insley',            '16FR3',   -91.4791, 32.3893),  # Franklin Parish, LA
-    ('J.W. Copes',        '16MA147',  -91.3894, 32.5339),  # Madison Parish, LA (Tensas Basin)
-    ('Cowpen Slough',     '16CT147', -91.9346, 31.3293),  # Catahoula Parish; Boeuf River margin
-    ('Jaketown',          '22HU505', -90.4872, 33.2349),  # Humphreys County, MS; near Belzoni
-    ('Claiborne',         '22HA501', -89.5758, 30.2141),  # Hancock County, MS; Pearl River mouth
-    ('Cedarland',         '22HA506', -89.5804, 30.2186),  # Hancock County, MS; adjacent to Claiborne
+    ('Poverty Point',     '16WC5',   -91.4089, 32.6362),  # West Carroll Parish, LA
+    ('Lower Jackson',     '16WC10',  -91.4108, 32.6175),  # West Carroll Parish; ~2 km S of PP
+    ('Watson Brake',      '16OU175', -92.0978, 32.4475),  # Ouachita Parish, LA
+    ('Caney',             '16CT5',   -91.67, 31.85),  # Catahoula Parish; Sicily Island Hills
+    ("Frenchman's Bend",  '16OU259', -92.11, 32.553),  # Ouachita Parish; Bayou Desiard
+    ('Insley',            '16FR3',   -91.675, 32.0833),  # Franklin Parish, LA
+    ('J.W. Copes',        '16MA47' ,  -91.15, 32.45),  # Madison Parish, LA (Tensas Basin)
+    ('Cowpen Slough',     '16CT147', -91.65, 31.68),  # Catahoula Parish; Boeuf River margin
+    ('Jaketown',          '22HU505', -90.4561, 33.1789),  # Humphreys County, MS; near Belzoni
+    ('Claiborne',         '22HA501', -89.5933, 30.3097),  # Hancock County, MS; Pearl River mouth
+    ('Cedarland',         '22HA506', -89.5919, 30.3083),  # Hancock County, MS; adjacent to Claiborne
 ]
 
 # Foraging buffer radius (km). 25 km is a typical ethnographic

@@ -86,14 +86,14 @@ jt_flood = 3310             # crevasse splay (Kidder Henry Arco 2018)
 jt_label = 'Jaketown'
 
 # Poverty Point (Kidder & Grooms 2024)
-pp_occupation = (3535, 3135)    # 95.4% hpd from Model 4
+pp_occupation = (3650, 3050)    # type-site occupation (Table 1; ca. 1700-1100 BCE)
 pp_construction = (3300, 3225)  # active construction window (micromorphology)
 pp_moundA = 3261                # mean date for Mound A (Ortmann & Kidder 2013)
 pp_rw3 = 3280                   # approximate Ridge West 3 (Kidder et al. 2021)
 pp_label = 'Poverty Point'
 
 # Key events
-gap_wb_pp = (4800, 3535)  # 1300-year gap between Watson Brake and PP
+gap_wb_pp = (4700, 3650)  # 1050-year gap: Watson Brake abandonment to PP emergence
 flood_event = 3310
 abandonment_end = 2780
 
@@ -141,23 +141,15 @@ for cs, ce in wb_construction:
     ax1.barh(y_positions[wb_label], cs - ce, left=ce, height=bar_height,
              color=CB['brown'], alpha=0.8, edgecolor='black', linewidth=0.5)
 
-# Jaketown phases
-# Phase 1: light fill
-ax1.barh(y_positions[jt_label], jt_phase1[0] - jt_phase1[1],
-         left=jt_phase1[1], height=bar_height, color=CB['blue'],
-         alpha=0.25, edgecolor=CB['blue'], linewidth=0.8)
-# Phase 2: medium fill
-ax1.barh(y_positions[jt_label], jt_phase2[0] - jt_phase2[1],
-         left=jt_phase2[1], height=bar_height, color=CB['blue'],
-         alpha=0.5, edgecolor=CB['blue'], linewidth=0.8)
-# Phase 3: construction (dark fill)
+# Jaketown: occupation 4000-3000 BP (Table 1; Grooms et al. 2023; Ward et al.
+# 2022) with the earthwork-construction sub-block. Phase detail is in Panel B.
+jt_occupation_A = (4000, 3000)
+ax1.barh(y_positions[jt_label], jt_occupation_A[0] - jt_occupation_A[1],
+         left=jt_occupation_A[1], height=bar_height, color=CB['blue'],
+         alpha=0.3, edgecolor=CB['blue'], linewidth=0.8)
 ax1.barh(y_positions[jt_label], jt_phase3[0] - jt_phase3[1],
          left=jt_phase3[1], height=bar_height, color=CB['blue'],
          alpha=0.85, edgecolor='black', linewidth=0.8)
-# Phase 4: post-flood
-ax1.barh(y_positions[jt_label], jt_phase4[0] - jt_phase4[1],
-         left=jt_phase4[1], height=bar_height, color=CB['blue'],
-         alpha=0.15, edgecolor=CB['blue'], linewidth=0.5, linestyle='--')
 
 # Poverty Point
 ax1.barh(y_positions[pp_label], pp_occupation[0] - pp_occupation[1],
@@ -200,8 +192,6 @@ legend_elements = [
           label='Occupation'),
     Patch(facecolor=CB['gray'], alpha=0.85, edgecolor='black',
           label='Earthwork construction'),
-    Patch(facecolor=CB['gray'], alpha=0.15, edgecolor='gray',
-          linestyle='--', label='Post-flood reoccupation'),
     plt.Line2D([0], [0], color=CB['red'], linewidth=2,
                label='Crevasse splay (3310 BP)'),
 ]

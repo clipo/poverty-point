@@ -44,17 +44,17 @@ STATES = ['ar', 'la', 'ms']  # Arkansas, Louisiana, Mississippi
 # data/sites/late_archaic_sites.csv (see data/sites/README.md for sources
 # and trinomial corrections).
 SITES = [
-    ('Poverty Point',     '16WC5',   -91.4074, 32.6366),
-    ('Lower Jackson',     '16WC10',  -91.4108, 32.6105),
-    ('Watson Brake',      '16OU175', -92.1311, 32.3684),
-    ('Caney',             '16CT5',   -92.0004, 31.4822),
-    ("Frenchman's Bend",  '16OU259', -92.0437, 32.6357),
-    ('Insley',            '16FR3',   -91.4791, 32.3893),
-    ('J.W. Copes',        '16MA147',  -91.3894, 32.5339),
-    ('Cowpen Slough',     '16CT147', -91.9346, 31.3293),
-    ('Jaketown',          '22HU505', -90.4872, 33.2349),
-    ('Claiborne',         '22HA501', -89.5758, 30.2141),
-    ('Cedarland',         '22HA506', -89.5804, 30.2186),
+    ('Poverty Point',     '16WC5',   -91.4089, 32.6362),
+    ('Lower Jackson',     '16WC10',  -91.4108, 32.6175),
+    ('Watson Brake',      '16OU175', -92.0978, 32.4475),
+    ('Caney',             '16CT5',   -91.67, 31.85),
+    ("Frenchman's Bend",  '16OU259', -92.11, 32.553),
+    ('Insley',            '16FR3',   -91.675, 32.0833),
+    ('J.W. Copes',        '16MA47' ,  -91.15, 32.45),
+    ('Cowpen Slough',     '16CT147', -91.65, 31.68),
+    ('Jaketown',          '22HU505', -90.4561, 33.1789),
+    ('Claiborne',         '22HA501', -89.5933, 30.3097),
+    ('Cedarland',         '22HA506', -89.5919, 30.3083),
 ]
 
 BUFFER_KM = 25.0

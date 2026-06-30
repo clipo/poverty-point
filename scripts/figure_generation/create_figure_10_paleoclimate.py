@@ -421,7 +421,7 @@ def create_panel_f_phase_space(ax):
                    bbox=dict(boxstyle='round,pad=0.18', facecolor='white',
                              edgecolor='#888888', alpha=0.85))
 
-    ax.set_xlabel('Shortfall Frequency (years)')
+    ax.set_xlabel('Shortfall recurrence interval, $T$ (years)')
     ax.set_ylabel('Shortfall Magnitude')
     ax.set_title('F. Environmental Phase Space', fontweight='bold')
 

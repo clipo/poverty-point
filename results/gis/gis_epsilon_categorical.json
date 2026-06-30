@@ -81,15 +81,15 @@
       "smithsonian": "16WC5",
       "qual_epsilon": 0.49,
       "l4_n_classes": 4,
-      "l4_H": 1.0725,
-      "l4_epsilon": 0.3868,
+      "l4_H": 1.0729,
+      "l4_epsilon": 0.387,
       "category_n": 3,
-      "category_H": 1.0601,
-      "category_epsilon": 0.2412,
+      "category_H": 1.0584,
+      "category_epsilon": 0.2409,
       "category_areas_km2": {
-        "Alluvial Active": 475.1,
-        "Backswamp": 577.8,
-        "Pleistocene Terrace": 907.5
+        "Alluvial Active": 470.3,
+        "Backswamp": 577.4,
+        "Pleistocene Terrace": 912.7
       },
       "unmapped_area_km2": 0.0
     },
@@ -98,15 +98,15 @@
       "smithsonian": "16WC10",
       "qual_epsilon": 0.48,
       "l4_n_classes": 4,
-      "l4_H": 1.0891,
-      "l4_epsilon": 0.3928,
+      "l4_H": 1.0856,
+      "l4_epsilon": 0.3916,
       "category_n": 3,
-      "category_H": 1.0677,
-      "category_epsilon": 0.243,
+      "category_H": 1.0649,
+      "category_epsilon": 0.2423,
       "category_areas_km2": {
-        "Alluvial Active": 501.7,
-        "Backswamp": 575.0,
-        "Pleistocene Terrace": 883.6
+        "Alluvial Active": 491.1,
+        "Backswamp": 576.5,
+        "Pleistocene Terrace": 892.7
       },
       "unmapped_area_km2": 0.0
     },
@@ -115,16 +115,16 @@
       "smithsonian": "16OU175",
       "qual_epsilon": 0.43,
       "l4_n_classes": 7,
-      "l4_H": 1.7341,
-      "l4_epsilon": 0.4456,
+      "l4_H": 1.7499,
+      "l4_epsilon": 0.4496,
       "category_n": 4,
-      "category_H": 1.3141,
-      "category_epsilon": 0.299,
+      "category_H": 1.3657,
+      "category_epsilon": 0.3108,
       "category_areas_km2": {
-        "Tertiary Upland": 726.9,
-        "Alluvial Active": 319.8,
-        "Pleistocene Terrace": 298.8,
-        "Backswamp": 614.9
+        "Tertiary Upland": 506.6,
+        "Alluvial Active": 409.3,
+        "Pleistocene Terrace": 395.6,
+        "Backswamp": 648.9
       },
       "unmapped_area_km2": 0.0
     },
@@ -132,17 +132,17 @@
       "site": "Caney",
       "smithsonian": "16CT5",
       "qual_epsilon": 0.43,
-      "l4_n_classes": 6,
-      "l4_H": 1.6046,
-      "l4_epsilon": 0.4478,
+      "l4_n_classes": 9,
+      "l4_H": 1.8922,
+      "l4_epsilon": 0.4306,
       "category_n": 4,
-      "category_H": 1.336,
-      "category_epsilon": 0.304,
+      "category_H": 1.2143,
+      "category_epsilon": 0.2763,
       "category_areas_km2": {
-        "Alluvial Active": 473.4,
-        "Pleistocene Terrace": 572.2,
-        "Tertiary Upland": 258.3,
-        "Backswamp": 656.5
+        "Tertiary Upland": 192.0,
+        "Alluvial Active": 978.7,
+        "Backswamp": 329.2,
+        "Pleistocene Terrace": 460.5
       },
       "unmapped_area_km2": 0.0
     },
@@ -151,16 +151,16 @@
       "smithsonian": "16OU259",
       "qual_epsilon": 0.43,
       "l4_n_classes": 6,
-      "l4_H": 1.6621,
-      "l4_epsilon": 0.4638,
+      "l4_H": 1.602,
+      "l4_epsilon": 0.447,
       "category_n": 4,
-      "category_H": 1.3422,
-      "category_epsilon": 0.3054,
+      "category_H": 1.3784,
+      "category_epsilon": 0.3137,
       "category_areas_km2": {
-        "Tertiary Upland": 269.9,
-        "Alluvial Active": 511.4,
-        "Pleistocene Terrace": 657.3,
-        "Backswamp": 521.6
+        "Tertiary Upland": 508.3,
+        "Alluvial Active": 422.2,
+        "Pleistocene Terrace": 447.3,
+        "Backswamp": 582.5
       },
       "unmapped_area_km2": 0.0
     },
@@ -168,33 +168,33 @@
       "site": "Insley",
       "smithsonian": "16FR3",
       "qual_epsilon": 0.43,
-      "l4_n_classes": 3,
-      "l4_H": 1.0679,
-      "l4_epsilon": 0.486,
-      "category_n": 3,
-      "category_H": 1.0679,
-      "category_epsilon": 0.243,
+      "l4_n_classes": 6,
+      "l4_H": 1.11,
+      "l4_epsilon": 0.3098,
+      "category_n": 4,
+      "category_H": 0.9496,
+      "category_epsilon": 0.2161,
       "category_areas_km2": {
-        "Alluvial Active": 519.5,
-        "Backswamp": 554.1,
-        "Pleistocene Terrace": 886.7
+        "Tertiary Upland": 5.4,
+        "Alluvial Active": 361.2,
+        "Backswamp": 391.8,
+        "Pleistocene Terrace": 1202.0
       },
       "unmapped_area_km2": 0.0
     },
     {
       "site": "J.W. Copes",
-      "smithsonian": "16MA147",
+      "smithsonian": "16MA47",
       "qual_epsilon": 0.42,
-      "l4_n_classes": 3,
-      "l4_H": 1.0915,
-      "l4_epsilon": 0.4968,
-      "category_n": 3,
-      "category_H": 1.0915,
-      "category_epsilon": 0.2484,
+      "l4_n_classes": 2,
+      "l4_H": 0.6103,
+      "l4_epsilon": 0.4403,
+      "category_n": 2,
+      "category_H": 0.6103,
+      "category_epsilon": 0.1389,
       "category_areas_km2": {
-        "Alluvial Active": 545.0,
-        "Backswamp": 710.1,
-        "Pleistocene Terrace": 705.3
+        "Alluvial Active": 1373.5,
+        "Backswamp": 586.9
       },
       "unmapped_area_km2": 0.0
     },
@@ -202,16 +202,17 @@
       "site": "Cowpen Slough",
       "smithsonian": "16CT147",
       "qual_epsilon": 0.42,
-      "l4_n_classes": 5,
-      "l4_H": 1.2841,
-      "l4_epsilon": 0.3989,
-      "category_n": 3,
-      "category_H": 1.0856,
-      "category_epsilon": 0.247,
+      "l4_n_classes": 8,
+      "l4_H": 1.4806,
+      "l4_epsilon": 0.356,
+      "category_n": 4,
+      "category_H": 0.9669,
+      "category_epsilon": 0.22,
       "category_areas_km2": {
-        "Pleistocene Terrace": 559.9,
-        "Alluvial Active": 803.5,
-        "Backswamp": 596.9
+        "Tertiary Upland": 107.3,
+        "Alluvial Active": 1255.4,
+        "Backswamp": 466.6,
+        "Pleistocene Terrace": 131.1
       },
       "unmapped_area_km2": 0.0
     },
@@ -219,16 +220,17 @@
       "site": "Jaketown",
       "smithsonian": "22HU505",
       "qual_epsilon": 0.4,
-      "l4_n_classes": 3,
-      "l4_H": 0.5115,
-      "l4_epsilon": 0.2328,
-      "category_n": 3,
-      "category_H": 0.5115,
-      "category_epsilon": 0.1164,
+      "l4_n_classes": 5,
+      "l4_H": 0.5206,
+      "l4_epsilon": 0.1617,
+      "category_n": 4,
+      "category_H": 0.5177,
+      "category_epsilon": 0.1178,
       "category_areas_km2": {
-        "Alluvial Active": 1609.1,
-        "Pleistocene Terrace": 21.6,
-        "Backswamp": 329.6
+        "Alluvial Active": 1590.1,
+        "Pleistocene Terrace": 1.1,
+        "Backswamp": 355.8,
+        "Loess Upland": 13.3
       },
       "unmapped_area_km2": 0.0
     },
@@ -237,15 +239,15 @@
       "smithsonian": "22HA501",
       "qual_epsilon": 0.3,
       "l4_n_classes": 5,
-      "l4_H": 1.2697,
-      "l4_epsilon": 0.3945,
+      "l4_H": 1.382,
+      "l4_epsilon": 0.4293,
       "category_n": 3,
-      "category_H": 0.996,
-      "category_epsilon": 0.2267,
+      "category_H": 0.9496,
+      "category_epsilon": 0.2161,
       "category_areas_km2": {
-        "Coastal Plain Upland": 585.2,
-        "Coastal Marsh": 536.6,
-        "Alluvial Active": 177.0
+        "Coastal Plain Upland": 990.5,
+        "Coastal Marsh": 401.1,
+        "Alluvial Active": 275.4
       },
       "unmapped_area_km2": 0.0
     },
@@ -254,31 +256,31 @@
       "smithsonian": "22HA506",
       "qual_epsilon": 0.3,
       "l4_n_classes": 5,
-      "l4_H": 1.2706,
-      "l4_epsilon": 0.3947,
+      "l4_H": 1.3828,
+      "l4_epsilon": 0.4296,
       "category_n": 3,
-      "category_H": 0.9988,
-      "category_epsilon": 0.2273,
+      "category_H": 0.9508,
+      "category_epsilon": 0.2164,
       "category_areas_km2": {
-        "Coastal Plain Upland": 603.7,
-        "Coastal Marsh": 533.4,
-        "Alluvial Active": 184.2
+        "Coastal Plain Upland": 983.1,
+        "Coastal Marsh": 401.6,
+        "Alluvial Active": 273.8
       },
       "unmapped_area_km2": 0.0
     }
   ],
   "correlations": {
     "qualitative_vs_l4": {
-      "rho": 0.03739787960033829,
-      "p": 0.9130718266501981
+      "rho": 0.065446289300592,
+      "p": 0.8483863076893241
     },
     "qualitative_vs_category": {
-      "rho": 0.4427698941164954,
-      "p": 0.17262973800436313
+      "rho": 0.5997306502318668,
+      "p": 0.05113488993334155
     },
     "l4_vs_category": {
-      "rho": 0.7243754556493464,
-      "p": 0.011696567268823265
+      "rho": 0.5831450209001027,
+      "p": 0.059695642321548156
     }
   }
 }
