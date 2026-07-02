@@ -5,15 +5,15 @@ NOTE ON AUTHORITATIVE VALUE
 ---------------------------
 The authoritative Watson Brake earthwork volume used in the manuscript
 (§5.1) is 27,065 m³, derived from per-mound polygon integration on the
-published Watson Brake contour map (eight mound/ridge clusters, with
+State of Louisiana LiDAR DEM (eight mound/ridge clusters, with
 local-minimum-elevation baselines of 22 m for the K/A/B/C/D, E, and F
 clusters and 21.5 m for the G, H, I, and J + ridge clusters). The
 per-cluster breakdown and total are recorded in the output JSON under
 the `refined_per_mound_estimate_m3` key, populated externally from the
-contour-map analysis. The per-mound polygons themselves were digitized
+State of Louisiana LiDAR analysis. The per-mound polygons themselves were digitized
 by hand and are not currently stored as a vector file; to reproduce the
 per-cluster volumes from scratch, an analyst would digitize the eight
-cluster polygons against the published contour map and integrate the
+cluster polygons on the State of Louisiana LiDAR DEM and integrate the
 LiDAR DEM above each cluster's documented baseline.
 
 This script computes polygon-wide volume estimates under seven different
