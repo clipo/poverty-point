@@ -160,10 +160,21 @@ class TestScenarioComparison:
         return sim.run()
 
     def test_high_uncertainty_more_aggregation(self):
-        """High uncertainty should produce more aggregation than low."""
+        """High uncertainty should produce a larger aggregating fraction.
+
+        Compared as the fraction of bands attending rather than the raw
+        attendance count, because extreme-uncertainty scenarios also
+        shrink the band population demographically.
+        """
         high = self._run_short(create_high_sigma_scenario())
         low = self._run_short(create_low_sigma_scenario())
-        assert high.mean_aggregation_size > low.mean_aggregation_size
+
+        def attend_fraction(res):
+            post = [s for s in res.yearly_states if s.year >= 20]
+            return sum(s.aggregation_size / max(1, s.n_bands) for s in post) \
+                / len(post)
+
+        assert attend_fraction(high) > attend_fraction(low)
 
     def test_high_uncertainty_more_dominance(self):
         """High uncertainty should shift strategy toward aggregation."""

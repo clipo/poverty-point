@@ -39,7 +39,9 @@ for rep in range(N_REPS):
         params=params,
         shortfall_params=scenario.shortfall_params,
         seed=seed,
+        signal_conditional_partners=True,
     )
+    sim.aggregation_site.ecotone_advantage = scenario.expected_epsilon
     res = sim.run(verbose=False)
     traj = {
         'rep': rep,

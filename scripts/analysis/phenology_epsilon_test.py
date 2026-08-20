@@ -42,8 +42,8 @@ SITES = [
     ('J.W. Copes',        0.42, 2, 0),  # minimal
     ('Cowpen Slough',     0.42, 2, 0),  # minimal
     ('Jaketown',          0.40, 3, 1),  # small
-    ('Claiborne',         0.30, 1, 1),  # shell ring (treat as small)
-    ('Cedarland',         0.30, 1, 1),  # small coastal
+    ('Claiborne',         0.40, 1, 1),  # shell ring (treat as small)
+    ('Cedarland',         0.40, 1, 1),  # small coastal
 ]
 
 # Late Archaic (PP-period) regional sigma; Middle Archaic sigma is

@@ -78,7 +78,8 @@ for i, target_sigma in enumerate(sigma_values):
                 params=params,
                 env_config=scenario.env_config,
                 shortfall_params=scenario.shortfall_params,
-                seed=seed
+                seed=seed,
+                signal_conditional_partners=True,
             )
             sim.aggregation_site.ecotone_advantage = epsilon
             res = sim.run(verbose=False)

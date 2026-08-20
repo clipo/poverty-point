@@ -405,8 +405,8 @@ def create_panel_f_phase_space(ax):
     sites = [
         # (name, freq, mag, label_offset_xy)
         ('Poverty Point',  10, 0.45, (-3.5, 0.18)),
-        ('Watson Brake',   12, 0.40, ( 3.5, -0.05)),
-        ('Jaketown',       11, 0.42, ( 3.5,  0.12)),
+        ('Watson Brake',   12, 0.43, ( 3.5, -0.05)),
+        ('Jaketown',       11, 0.43, ( 3.5,  0.12)),
         ('Lower Jackson',  10, 0.40, (-3.5, -0.05)),
     ]
 
@@ -492,9 +492,7 @@ def main():
     # Main title
     # No figure title per CLAUDE.md style guide
 
-    # Save figure (writes to figures/manuscript/ with current Figure 11
-    # numbering; script filename retained as create_figure_10_* for
-    # backward compatibility but output is figure_11_*).
+    # Save figure (figures/manuscript/, Figure 11).
     output_dir = os.path.join(PROJECT_ROOT, 'figures', 'manuscript')
     os.makedirs(output_dir, exist_ok=True)
     output_png = os.path.join(output_dir, 'figure_11_paleoclimate_proxy.png')

@@ -9,24 +9,39 @@
     },
     {
       "predictor": "static epsilon alone",
-      "rho_vs_ordinal_scale": 0.387846410524698,
-      "p_vs_ordinal": 0.23855057107893163,
-      "rho_vs_volume": 0.43774522169965385,
-      "p_vs_volume": 0.17813312441861734
+      "rho_vs_ordinal_scale": 0.39067400380863776,
+      "p_vs_ordinal": 0.2348465093981425,
+      "rho_vs_volume": 0.41485970631584473,
+      "p_vs_volume": 0.2045403551383278,
+      "partial_rho_vs_ordinal_given_nagg": 0.40917927008719257,
+      "partial_rho_vs_volume_given_nagg": 0.5234270175769988
+    },
+    {
+      "predictor": "EPA-L4 epsilon alone",
+      "rho_vs_ordinal_scale": 0.24247805176542483,
+      "p_vs_ordinal": 0.4725128636569865,
+      "rho_vs_volume": 0.07110166549574456,
+      "p_vs_volume": 0.8354330909063352,
+      "partial_rho_vs_ordinal_given_nagg": 0.47780404853645175,
+      "partial_rho_vs_volume_given_nagg": 0.15943714819656102
     },
     {
       "predictor": "phenology epsilon alone",
       "rho_vs_ordinal_scale": -0.2065770748432023,
       "p_vs_ordinal": 0.5422355793173808,
       "rho_vs_volume": -0.04541228503444074,
-      "p_vs_volume": 0.8945246790024939
+      "p_vs_volume": 0.8945246790024939,
+      "partial_rho_vs_ordinal_given_nagg": -0.5246518436373524,
+      "partial_rho_vs_volume_given_nagg": -0.2453563604567667
     },
     {
       "predictor": "water-route epsilon alone",
-      "rho_vs_ordinal_scale": 0.3462840234591299,
-      "p_vs_ordinal": 0.2968528098595879,
-      "rho_vs_volume": 0.5552995391705069,
-      "p_vs_volume": 0.07616821935655507
+      "rho_vs_ordinal_scale": 0.2787737868500499,
+      "p_vs_ordinal": 0.4064677867796647,
+      "rho_vs_volume": 0.5080473194556498,
+      "p_vs_volume": 0.11058964266746565,
+      "partial_rho_vs_ordinal_given_nagg": -0.40470451704157095,
+      "partial_rho_vs_volume_given_nagg": 0.0988034345459013
     },
     {
       "predictor": "joint M_g(static_eps, n_agg)",
@@ -44,16 +59,16 @@
     },
     {
       "predictor": "joint M_g(water-route_eps, n_agg)",
-      "rho_vs_ordinal_scale": 0.8958884090223824,
-      "p_vs_ordinal": 0.0001906033916850913,
-      "rho_vs_volume": 0.9264392295955968,
-      "p_vs_volume": 4.177733390936783e-05
+      "rho_vs_ordinal_scale": 0.8938406614098013,
+      "p_vs_ordinal": 0.00020742995082261885,
+      "rho_vs_volume": 0.9243216514446795,
+      "p_vs_volume": 4.732062487984753e-05
     }
   ],
   "marginal_contribution_eps": {
     "static": -0.013614450998310934,
     "phenology": 0.009427023656066957,
-    "water_route": 0.01881556200742407
+    "water_route": 0.016697983856506782
   },
   "interpretation": "n_agg alone gives Spearman rho ~ +0.87 to +0.89 against observed monument scale and volume. Epsilon adds at most ~0.02 to the joint correlation. The framework's magnitude prediction is dominated by exogenous n_agg from the convergence-model literature; epsilon provides essentially no marginal predictive power for cross-site monument scale."
 }

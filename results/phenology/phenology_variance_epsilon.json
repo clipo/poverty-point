@@ -123,42 +123,42 @@
     {
       "name": "Cowpen Slough",
       "access_flags": [
-        0.5,
+        0.0,
         1.0,
         1.0,
         0.5,
         0.5
       ],
-      "flag_sum": 3.5,
+      "flag_sum": 3.0,
       "n_agg": 3,
       "observed_scale": 0,
-      "mean_total_productivity": 1.7325071731481476,
-      "sd_total_productivity": 0.6508238342457394,
-      "cv_observed": 0.3756543374438815,
+      "mean_total_productivity": 1.4929442227856604,
+      "sd_total_productivity": 0.58647864147983,
+      "cv_observed": 0.39283359185752365,
       "cv_single_zone_baseline": 0.5511032431602017,
-      "cv_reduction_vs_baseline": 0.318359414309087,
-      "eps_var": 0.1591797071545435,
-      "snr": 2.6620217053912993
+      "cv_reduction_vs_baseline": 0.2871869350561419,
+      "eps_var": 0.14359346752807095,
+      "snr": 2.5456071495094768
     },
     {
       "name": "J.W. Copes",
       "access_flags": [
-        0.5,
+        1.0,
         1.0,
         1.0,
         0.5,
         0.5
       ],
-      "flag_sum": 3.5,
+      "flag_sum": 4.0,
       "n_agg": 3,
       "observed_scale": 0,
-      "mean_total_productivity": 1.7325071731481476,
-      "sd_total_productivity": 0.6508238342457394,
-      "cv_observed": 0.3756543374438815,
+      "mean_total_productivity": 1.9720701235106344,
+      "sd_total_productivity": 0.7360551752784882,
+      "cv_observed": 0.37323985922375796,
       "cv_single_zone_baseline": 0.5511032431602017,
-      "cv_reduction_vs_baseline": 0.318359414309087,
-      "eps_var": 0.1591797071545435,
-      "snr": 2.6620217053912993
+      "cv_reduction_vs_baseline": 0.3227405865306079,
+      "eps_var": 0.16137029326530394,
+      "snr": 2.6792422494203603
     },
     {
       "name": "Jaketown",
@@ -224,12 +224,12 @@
   "regional_rho": 0.3,
   "spearman": {
     "eps_var_vs_scale": {
-      "rho": -0.02149349111125634,
-      "p": 0.9499856120138243
+      "rho": 0.0786285039833474,
+      "p": 0.8182506749402799
     },
     "flag_sum_vs_scale": {
-      "rho": -0.123516014003684,
-      "p": 0.7174890531696144
+      "rho": -0.10606136066054488,
+      "p": 0.7562804179836266
     }
   },
   "n_years": 1000,

@@ -66,7 +66,7 @@ QUAL_EPSILON = {
     "Frenchman's Bend": 0.43, 'Insley': 0.43,
     'J.W. Copes': 0.42, 'Cowpen Slough': 0.42,
     'Jaketown': 0.40,
-    'Claiborne': 0.30, 'Cedarland': 0.30,
+    'Claiborne': 0.40, 'Cedarland': 0.40,
 }
 
 

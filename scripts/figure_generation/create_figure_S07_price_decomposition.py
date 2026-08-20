@@ -10,7 +10,7 @@ threshold), confirming that the MLS prediction holds in the ABM:
   - Near σ*: selection term hovers near zero with high variance
 
 Input: results/analysis/price_decomposition_*.json
-Output: figures/supplemental/figure_S03_price_decomposition.{png,pdf}
+Output: figures/supplemental/figure_S07_price_decomposition.{png,pdf}
 """
 import json
 import glob
@@ -203,8 +203,8 @@ def main():
     ax_bar.grid(True, axis='y', alpha=0.3)
 
     plt.tight_layout()
-    out_png = OUTPUT_DIR / 'figure_S03_price_decomposition.png'
-    out_pdf = OUTPUT_DIR / 'figure_S03_price_decomposition.pdf'
+    out_png = OUTPUT_DIR / 'figure_S07_price_decomposition.png'
+    out_pdf = OUTPUT_DIR / 'figure_S07_price_decomposition.pdf'
     plt.savefig(out_png, dpi=300, bbox_inches='tight')
     plt.savefig(out_pdf, bbox_inches='tight')
     print(f'Saved: {out_png}')

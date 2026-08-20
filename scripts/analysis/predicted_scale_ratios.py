@@ -47,8 +47,8 @@ SITES = [
     ('J.W. Copes',       0.42, 2, 3, 0.64, 0, 500),  # minimal
     ('Cowpen Slough',    0.42, 2, 3, 0.64, 0, 500),  # minimal
     ('Jaketown',         0.40, 3, 8, 0.64, 1, 5000),  # small (1 PP-period mound)
-    ('Claiborne',        0.30, 1, 4, 0.64, 1, 3000),  # shell ring (rough estimate)
-    ('Cedarland',        0.30, 1, 4, 0.64, 1, 1000),  # smaller paired
+    ('Claiborne',        0.40, 1, 4, 0.64, 1, 3000),  # shell ring (rough estimate)
+    ('Cedarland',        0.40, 1, 4, 0.64, 1, 1000),  # smaller paired
 ]
 
 EPS_MIN_PHEN = 0.10

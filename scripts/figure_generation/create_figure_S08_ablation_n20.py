@@ -12,8 +12,8 @@ from the canonical ablation pad data:
   (C) Per-cell dominance difference (random − signal) with ±1 SD
   (D) Crossover detail (zoomed view near the threshold)
 
-Input: results/ablation/overnight_sweep.json (n=20 per cell)
-Output: figures/supplemental/figure_S05_ablation_n20.{png,pdf}
+Input: results/ablation/ablation_sweep_engine2.json (n=20 per cell)
+Output: figures/supplemental/figure_S08_ablation_n20.{png,pdf}
 """
 import json
 from pathlib import Path
@@ -29,7 +29,7 @@ SIGMA_STAR_ANALYTICAL = 0.40
 
 
 def main():
-    with open(PROJECT_ROOT / 'results' / 'ablation' / 'overnight_sweep.json') as f:
+    with open(PROJECT_ROOT / 'results' / 'ablation' / 'ablation_sweep_engine2.json') as f:
         data = json.load(f)
     sigma_targets = data['sigma_effs']
 
@@ -175,8 +175,8 @@ def main():
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    out_png = OUTPUT_DIR / 'figure_S05_ablation_n20.png'
-    out_pdf = OUTPUT_DIR / 'figure_S05_ablation_n20.pdf'
+    out_png = OUTPUT_DIR / 'figure_S08_ablation_n20.png'
+    out_pdf = OUTPUT_DIR / 'figure_S08_ablation_n20.pdf'
     plt.savefig(out_png, dpi=300, bbox_inches='tight')
     plt.savefig(out_pdf, bbox_inches='tight')
     print(f'Saved: {out_png}')

@@ -2,6 +2,20 @@
 
 Revision history for the Poverty Point costly-signaling project. Most recent first.
 
+## 2026-08-20 — Full validation audit, engine revision, and re-run
+
+**Status**: Complete methods-code alignment audit (`docs/references/methods_code_alignment_report.md`), engine revision to match the ODD specification, full re-run of the §4 simulation suite, and correction of every discrepancy the audit found. Test suite: 222 passed.
+
+**Engine revision** (`src/poverty_point/`): once-per-year scheduling (each seasonal phase executes once, not three times); band fission at size >30 with half-weight inheritance and dissolution below 5; heterogeneous band quality U[0.2, 2.0]; realized network vulnerability (seasonal_k from obligation strengths); synchronous decisions against the emergent monument signal stock (depreciated annually) and previous-year attendance; shortfalls propagate into harvests; severity-scaled shortfall mortality; density-dependent harvests; reciprocal obligations with resource-transfer help; fitness-weighted deaths; quality-based exotic acquisition; random initial network seeding. New tests in `tests/test_engine_semantics.py`.
+
+**Re-run results (all committed)**: ablation sweep n=20 (`ablation_sweep_engine2.json`): signal-conditional crossing at realized σ = 0.387 vs random-partner 0.385 (−0.4% shift; no discriminating shift), analytical σ* = 0.400 matched within 0.013; phase space 12×10×5: simulated crossings within 0.03 of the analytical σ*(ε) line at every ε row; calibration replicates: PP 7,203 ± 3,276 units → 104 m³/unit anchor; per-material PPC (`exotic_ppc.py`, new): copper and galena consistent in like units, steatite consistent on a vessel basis, near-source materials overpredicted 8-63× (reported as a genuine informative misfit), joint Mahalanobis d² = 9,289; Price decomposition: S(t) = −0.011/+0.047/+0.023 below/at/above threshold; factorial: main effects ε +1.00, λ_W +0.32, λ_C/λ_X ≈ 0; memory probe (new): +0.019 crossing shift with memory off.
+
+**Corrections**: α = 1 Watson Brake direction error fixed in six places (overpredicts 2.8×; the "underpredicts 7.7-fold / ~3,500 m³" claim was irreproducible and structurally impossible); ddof-doubled SDs fixed; stale ρ = 0.95 distance-decay lineage removed everywhere (current result ρ = −0.40) and Figure S9 (placeholder data) dropped; W_agg−W_ind monotonicity direction corrected (increasing); GIS/Table 3/§S12/§S13 rebuilt under the corrected coastal ε = 0.40 coding with true rank-based partial correlations (Saucier-vs-rubric now ρ = 0.70, p = 0.016; coastal-last Monte Carlo robustness drops to 21% and §6.4 says so); §6.5 upland correlations reattributed as assumptions; §S1 ODD, §S1.5, §S2, §S5.4, §S5.5, §S6, §S7.1, §S7.2, §S14, §S16, §S17.1, §S17.4 all updated to the implemented model and new outputs; five previously code-free verification claims now have committed scripts (`verify_analytical_diagnostics.py`, `exotic_ppc.py`, `table2_weight_perturbation.py`, `memory_effect_probe.py`).
+
+**Repository**: figure scripts renamed to match figure numbers (main 1-15, supplemental S1-S11 renumbered); Makefile targets reorganized (analyses / simulations / figures / manuscript); REPRODUCE.md rewritten (the §8 "not implemented" list was false); `site_coordinates.csv` regenerated from the canonical `late_archaic_sites.csv`; superseded artifacts removed from the tree. Manuscript.docx and Supplemental.docx rebuilt.
+
+**Open author decision**: README and manuscript disagree on the DiNapoli author name form (Robert J. vs Beau) and author order.
+
 ## 2026-05-05 — Submission-ready checkpoint
 
 **Status**: JAMT manuscript and supplemental are submission-ready. Pick up from here for any future resumption.

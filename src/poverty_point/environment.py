@@ -45,10 +45,10 @@ class SeasonalProfile:
 # Seasonal profiles based on archaeological evidence
 SEASONAL_PROFILES = {
     ResourceZone.AQUATIC: SeasonalProfile(
-        spring=1.5,  # Fish runs, spawning
-        summer=1.3,  # Peak aquatic productivity
-        fall=0.8,    # Declining
-        winter=0.5   # Low aquatic activity
+        spring=1.5,  # Fish runs, spawning; spring flyway migration peak
+        summer=1.2,  # Sustained aquatic productivity, summer waterfowl
+        fall=1.3,    # Fall flyway migration peak
+        winter=0.7   # Overwintering waterfowl (Nov-Mar) keep winter moderate
     ),
     ResourceZone.TERRESTRIAL: SeasonalProfile(
         spring=0.7,  # Lean season for deer

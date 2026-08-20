@@ -1,0 +1,94 @@
+{
+  "convergence": {
+    "n_points": 30,
+    "all_converged": true,
+    "iterations_mean": 18.0,
+    "iterations_median": 18.0,
+    "iterations_max": 18
+  },
+  "multistart_uniqueness": {
+    "unique_within_1e-4": true,
+    "rows": [
+      {
+        "sigma": 0.3,
+        "M_g": [
+          129.78228678702447,
+          129.78292965969175,
+          129.78289874426585
+        ],
+        "max_rel_diff": 4.953470024160467e-06
+      },
+      {
+        "sigma": 0.5,
+        "M_g": [
+          129.7844498543508,
+          129.7850922511434,
+          129.78506135316906
+        ],
+        "max_rel_diff": 4.949720812552627e-06
+      },
+      {
+        "sigma": 0.7,
+        "M_g": [
+          129.78661274336218,
+          129.78725466467404,
+          129.78722378414028
+        ],
+        "max_rel_diff": 4.9459747679669874e-06
+      }
+    ]
+  },
+  "single_crossing": {
+    "monotone_increasing": true,
+    "sign_changes": 1,
+    "fa_low": -0.22143813311447258,
+    "fa_high": 0.3485378957213644
+  },
+  "window_invariance": {
+    "ratio_invariant": true,
+    "rows": [
+      {
+        "T0": 5,
+        "sigma_LMV": 0.3181980515339464,
+        "sigma_star": 0.1998269284259719,
+        "ratio": 1.5923682260463028
+      },
+      {
+        "T0": 10,
+        "sigma_LMV": 0.45000000000000007,
+        "sigma_star": 0.28259795230736723,
+        "ratio": 1.592368226046303
+      },
+      {
+        "T0": 20,
+        "sigma_LMV": 0.6363961030678928,
+        "sigma_star": 0.3996538568519438,
+        "ratio": 1.5923682260463028
+      },
+      {
+        "T0": 50,
+        "sigma_LMV": 1.0062305898749055,
+        "sigma_star": 0.6319082316615167,
+        "ratio": 1.592368226046303
+      }
+    ]
+  },
+  "site_margins": {
+    "watson_brake": {
+      "sigma": 0.56,
+      "epsilon": 0.43,
+      "n_agg": 8,
+      "sigma_star": 0.3752476872974558,
+      "margin": 0.18475231270254427,
+      "fitness_differential": 0.12464756588616982
+    },
+    "poverty_point": {
+      "sigma": 0.64,
+      "epsilon": 0.49,
+      "n_agg": 25,
+      "sigma_star": 0.3570011223490067,
+      "margin": 0.2829988776509933,
+      "fitness_differential": 0.20063799930619997
+    }
+  }
+}

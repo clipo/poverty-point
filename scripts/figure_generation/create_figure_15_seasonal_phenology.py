@@ -52,7 +52,7 @@ The independence count (Panel B) is the number of *independent* peak
 windows: peaks driven by different climate mechanisms, so multi-drainage
 access is needed for high counts.
 
-Output: figures/manuscript/figure_14_seasonal_phenology.{png,pdf}
+Output: figures/manuscript/figure_15_seasonal_phenology.{png,pdf}
 """
 from pathlib import Path
 import numpy as np
@@ -247,8 +247,8 @@ def main():
 
     fig.suptitle('', y=0.99)
 
-    out_png = OUTPUT_DIR / 'figure_14_seasonal_phenology.png'
-    out_pdf = OUTPUT_DIR / 'figure_14_seasonal_phenology.pdf'
+    out_png = OUTPUT_DIR / 'figure_15_seasonal_phenology.png'
+    out_pdf = OUTPUT_DIR / 'figure_15_seasonal_phenology.pdf'
     fig.savefig(out_png, dpi=300, bbox_inches='tight')
     fig.savefig(out_pdf, bbox_inches='tight')
     plt.close(fig)

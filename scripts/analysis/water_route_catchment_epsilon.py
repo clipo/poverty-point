@@ -50,7 +50,7 @@ SITE_ACCESS = {
     "Frenchman's Bend": {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 1.0},  # Ouachita tributary
     'Caney':            {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 1.0},  # Sicily Island Hills
     'Insley':           {'BayouMacon': 0.5, 'Mississippi': 0.0, 'Tensas': 0.5, 'Yazoo': 0.0, 'Upland': 1.0},
-    'Cowpen Slough':    {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 0.5},  # Red/Black River system (drains Ouachita Mountains) — see OuachitaSystem assignment below
+    'Cowpen Slough':    {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 0.0},  # Red/Black River system (drains Ouachita Mountains) — see OuachitaSystem assignment below. Marginal upland in the foraging buffer is excluded per the §6.5 conservative single-regime coding.
     'J.W. Copes':       {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 1.0, 'Yazoo': 0.0, 'Upland': 0.5},
     'Jaketown':         {'BayouMacon': 0.0, 'Mississippi': 0.5, 'Tensas': 0.0, 'Yazoo': 1.0, 'Upland': 0.5},
     'Claiborne':        {'BayouMacon': 0.0, 'Mississippi': 0.0, 'Tensas': 0.0, 'Yazoo': 0.0, 'Upland': 0.0},  # Pearl River + Gulf
@@ -72,6 +72,13 @@ SITE_ACCESS['Caney']['Tensas'] = 0.5  # via small tributaries
 SITE_ACCESS['Cowpen Slough']['OuachitaSystem'] = 1.0
 SITE_ACCESS['Claiborne']['PearlGulf'] = 1.0
 SITE_ACCESS['Cedarland']['PearlGulf'] = 1.0
+# Coastal Plain Upland (Gulf Coast Flatwoods): the coastal pair's second
+# regime per §6.5 (Pearl-River-estuarine/marsh plus Coastal Plain Upland).
+# Partial access (0.5); correlation with PearlGulf assumed 0.45 by the
+# same convention as the Macon Ridge upland vs its adjacent drainages
+# (no gauge measures upland productivity; this is an assumption).
+SITE_ACCESS['Claiborne']['CoastalUpland'] = 0.5
+SITE_ACCESS['Cedarland']['CoastalUpland'] = 0.5
 
 
 # Empirical correlation matrix from §S7.5b USGS gauge analysis.
@@ -79,19 +86,20 @@ SITE_ACCESS['Cedarland']['PearlGulf'] = 1.0
 # OuachitaSystem (proxy as moderate correlation with Tensas), PearlGulf
 # (treated as independent of LMV interior).
 DRAINAGE_NAMES = ['BayouMacon', 'Mississippi', 'Tensas', 'Yazoo',
-                  'Upland', 'OuachitaSystem', 'PearlGulf']
+                  'Upland', 'OuachitaSystem', 'PearlGulf', 'CoastalUpland']
 N_DRAINAGES = len(DRAINAGE_NAMES)
 
 # Correlation matrix (rho_ij)
 RHO = np.array([
-    # BayouMacon, Mississippi, Tensas, Yazoo, Upland, OuachitaSystem, PearlGulf
-    [1.00, 0.11, 0.90, 0.30, 0.45, 0.20, 0.00],  # Bayou Macon
-    [0.11, 1.00, 0.34, 0.11, 0.10, 0.20, 0.00],  # Mississippi
-    [0.90, 0.34, 1.00, 0.54, 0.45, 0.30, 0.00],  # Tensas
-    [0.30, 0.11, 0.54, 1.00, 0.30, 0.15, 0.00],  # Yazoo
-    [0.45, 0.10, 0.45, 0.30, 1.00, 0.20, 0.00],  # Upland (Macon Ridge)
-    [0.20, 0.20, 0.30, 0.15, 0.20, 1.00, 0.00],  # OuachitaSystem
-    [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00],  # PearlGulf
+    # BayouMacon, Mississippi, Tensas, Yazoo, Upland, OuachitaSystem, PearlGulf, CoastalUpland
+    [1.00, 0.11, 0.90, 0.30, 0.45, 0.20, 0.00, 0.00],  # Bayou Macon
+    [0.11, 1.00, 0.34, 0.11, 0.10, 0.20, 0.00, 0.00],  # Mississippi
+    [0.90, 0.34, 1.00, 0.54, 0.45, 0.30, 0.00, 0.00],  # Tensas
+    [0.30, 0.11, 0.54, 1.00, 0.30, 0.15, 0.00, 0.00],  # Yazoo
+    [0.45, 0.10, 0.45, 0.30, 1.00, 0.20, 0.00, 0.00],  # Upland (Macon Ridge)
+    [0.20, 0.20, 0.30, 0.15, 0.20, 1.00, 0.00, 0.00],  # OuachitaSystem
+    [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.45],  # PearlGulf
+    [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.45, 1.00],  # CoastalUpland (assumed vs PearlGulf)
 ])
 # (Off-diagonal entries for Bayou Macon-Yazoo, Bayou Macon-Upland, Tensas-Upland,
 # etc., interpolated from §S7.5b structure: high within Macon-Ridge regime,

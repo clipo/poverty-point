@@ -1,0 +1,25 @@
+{
+  "n_draws": 1000,
+  "perturbation": 0.2,
+  "baseline_epsilon": {
+    "Poverty Point": 0.49119439089781064,
+    "Lower Jackson": 0.4800863608847778,
+    "Watson Brake": 0.4299856736258023,
+    "Caney": 0.4274880622688731,
+    "Frenchman's Bend": 0.4277557331285931,
+    "Insley": 0.4268514434551518,
+    "J.W. Copes": 0.42418308783467223,
+    "Cowpen Slough": 0.423926808801606,
+    "Jaketown": 0.40274572350575083,
+    "Claiborne": 0.4011703040333662,
+    "Cedarland": 0.4011703040333662
+  },
+  "pp_first_fraction": 0.862,
+  "coastal_bottom_two_fraction": 0.206,
+  "full_order_preserved_fraction": 0.0,
+  "rho_eps_vs_scale_mean": 0.1607908850988547,
+  "rho_eps_vs_scale_ci95": [
+    -0.19010192118056998,
+    0.49333998260210304
+  ]
+}

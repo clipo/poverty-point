@@ -107,17 +107,20 @@ class Band:
                         params: SimulationParameters,
                         rng: np.random.Generator,
                         M_g: float = 0.0,
-                        lam: float = -1.0) -> Strategy:
+                        lam: float = -1.0,
+                        site_location: Tuple[float, float] | None = None,
+                        memory_effect: bool = True) -> Strategy:
         """
         Decide whether to aggregate based on MLS fitness comparison.
 
-        Uses soft-max decision rule with memory effects.
+        Uses soft-max decision rule with memory effects. Travel distance is
+        measured to the actual aggregation site when provided.
         """
         # Calculate expected fitness using MLS framework
-        travel_dist = self.calculate_travel_distance(
-            (params.environment.region_size / 2,
-             params.environment.region_size / 2)
-        )
+        if site_location is None:
+            site_location = (params.environment.region_size / 2,
+                             params.environment.region_size / 2)
+        travel_dist = self.calculate_travel_distance(site_location)
         E_W_agg = W_aggregator(
             sigma, epsilon, expected_n, params,
             band_quality=self.quality,
@@ -130,7 +133,7 @@ class Band:
         fitness_diff = E_W_agg - E_W_ind
 
         # Memory effect: recent experience influences decision
-        if len(self.fitness_history) >= 5:
+        if memory_effect and len(self.fitness_history) >= 5:
             recent_fitness = np.mean(self.fitness_history[-5:])
             long_term_fitness = np.mean(self.fitness_history)
 
@@ -226,7 +229,9 @@ class Band:
             return False
 
         acquired_any = False
-        base_prob = 0.25 * (1 + self.prestige / (1 + self.prestige))
+        # Base probability scales with band quality (productive capacity):
+        # b_base = 0.25 * (1 + q/(1+q)), per the ODD submodel specification.
+        base_prob = 0.25 * (1 + self.quality / (1 + self.quality))
 
         for material, distance in EXOTIC_SOURCES.items():
             cost = exotic_signaling_cost(distance)
@@ -284,10 +289,17 @@ class Band:
                   birth_rate: float,
                   death_rate: float,
                   rng: np.random.Generator) -> None:
-        """Update population based on fitness."""
+        """Update population based on fitness.
+
+        Both births and deaths are fitness-weighted: births scale with
+        fitness and resource state; the death rate scales with (2 - fitness)
+        bounded to [0.5, 2.0]x the baseline, so high-fitness bands lose
+        fewer members and low-fitness bands lose more.
+        """
         effective_birth_rate = birth_rate * fitness * (0.5 + self.resources)
         births = rng.binomial(self.size, min(effective_birth_rate, 0.99))
-        deaths = rng.binomial(self.size, death_rate)
+        effective_death_rate = death_rate * float(np.clip(2.0 - fitness, 0.5, 2.0))
+        deaths = rng.binomial(self.size, min(effective_death_rate, 0.99))
         self.size = max(1, self.size + births - deaths)
 
     def suffer_shortfall(self,
@@ -304,6 +316,58 @@ class Band:
         deaths = rng.binomial(self.size, min(mortality_rate, 0.99))
         self.size = max(1, self.size - deaths)
         return deaths
+
+    def fission(self,
+                new_band_id: int,
+                rng: np.random.Generator,
+                q_min: float = 0.2,
+                q_max: float = 2.0) -> "Band":
+        """Split this band, returning a daughter band.
+
+        The daughter takes half the parent's members and resources,
+        inherits the parent's monument-investment history and obligation
+        network at half weight, receives half the exotic holdings, and
+        settles near the parent's home range. The parent keeps its own
+        contribution history and network at full weight.
+        """
+        daughter_size = self.size // 2
+        self.size = self.size - daughter_size
+
+        daughter_resources = self.resources / 2.0
+        self.resources -= daughter_resources
+
+        daughter_exotics = {}
+        for material, count in self.exotic_goods.items():
+            take = count // 2
+            daughter_exotics[material] = take
+            self.exotic_goods[material] = count - take
+
+        jitter = rng.uniform(-20.0, 20.0, size=2)
+        daughter_location = (self.home_location[0] + float(jitter[0]),
+                             self.home_location[1] + float(jitter[1]))
+
+        daughter_quality = float(np.clip(
+            self.quality * (1.0 + rng.normal(0.0, 0.1)), q_min, q_max
+        ))
+
+        daughter = Band(
+            band_id=new_band_id,
+            size=max(1, daughter_size),
+            home_location=daughter_location,
+            strategy=self.strategy,
+            quality=daughter_quality,
+            resources=daughter_resources,
+        )
+        daughter.monument_contributions = self.monument_contributions * 0.5
+        daughter.prestige = self.prestige * 0.5
+        daughter.exotic_goods = daughter_exotics
+        daughter.obligations = {
+            partner_id: strength * 0.5
+            for partner_id, strength in self.obligations.items()
+        }
+        daughter.seasonal_k = self.seasonal_k
+        daughter.network_degree_value = self.network_degree_value
+        return daughter
 
 
 @dataclass
@@ -388,7 +452,7 @@ def create_bands(n_bands: int,
         strategy = (Strategy.AGGREGATOR if rng.random() < strategy_probs[0]
                     else Strategy.INDEPENDENT)
 
-        size = initial_size + rng.integers(-5, 6)
+        size = int(initial_size + rng.integers(-5, 6))
         resources = 0.4 + 0.2 * rng.random()
 
         # Initialize quality from band size and resources

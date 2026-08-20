@@ -146,7 +146,7 @@ def main():
         "Frenchman's Bend": 0.43, 'Insley': 0.43,
         'J.W. Copes': 0.42, 'Cowpen Slough': 0.42,
         'Jaketown': 0.40,
-        'Claiborne': 0.30, 'Cedarland': 0.30,
+        'Claiborne': 0.40, 'Cedarland': 0.40,
     }
     print()
     print(f"{'Site':<22} {'eps_qual':>9} {'eps_gis':>8} {'diff':>7}")

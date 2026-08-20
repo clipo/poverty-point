@@ -1,0 +1,85 @@
+{
+  "memory_on": {
+    "cells": [
+      {
+        "sigma_target": 0.12,
+        "mean_realized_sigma": 0.16658489259807135,
+        "mean_dominance": -0.6130105858360159,
+        "sd_dominance": 0.0048280810794319945
+      },
+      {
+        "sigma_target": 0.16,
+        "mean_realized_sigma": 0.22795904544199436,
+        "mean_dominance": -0.5004888486094775,
+        "sd_dominance": 0.021573488334060188
+      },
+      {
+        "sigma_target": 0.2,
+        "mean_realized_sigma": 0.2896475308181651,
+        "mean_dominance": -0.3913529902092402,
+        "sd_dominance": 0.08308153213903563
+      },
+      {
+        "sigma_target": 0.24,
+        "mean_realized_sigma": 0.3512688946072539,
+        "mean_dominance": -0.17665899466377374,
+        "sd_dominance": 0.24072732295147184
+      },
+      {
+        "sigma_target": 0.28,
+        "mean_realized_sigma": 0.41281908556951585,
+        "mean_dominance": 0.15803035738865565,
+        "sd_dominance": 0.055951772216191596
+      },
+      {
+        "sigma_target": 0.36,
+        "mean_realized_sigma": 0.5363481562592608,
+        "mean_dominance": 0.5065861133550881,
+        "sd_dominance": 0.02167959649054725
+      }
+    ],
+    "threshold_realized_sigma": 0.383756916081726
+  },
+  "memory_off": {
+    "cells": [
+      {
+        "sigma_target": 0.12,
+        "mean_realized_sigma": 0.16704484855446305,
+        "mean_dominance": -0.6261788569597295,
+        "sd_dominance": 0.04625330226593903
+      },
+      {
+        "sigma_target": 0.16,
+        "mean_realized_sigma": 0.22819146304936364,
+        "mean_dominance": -0.523746358118899,
+        "sd_dominance": 0.09303959750983926
+      },
+      {
+        "sigma_target": 0.2,
+        "mean_realized_sigma": 0.2898413779550718,
+        "mean_dominance": -0.31706097685412066,
+        "sd_dominance": 0.06267786921865476
+      },
+      {
+        "sigma_target": 0.24,
+        "mean_realized_sigma": 0.3515253113686046,
+        "mean_dominance": -0.12985186995409861,
+        "sd_dominance": 0.06017844776274095
+      },
+      {
+        "sigma_target": 0.28,
+        "mean_realized_sigma": 0.41326941442295945,
+        "mean_dominance": 0.02695077279491397,
+        "sd_dominance": 0.07919437906868398
+      },
+      {
+        "sigma_target": 0.36,
+        "mean_realized_sigma": 0.5353959712558207,
+        "mean_dominance": 0.4179724071752511,
+        "sd_dominance": 0.06524974304027094
+      }
+    ],
+    "threshold_realized_sigma": 0.4026570212663769
+  },
+  "threshold_shift_off_minus_on": 0.018900105184650906
+}

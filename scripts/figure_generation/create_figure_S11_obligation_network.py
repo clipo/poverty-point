@@ -10,7 +10,7 @@ Create Figure 14: Obligation Network
 
 Requires Phase 2 infrastructure additions to IntegratedState.
 
-Output: figures/supplemental/figure_S08_obligation_network.png + .pdf
+Output: figures/supplemental/figure_S11_obligation_network.png + .pdf
 """
 
 import sys
@@ -28,7 +28,7 @@ from src.poverty_point.environmental_scenarios import get_scenario
 from src.poverty_point.agents import Strategy
 
 PROJECT_ROOT = Path('/Users/clipo/PycharmProjects/poverty-point')
-OUTPUT_DIR = PROJECT_ROOT / 'figures' / 'final'
+OUTPUT_DIR = PROJECT_ROOT / 'figures' / 'supplemental'
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Publication formatting
@@ -213,8 +213,8 @@ def main():
 
     fig = create_obligation_network_figure()
 
-    output_png = OUTPUT_DIR / 'figure_S08_obligation_network.png'
-    output_pdf = OUTPUT_DIR / 'figure_S08_obligation_network.pdf'
+    output_png = OUTPUT_DIR / 'figure_S11_obligation_network.png'
+    output_pdf = OUTPUT_DIR / 'figure_S11_obligation_network.pdf'
 
     fig.savefig(output_png, dpi=300, bbox_inches='tight', facecolor='white')
     fig.savefig(output_pdf, bbox_inches='tight', facecolor='white')

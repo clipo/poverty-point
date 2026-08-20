@@ -237,7 +237,7 @@
     {
       "site": "Claiborne",
       "smithsonian": "22HA501",
-      "qual_epsilon": 0.3,
+      "qual_epsilon": 0.4,
       "l4_n_classes": 5,
       "l4_H": 1.382,
       "l4_epsilon": 0.4293,
@@ -254,7 +254,7 @@
     {
       "site": "Cedarland",
       "smithsonian": "22HA506",
-      "qual_epsilon": 0.3,
+      "qual_epsilon": 0.4,
       "l4_n_classes": 5,
       "l4_H": 1.3828,
       "l4_epsilon": 0.4296,
@@ -271,12 +271,12 @@
   ],
   "correlations": {
     "qualitative_vs_l4": {
-      "rho": 0.065446289300592,
-      "p": 0.8483863076893241
+      "rho": 0.11772040233700277,
+      "p": 0.7303076453458941
     },
     "qualitative_vs_category": {
-      "rho": 0.5997306502318668,
-      "p": 0.05113488993334155
+      "rho": 0.6347800897431611,
+      "p": 0.03588973443477439
     },
     "l4_vs_category": {
       "rho": 0.5831450209001027,

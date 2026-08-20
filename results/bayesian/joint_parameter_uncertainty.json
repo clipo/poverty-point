@@ -1,5 +1,12 @@
 {
   "N": 1000,
+  "P_joint_by_seed": {
+    "42": 0.326,
+    "43": 0.339,
+    "44": 0.369,
+    "45": 0.317,
+    "46": 0.337
+  },
   "priors_match_section_6_2_rubric": true,
   "P_baseline_sigma_epsilon_only": 0.249,
   "P_joint_with_6_parameters": 0.326,

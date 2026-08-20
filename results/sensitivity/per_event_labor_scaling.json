@@ -105,28 +105,28 @@
         {
           "name": "Claiborne",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 5778.852735578494,
-          "predicted_volume_m3": 120138.04790743286,
+          "predicted_volume_m3": 120126.23738020516,
           "observed_volume_m3": 3000,
           "observed_scale": 1,
-          "log_overpred": 1.60255931620849
+          "log_overpred": 1.6025166195022245
         },
         {
           "name": "Cedarland",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 5778.852735578494,
-          "predicted_volume_m3": 120138.04790743286,
+          "predicted_volume_m3": 120126.23738020516,
           "observed_volume_m3": 1000,
           "observed_scale": 1,
-          "log_overpred": 2.0796805709281525
+          "log_overpred": 2.079637874221887
         }
       ],
-      "mean_log_overpred": 1.5242925049554024,
-      "std_log_overpred": 0.6607023339593164,
+      "mean_log_overpred": 1.5242847419178995,
+      "std_log_overpred": 0.6606982392911043,
       "spearman_rho_volume": 0.8940092165898618,
       "spearman_p_volume": 0.0002060037500216059,
       "spearman_rho_scale": 0.8477988160551113,
@@ -237,28 +237,28 @@
         {
           "name": "Claiborne",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 2311.5410942313974,
-          "predicted_volume_m3": 48055.219162973146,
+          "predicted_volume_m3": 48050.49495208207,
           "observed_volume_m3": 3000,
           "observed_scale": 1,
-          "log_overpred": 1.2046193075364524
+          "log_overpred": 1.204576610830187
         },
         {
           "name": "Cedarland",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 2311.5410942313974,
-          "predicted_volume_m3": 48055.219162973146,
+          "predicted_volume_m3": 48050.49495208207,
           "observed_volume_m3": 1000,
           "observed_scale": 1,
-          "log_overpred": 1.6817405622561148
+          "log_overpred": 1.6816978655498493
         }
       ],
-      "mean_log_overpred": 1.1679849430651499,
-      "std_log_overpred": 0.5586304732565254,
+      "mean_log_overpred": 1.167977180027647,
+      "std_log_overpred": 0.5586262668199796,
       "spearman_rho_volume": 0.8940092165898618,
       "spearman_p_volume": 0.0002060037500216059,
       "spearman_rho_scale": 0.8477988160551113,
@@ -369,28 +369,28 @@
         {
           "name": "Claiborne",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 924.616437692559,
-          "predicted_volume_m3": 19222.087665189258,
+          "predicted_volume_m3": 19220.197980832825,
           "observed_volume_m3": 3000,
           "observed_scale": 1,
-          "log_overpred": 0.8066792988644147
+          "log_overpred": 0.8066366021581493
         },
         {
           "name": "Cedarland",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 924.616437692559,
-          "predicted_volume_m3": 19222.087665189258,
+          "predicted_volume_m3": 19220.197980832825,
           "observed_volume_m3": 1000,
           "observed_scale": 1,
-          "log_overpred": 1.283800553584077
+          "log_overpred": 1.2837578568778119
         }
       ],
-      "mean_log_overpred": 0.8116773811748971,
-      "std_log_overpred": 0.49669181777325955,
+      "mean_log_overpred": 0.8116696181373942,
+      "std_log_overpred": 0.4966878025487068,
       "spearman_rho_volume": 0.8940092165898618,
       "spearman_p_volume": 0.0002060037500216059,
       "spearman_rho_scale": 0.8477988160551113,
@@ -501,28 +501,28 @@
         {
           "name": "Claiborne",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 584.7787810279295,
-          "predicted_volume_m3": 12157.115681085232,
+          "predicted_volume_m3": 12155.920539760207,
           "observed_volume_m3": 3000,
           "observed_scale": 1,
-          "log_overpred": 0.6077092945283958
+          "log_overpred": 0.6076665978221305
         },
         {
           "name": "Cedarland",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 584.7787810279295,
-          "predicted_volume_m3": 12157.115681085232,
+          "predicted_volume_m3": 12155.920539760207,
           "observed_volume_m3": 1000,
           "observed_scale": 1,
-          "log_overpred": 1.0848305492480583
+          "log_overpred": 1.0847878525417929
         }
       ],
-      "mean_log_overpred": 0.6335236002297708,
-      "std_log_overpred": 0.4859840652523165,
+      "mean_log_overpred": 0.633515837192268,
+      "std_log_overpred": 0.48598032732878843,
       "spearman_rho_volume": 0.8940092165898618,
       "spearman_p_volume": 0.0002060037500216059,
       "spearman_rho_scale": 0.8477988160551113,
@@ -633,28 +633,28 @@
         {
           "name": "Claiborne",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 369.8465750770236,
-          "predicted_volume_m3": 7688.835066075703,
+          "predicted_volume_m3": 7688.07919233313,
           "observed_volume_m3": 3000,
           "observed_scale": 1,
-          "log_overpred": 0.4087392901923771
+          "log_overpred": 0.4086965934861117
         },
         {
           "name": "Cedarland",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 369.8465750770236,
-          "predicted_volume_m3": 7688.835066075703,
+          "predicted_volume_m3": 7688.07919233313,
           "observed_volume_m3": 1000,
           "observed_scale": 1,
-          "log_overpred": 0.8858605449120395
+          "log_overpred": 0.8858178482057741
         }
       ],
-      "mean_log_overpred": 0.4553698192846445,
-      "std_log_overpred": 0.49033849805575563,
+      "mean_log_overpred": 0.4553620562471417,
+      "std_log_overpred": 0.49033515584819437,
       "spearman_rho_volume": 0.8940092165898618,
       "spearman_p_volume": 0.0002060037500216059,
       "spearman_rho_scale": 0.8477988160551113,
@@ -765,28 +765,28 @@
         {
           "name": "Claiborne",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 233.9115124111718,
-          "predicted_volume_m3": 4862.8462724340925,
+          "predicted_volume_m3": 4862.368215904083,
           "observed_volume_m3": 3000,
           "observed_scale": 1,
-          "log_overpred": 0.20976928585635826
+          "log_overpred": 0.2097265891500929
         },
         {
           "name": "Cedarland",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 233.9115124111718,
-          "predicted_volume_m3": 4862.8462724340925,
+          "predicted_volume_m3": 4862.368215904083,
           "observed_volume_m3": 1000,
           "observed_scale": 1,
-          "log_overpred": 0.6868905405760207
+          "log_overpred": 0.6868478438697554
         }
       ],
-      "mean_log_overpred": 0.27721603833951813,
-      "std_log_overpred": 0.5093689771002198,
+      "mean_log_overpred": 0.27720827530201536,
+      "std_log_overpred": 0.5093661087380014,
       "spearman_rho_volume": 0.8940092165898618,
       "spearman_p_volume": 0.0002060037500216059,
       "spearman_rho_scale": 0.8477988160551113,
@@ -897,28 +897,28 @@
         {
           "name": "Claiborne",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 147.93863003080943,
-          "predicted_volume_m3": 3075.5340264302813,
+          "predicted_volume_m3": 3075.231676933252,
           "observed_volume_m3": 3000,
           "observed_scale": 1,
-          "log_overpred": 0.010799281520339415
+          "log_overpred": 0.010756584814074101
         },
         {
           "name": "Cedarland",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 147.93863003080943,
-          "predicted_volume_m3": 3075.5340264302813,
+          "predicted_volume_m3": 3075.231676933252,
           "observed_volume_m3": 1000,
           "observed_scale": 1,
-          "log_overpred": 0.48792053624000187
+          "log_overpred": 0.48787783953373653
         }
       ],
-      "mean_log_overpred": 0.09906225739439184,
-      "std_log_overpred": 0.5415304683476431,
+      "mean_log_overpred": 0.09905449435688908,
+      "std_log_overpred": 0.5415280985888518,
       "spearman_rho_volume": 0.8940092165898618,
       "spearman_p_volume": 0.0002060037500216059,
       "spearman_rho_scale": 0.8477988160551113,
@@ -1029,28 +1029,28 @@
         {
           "name": "Claiborne",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 59.17545201232378,
-          "predicted_volume_m3": 1230.2136105721127,
+          "predicted_volume_m3": 1230.092670773301,
           "observed_volume_m3": 3000,
           "observed_scale": 1,
-          "log_overpred": -0.3871407271516981
+          "log_overpred": -0.38718342385796345
         },
         {
           "name": "Cedarland",
           "n_agg": 4,
-          "eps": 0.3,
-          "M_g": 20.789255827161412,
+          "eps": 0.4,
+          "M_g": 20.787212077689308,
           "m3_per_Mg": 59.17545201232378,
-          "predicted_volume_m3": 1230.2136105721127,
+          "predicted_volume_m3": 1230.092670773301,
           "observed_volume_m3": 1000,
           "observed_scale": 1,
-          "log_overpred": 0.08998052756796432
+          "log_overpred": 0.08993783086169901
         }
       ],
-      "mean_log_overpred": -0.25724530449586086,
-      "std_log_overpred": 0.6365319931178913,
+      "mean_log_overpred": -0.2572530675333637,
+      "std_log_overpred": 0.6365305355616611,
       "spearman_rho_volume": 0.8940092165898618,
       "spearman_p_volume": 0.0002060037500216059,
       "spearman_rho_scale": 0.8477988160551113,

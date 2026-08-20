@@ -23,7 +23,12 @@ from .parameters import (
     W_aggregator, W_independent,
     calculate_sigma_from_shortfall,
 )
-from .signaling_core import vulnerability_coefficient, lambda_total_at_sigma
+from .signaling_core import (
+    vulnerability_coefficient,
+    compute_lambda_C,
+    compute_lambda_X,
+    seasonal_effective_degree,
+)
 from .agents import Band, AggregationSite, Strategy
 from .environmental_scenarios import ShortfallParams
 
@@ -157,7 +162,8 @@ class IntegratedSimulation:
                  env_config: Optional[EnvironmentConfig] = None,
                  shortfall_params: Optional[ShortfallParams] = None,
                  seed: int = 42,
-                 signal_conditional_partners: bool = False):
+                 signal_conditional_partners: bool = False,
+                 memory_effect: bool = True):
         """
         Initialize integrated simulation.
 
@@ -174,6 +180,7 @@ class IntegratedSimulation:
         self.params = params or default_parameters(seed=seed)
         self.params.seed = seed
         self.signal_conditional_partners = signal_conditional_partners
+        self.memory_effect = memory_effect
 
         # Shortfall parameters
         self.shortfall_params = shortfall_params or ShortfallParams()
@@ -197,6 +204,12 @@ class IntegratedSimulation:
 
         # Initialize bands (from agents.py pattern)
         self.bands = self._create_bands()
+        self.band_by_id: Dict[int, Band] = {b.band_id: b for b in self.bands}
+        self.next_band_id = len(self.bands)
+
+        # Random initial obligation-network seeding: each band starts with
+        # 0-2 weak reciprocal ties to randomly chosen partners.
+        self._seed_initial_obligations()
 
         # Initialize aggregation site at ecotone location
         self.aggregation_site = self._create_aggregation_site()
@@ -206,6 +219,15 @@ class IntegratedSimulation:
         self.month = 1
         self.annual_productivities: List[float] = []
         self.effective_sigma = 0.0
+
+        # Population state sensed by next year's strategy decisions:
+        # previous year's realized attendance, and the monument signal
+        # stock / lambda the bands observed at the gathering.
+        self.prev_n_attending = max(
+            5, int(round(0.5 * self.params.population.n_bands))
+        )
+        self._sensed_M_g = 0.0
+        self._sensed_lam = self.params.signaling.lambda_W
 
         # Shortfall tracking
         self.in_shortfall = False
@@ -224,24 +246,50 @@ class IntegratedSimulation:
         n_bands = self.params.population.n_bands
         region_size = self.env_config.region_size
 
+        q_min = self.params.signaling.q_min
+        q_max = self.params.signaling.q_max
+
         for i in range(n_bands):
             x = self.rng.uniform(0, region_size)
             y = self.rng.uniform(0, region_size)
 
-            # Initial strategy based on parameters
-            strategy = (Strategy.AGGREGATOR if self.rng.random() < 0.4
+            # Initial strategy: Bernoulli(0.5) aggregator/independent
+            strategy = (Strategy.AGGREGATOR if self.rng.random() < 0.5
                        else Strategy.INDEPENDENT)
 
             band = Band(
                 band_id=i,
-                size=self.params.population.initial_band_size + self.rng.integers(-5, 6),
+                size=int(self.params.population.initial_band_size
+                         + self.rng.integers(-5, 6)),
                 home_location=(x, y),
                 strategy=strategy,
+                # Band productive quality drawn from U[q_min, q_max]
+                # (heterogeneous signaling capacity across bands).
+                quality=float(self.rng.uniform(q_min, q_max)),
                 resources=0.4 + 0.2 * self.rng.random()
             )
             bands.append(band)
 
         return bands
+
+    def _seed_initial_obligations(self) -> None:
+        """Seed each band with 0-2 weak reciprocal obligations."""
+        band_ids = [b.band_id for b in self.bands]
+        for band in self.bands:
+            n_ties = int(self.rng.integers(0, 3))
+            if n_ties == 0 or len(band_ids) < 2:
+                continue
+            partners = self.rng.choice(
+                [i for i in band_ids if i != band.band_id],
+                size=min(n_ties, len(band_ids) - 1),
+                replace=False,
+            )
+            for partner_id in np.atleast_1d(partners):
+                partner_id = int(partner_id)
+                band.form_obligation(partner_id, strength=0.1)
+                self.band_by_id[partner_id].form_obligation(
+                    band.band_id, strength=0.1
+                )
 
     def _create_aggregation_site(self) -> AggregationSite:
         """Create aggregation site at optimal ecotone location."""
@@ -352,7 +400,7 @@ class IntegratedSimulation:
                 band.home_location,
                 access_radius=50.0
             )
-            base_harvest = location_value['total'] * 0.3
+            base_harvest = location_value['total'] * 0.3 * self._harvest_factor()
 
             # Aggregators prepare for travel (reduced foraging)
             if band.strategy == Strategy.AGGREGATOR:
@@ -365,54 +413,82 @@ class IntegratedSimulation:
             band.resources += harvest - consumption
             band.resources = max(0.0, band.resources)
 
+    # Scale converting (vulnerability x shortfall severity) into per-event
+    # mortality. At the PP-scenario severity (m ~ 0.45-0.5) an unbuffered
+    # band (alpha ~ 0.985) loses ~9-10% of members per shortfall year;
+    # a well-networked aggregator loses proportionally less via alpha(k).
+    SHORTFALL_MORTALITY_SCALE = 0.2
+
+    def _harvest_factor(self) -> float:
+        """Shortfall propagation into realized productivity.
+
+        In a shortfall year every harvest draw is reduced by the shortfall
+        severity, so shortfalls flow through zone productivity into band
+        resources rather than acting on mortality alone. Harvests are also
+        density-dependent: regional productivity is finite, so the per-band
+        share scales inversely with the number of bands drawing on the
+        region (normalized to the initial band count).
+        """
+        shortfall = 1.0 - self.shortfall_severity if self.in_shortfall else 1.0
+        density = self.params.population.n_bands / max(1, len(self.bands))
+        return shortfall * min(density, 2.0)
+
     def _run_summer_aggregation(self) -> None:
         """
-        Summer aggregation season: Bands gather at Poverty Point.
+        Summer aggregation season: bands gather at Poverty Point.
+
+        Runs once per simulated year. Strategy decisions are synchronous:
+        every band evaluates the same start-of-year population state
+        (previous year's realized attendance, the site's depreciated
+        monument signal stock, and the lambda implied by that stock)
+        before any band acts. Partner formation runs as a second pass
+        over the full attending cohort.
         """
         # Reset aggregation site
         self.aggregation_site.reset_annual_state()
 
-        # Calculate expected aggregation benefits
-        expected_n = max(5, self.aggregation_site.n_attending)
+        # Population state sensed by all bands this year.
+        expected_n = max(5, self.prev_n_attending)
+        M_g_sensed = self.aggregation_site.effective_M_g
+        lam_sensed = (
+            self.params.signaling.lambda_W
+            + compute_lambda_C(M_g_sensed, self.params.conflict)
+            + compute_lambda_X(M_g_sensed, self.effective_sigma,
+                               self.params.network)
+        )
+        self._sensed_M_g = M_g_sensed
+        self._sensed_lam = lam_sensed
 
         # Get actual ecotone value at aggregation site
         site_value = self.environment.get_location_value(
             self.aggregation_site.location,
             access_radius=80.0  # Larger radius during aggregation
         )
-        ecotone_benefit = site_value.get('diversity_bonus', 0.0)
 
         total_construction = 0.0
+        harvest_factor = self._harvest_factor()
 
-        # Compute equilibrium lambda for strategy decisions
-        eq_decision = lambda_total_at_sigma(
-            self.effective_sigma,
-            self.params.signaling,
-            self.params.network,
-            self.params.conflict,
-            self.params.aggregation,
-            expected_n,
-        )
-        decision_lam = eq_decision['lambda_total']
-        decision_M_g = eq_decision['M_g']
-
+        # Pass 1: synchronous strategy decisions and individual actions.
         for band in self.bands:
-            # Bands decide strategy based on current conditions
             band.strategy = band.decide_strategy(
                 expected_n=expected_n,
                 sigma=self.effective_sigma,
                 epsilon=self.aggregation_site.ecotone_advantage,
                 params=self.params,
                 rng=self.rng,
-                M_g=decision_M_g,
-                lam=decision_lam,
+                M_g=M_g_sensed,
+                lam=lam_sensed,
+                site_location=self.aggregation_site.location,
+                memory_effect=self.memory_effect,
             )
             band.strategy_history.append(band.strategy)
 
             if band.strategy == Strategy.AGGREGATOR:
-                # Travel to aggregation site
+                # Travel to aggregation site (documented cost coefficient,
+                # capped at 30% of current resources)
                 travel_cost = band.calculate_travel_cost(
-                    self.aggregation_site.location
+                    self.aggregation_site.location,
+                    cost_per_km=self.params.aggregation.C_travel_per_km,
                 )
                 band.resources -= min(travel_cost, band.resources * 0.3)
 
@@ -421,101 +497,125 @@ class IntegratedSimulation:
                 band.aggregation_history.append(True)
 
                 # Benefit from ecotone resources during aggregation
-                aggregation_harvest = site_value['total'] * 0.2
+                aggregation_harvest = site_value['total'] * 0.2 * harvest_factor
                 band.resources += aggregation_harvest
 
-                # Monument investment (equilibrium signaling via feedback loop)
+                # Monument investment at the signaling equilibrium x*(q),
+                # under the lambda every band sensed at the start of the
+                # gathering (synchronous within the phase).
                 if band.resources > 0.3:
-                    eq = lambda_total_at_sigma(
-                        self.effective_sigma,
-                        self.params.signaling,
-                        self.params.network,
-                        self.params.conflict,
-                        self.params.aggregation,
-                        max(1, len(self.aggregation_site.attending_bands)),
-                    )
-                    lam = eq['lambda_total']
                     investment = band.invest_in_monument(
-                        lam=lam,
+                        lam=lam_sensed,
                         q_min=self.params.signaling.q_min,
                         rng=self.rng,
                     )
                     total_construction += investment
 
-                # Exotic acquisition
+                # Exotic acquisition (at most one material per year)
                 band.acquire_exotic(rng=self.rng)
-
-                # Form social obligations
-                if len(self.aggregation_site.attending_bands) > 1:
-                    potential_partners = [
-                        b_id for b_id in self.aggregation_site.attending_bands
-                        if b_id != band.band_id
-                    ]
-                    if potential_partners:
-                        if self.signal_conditional_partners:
-                            # Signal-conditional partner formation:
-                            # tie probability depends on the focal band's
-                            # display level, and partner choice is weighted
-                            # by potential partners' display levels. Display =
-                            # monument contributions plus exotic-goods count
-                            # (both visible at the gathering); normalized
-                            # within the attending cohort so the rule is
-                            # scale-free across scenarios.
-                            attending = self.aggregation_site.attending_bands
-                            displays = {}
-                            for b_id in attending:
-                                b = self.bands[b_id]
-                                displays[b_id] = (
-                                    b.monument_contributions
-                                    + float(b.total_exotic_count)
-                                )
-                            d_max = max(displays.values()) if displays else 0.0
-                            if d_max > 0:
-                                norm_display = {
-                                    k: v / d_max for k, v in displays.items()
-                                }
-                            else:
-                                norm_display = {k: 0.0 for k in displays}
-
-                            # Focal band's tie-formation probability.
-                            # Base 0.20 (matches manuscript "20-30%" lower
-                            # bound) plus 0.20 * own normalized display, so
-                            # high-display bands form ties up to ~0.40.
-                            own_signal = norm_display.get(band.band_id, 0.0)
-                            tie_prob = 0.20 + 0.20 * own_signal
-
-                            if self.rng.random() < tie_prob:
-                                # Partner choice weighted by display level.
-                                # Floor at 0.5 so low-display bands still get
-                                # picked occasionally; weight up to 1.5x for
-                                # max-display partners.
-                                weights = np.array([
-                                    0.5 + norm_display.get(p_id, 0.0)
-                                    for p_id in potential_partners
-                                ], dtype=float)
-                                weights /= weights.sum()
-                                partner_id = int(self.rng.choice(
-                                    potential_partners, p=weights
-                                ))
-                                band.form_obligation(partner_id)
-                        else:
-                            # Signal-blind (prior behavior): uniform 30%
-                            # probability, partner chosen uniformly at random.
-                            if self.rng.random() < 0.3:
-                                partner_id = self.rng.choice(potential_partners)
-                                band.form_obligation(partner_id)
-
             else:
                 # Independent: continue foraging at home
                 band.aggregation_history.append(False)
                 location_value = self.environment.get_location_value(
                     band.home_location, access_radius=50.0
                 )
-                harvest = location_value['total'] * 0.25
+                harvest = location_value['total'] * 0.25 * harvest_factor
                 band.resources += harvest
 
-        # Record construction
+        # Pass 2: partner formation over the full attending cohort.
+        self._form_obligations()
+
+        # Record construction, update each band's realized network state,
+        # and remember attendance for next year's decisions.
         self.aggregation_site.record_construction(total_construction)
+        self._update_network_state()
+        self.prev_n_attending = self.aggregation_site.n_attending
+
+    def _form_obligations(self) -> None:
+        """Partner formation among attending bands (one pass per year).
+
+        Signal-conditional mode: tie probability 0.20 + 0.20 * own
+        normalized display (display = monument contributions plus
+        exotic-goods count, normalized within the attending cohort);
+        partner choice weighted 0.5 + partner's normalized display.
+
+        Signal-blind mode (random-partner ablation): the same expected
+        number of ties forms (uniform probability equal to the cohort
+        mean of the conditional probabilities), but who pairs with whom
+        is uniform random.
+
+        Obligations are reciprocal: both bands record the tie.
+        """
+        attending = self.aggregation_site.attending_bands
+        if len(attending) <= 1:
+            return
+
+        displays = {}
+        for b_id in attending:
+            b = self.band_by_id[b_id]
+            displays[b_id] = (
+                b.monument_contributions + float(b.total_exotic_count)
+            )
+        d_max = max(displays.values())
+        if d_max > 0:
+            norm_display = {k: v / d_max for k, v in displays.items()}
+        else:
+            norm_display = {k: 0.0 for k in displays}
+
+        mean_display = float(np.mean(list(norm_display.values())))
+        blind_prob = 0.20 + 0.20 * mean_display
+
+        for b_id in attending:
+            band = self.band_by_id[b_id]
+            potential_partners = [p for p in attending if p != b_id]
+            if not potential_partners:
+                continue
+
+            if self.signal_conditional_partners:
+                tie_prob = 0.20 + 0.20 * norm_display[b_id]
+                if self.rng.random() < tie_prob:
+                    # Partner choice weighted by display level. Floor at
+                    # 0.5 so low-display bands still get picked; weight up
+                    # to 1.5x for max-display partners.
+                    weights = np.array([
+                        0.5 + norm_display[p_id]
+                        for p_id in potential_partners
+                    ], dtype=float)
+                    weights /= weights.sum()
+                    partner_id = int(self.rng.choice(
+                        potential_partners, p=weights
+                    ))
+                    band.form_obligation(partner_id)
+                    self.band_by_id[partner_id].form_obligation(b_id)
+            else:
+                # Signal-blind: equal expected tie count, random pairing.
+                if self.rng.random() < blind_prob:
+                    partner_id = int(self.rng.choice(potential_partners))
+                    band.form_obligation(partner_id)
+                    self.band_by_id[partner_id].form_obligation(b_id)
+
+    def _update_network_state(self) -> None:
+        """Update each band's realized network degree after aggregation.
+
+        A band's within-aggregation degree is k_0 plus the summed strength
+        of its obligations, capped at k_0 + k_max (the saturating ceiling
+        of the network-growth function). Aggregators carry the seasonal
+        average k_eff into winter vulnerability; independents fall back to
+        the baseline kin degree k_0.
+        """
+        k_0 = self.params.network.k_0
+        k_cap = k_0 + self.params.network.k_max
+        for band in self.bands:
+            k_band = min(k_0 + sum(band.obligations.values()), k_cap)
+            band.network_degree_value = k_band
+            if band.strategy == Strategy.AGGREGATOR:
+                band.seasonal_k = seasonal_effective_degree(
+                    k_band, k_0,
+                    self.params.aggregation.delta_net,
+                    self.params.aggregation.f_agg,
+                )
+            else:
+                band.seasonal_k = k_0
 
     def _run_fall_dispersal(self) -> None:
         """
@@ -530,7 +630,8 @@ class IntegratedSimulation:
 
             # Extra benefit if mast is accessible
             mast_bonus = location_value.get('mast', 0.0) * 0.5
-            harvest = location_value['total'] * 0.2 + mast_bonus
+            harvest = (location_value['total'] * 0.2 + mast_bonus) \
+                * self._harvest_factor()
 
             # Consumption and storage for winter
             consumption = band.size * 0.012
@@ -570,7 +671,13 @@ class IntegratedSimulation:
                     self.effective_sigma,
                     eps,
                     self.aggregation_site.n_attending,
-                    self.params
+                    self.params,
+                    band_quality=band.quality,
+                    travel_distance=band.calculate_travel_distance(
+                        self.aggregation_site.location
+                    ),
+                    M_g=self._sensed_M_g,
+                    lam=self._sensed_lam,
                 )
             else:
                 fitness = W_independent(self.effective_sigma, self.params)
@@ -603,26 +710,46 @@ class IntegratedSimulation:
                             for partner_id, _strength in partners_sorted:
                                 if remaining <= 0.001:
                                     break
+                                partner = self.band_by_id.get(partner_id)
+                                if partner is None:
+                                    # Partner band dissolved; prune the tie.
+                                    band.obligations.pop(partner_id, None)
+                                    continue
+                                # Help is a transfer: bounded by what the
+                                # partner can spare (floor 0.05).
+                                available = max(0.0, partner.resources - 0.05)
+                                if available <= 0.0:
+                                    continue
                                 help_received = band.call_obligation(
-                                    partner_id, need=remaining,
+                                    partner_id,
+                                    need=min(remaining, available),
                                 )
+                                partner.resources -= help_received
                                 band.resources += help_received
                                 remaining -= help_received
                         else:
                             # Signal-blind (prior behavior): one random call.
-                            partner_id = self.rng.choice(
+                            partner_id = int(self.rng.choice(
                                 list(band.obligations.keys())
-                            )
-                            help_received = band.call_obligation(
-                                partner_id, need=0.15,
-                            )
-                            band.resources += help_received
+                            ))
+                            partner = self.band_by_id.get(partner_id)
+                            if partner is None:
+                                band.obligations.pop(partner_id, None)
+                            else:
+                                available = max(0.0, partner.resources - 0.05)
+                                help_received = band.call_obligation(
+                                    partner_id, need=min(0.15, available),
+                                )
+                                partner.resources -= help_received
+                                band.resources += help_received
                 else:
                     vuln = vulnerability_coefficient(self.params.network.k_0, gamma)
 
+                # Mortality is driven by the realized event severity, not
+                # the composite sigma index, at the documented scale.
                 band.suffer_shortfall(
-                    vuln,
-                    self.effective_sigma,
+                    vuln * self.SHORTFALL_MORTALITY_SCALE,
+                    self.shortfall_severity,
                     self.rng
                 )
 
@@ -637,11 +764,43 @@ class IntegratedSimulation:
             # Storage decay on excess resources
             band.apply_storage_decay()
 
-            # Band size constraints
-            if band.size < self.params.population.min_band_size:
-                band.size = self.params.population.min_band_size
-            elif band.size > self.params.population.max_band_size:
-                band.size = self.params.population.max_band_size
+        # Band-size demography (dissolution / fission) is applied once per
+        # year in step_year after the winter phase.
+
+    def _apply_fission_and_dissolution(self) -> None:
+        """Apply once-per-year band demography.
+
+        Bands below min_band_size dissolve (are removed from the
+        population). Bands above max_band_size fission deterministically:
+        a daughter band splits off with half the members and resources,
+        inheriting the parent's monument-contribution history and
+        obligation network at half weight (Band.fission).
+        """
+        min_size = self.params.population.min_band_size
+        max_size = self.params.population.max_band_size
+
+        survivors: List[Band] = []
+        daughters: List[Band] = []
+        for band in self.bands:
+            if band.size < min_size:
+                continue  # band dissolves
+            if band.size > max_size:
+                daughter = band.fission(
+                    self.next_band_id, self.rng,
+                    q_min=self.params.signaling.q_min,
+                    q_max=self.params.signaling.q_max,
+                )
+                self.next_band_id += 1
+                daughters.append(daughter)
+            survivors.append(band)
+
+        if not survivors and not daughters:
+            # Guard against total dissolution: keep the largest band so
+            # downstream statistics remain defined.
+            survivors = [max(self.bands, key=lambda b: b.size)]
+
+        self.bands = survivors + daughters
+        self.band_by_id = {b.band_id: b for b in self.bands}
 
     def _record_state(self, annual: bool = False) -> IntegratedState:
         """Record current simulation state."""
@@ -740,30 +899,28 @@ class IntegratedSimulation:
         # Update effective sigma from productivity history
         self.effective_sigma = self._calculate_effective_sigma()
 
-        # Run seasonal cycle
-        # Spring (months 3-5): Dispersal
-        for month in [3, 4, 5]:
+        # Run seasonal cycle: the time step is one year, partitioned into
+        # a four-phase annual cycle. Each seasonal handler executes exactly
+        # once per year, with the environment set to a representative month
+        # for that season.
+        for month, handler in ((4, self._run_spring_dispersal),
+                               (7, self._run_summer_aggregation),
+                               (10, self._run_fall_dispersal),
+                               (1, self._run_winter_mortality)):
             self.month = month
             self.environment.month = month
-            self._run_spring_dispersal()
+            handler()
 
-        # Summer (months 6-8): Aggregation
-        for month in [6, 7, 8]:
-            self.month = month
-            self.environment.month = month
-            self._run_summer_aggregation()
+        # Monument signal-stock depreciation, once per year:
+        # M_g(t+1) = (1 - delta) * M_g(t) + I_g(t). The cumulative
+        # monument_level (physical fill) is unaffected; only the signal
+        # value depreciates.
+        self.aggregation_site.depreciate_monument(self.params.signaling.delta)
 
-        # Fall (months 9-11): Dispersal
-        for month in [9, 10, 11]:
-            self.month = month
-            self.environment.month = month
-            self._run_fall_dispersal()
-
-        # Winter (months 12, 1, 2): Mortality/reproduction
-        for month in [12, 1, 2]:
-            self.month = month
-            self.environment.month = month
-            self._run_winter_mortality()
+        # Band demography: dissolution below the minimum viable size,
+        # deterministic fission above the maximum size (daughter bands
+        # inherit history and network at half weight).
+        self._apply_fission_and_dissolution()
 
         # Record annual state
         state = self._record_state(annual=True)

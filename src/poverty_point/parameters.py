@@ -155,8 +155,8 @@ class PopulationParameters:
     death_rate: float = 0.02      # Per capita annual (non-shortfall)
 
     # Band size constraints
-    min_band_size: int = 5        # Below this, band dissolves
-    max_band_size: int = 50       # Above this, band fissions
+    min_band_size: int = 5        # Below this, band dissolves (removed from population)
+    max_band_size: int = 30       # Above this, band fissions (daughter band splits off)
 
 
 @dataclass

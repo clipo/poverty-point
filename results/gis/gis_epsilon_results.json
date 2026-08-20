@@ -148,10 +148,10 @@
     "J.W. Copes": 0.42,
     "Cowpen Slough": 0.42,
     "Jaketown": 0.4,
-    "Claiborne": 0.3,
-    "Cedarland": 0.3
+    "Claiborne": 0.4,
+    "Cedarland": 0.4
   },
-  "spearman_rho": 0.6638123629060045,
-  "spearman_p": 0.025930461438533427,
+  "spearman_rho": 0.7016135979285366,
+  "spearman_p": 0.016117841759634776,
   "buffer_km": 25.0
 }

@@ -47,7 +47,7 @@ EPS_STATIC = {
     'Poverty Point': 0.49, 'Lower Jackson': 0.48, 'Watson Brake': 0.43,
     "Frenchman's Bend": 0.43, 'Caney': 0.43, 'Insley': 0.43,
     'Cowpen Slough': 0.42, 'J.W. Copes': 0.42, 'Jaketown': 0.40,
-    'Claiborne': 0.30, 'Cedarland': 0.30,
+    'Claiborne': 0.40, 'Cedarland': 0.40,
 }
 
 EPS_PHEN = {  # phenology peak count rescaled to [0.10, 0.50]
@@ -57,12 +57,37 @@ EPS_PHEN = {  # phenology peak count rescaled to [0.10, 0.50]
     'Claiborne': 0.18, 'Cedarland': 0.18,
 }
 
-EPS_WR = {  # water-route epsilon from S7.7 extension 6
-    'Poverty Point': 0.154, 'Lower Jackson': 0.145, 'Watson Brake': 0.115,
-    "Frenchman's Bend": 0.115, 'Caney': 0.070, 'Insley': 0.083,
-    'Cowpen Slough': 0.068, 'J.W. Copes': 0.068, 'Jaketown': 0.151,
-    'Claiborne': 0.050, 'Cedarland': 0.050,
-}
+def load_eps_wr() -> dict:
+    """Water-route epsilon per site, from the S17.4 extension output."""
+    path = Path('results/sensitivity/water_route_epsilon.json')
+    with open(path) as f:
+        data = json.load(f)
+    return {s['site']: s['eps_water_route'] for s in data['sites']}
+
+
+def load_eps_epa_l4() -> dict:
+    """EPA Level IV GIS epsilon per site, from the stored §S12 output."""
+    path = Path('results/gis/gis_epsilon_eparegions.json')
+    with open(path) as f:
+        data = json.load(f)
+    return {s['name']: s['epsilon_gis_l4'] for s in data['sites']}
+
+
+def partial_spearman(x, y, z):
+    """Partial Spearman rho of x and y controlling for z.
+
+    Rank-transform all three variables, then compute the first-order
+    partial Pearson correlation on the ranks.
+    """
+    from scipy.stats import rankdata, pearsonr
+    rx, ry, rz = rankdata(x), rankdata(y), rankdata(z)
+    r_xy = pearsonr(rx, ry).statistic
+    r_xz = pearsonr(rx, rz).statistic
+    r_yz = pearsonr(ry, rz).statistic
+    denom = np.sqrt((1.0 - r_xz ** 2) * (1.0 - r_yz ** 2))
+    if denom <= 0:
+        return float('nan')
+    return float((r_xy - r_xz * r_yz) / denom)
 
 ALPHA = 2.0
 N_REF = 25
@@ -95,12 +120,15 @@ def main():
     vol = [s[3] for s in SITES]
     eps_st = [EPS_STATIC[s[0]] for s in SITES]
     eps_ph = [EPS_PHEN[s[0]] for s in SITES]
-    eps_wr = [EPS_WR[s[0]] for s in SITES]
+    eps_wr_map = load_eps_wr()
+    eps_wr = [eps_wr_map[s[0]] for s in SITES]
+    eps_l4_map = load_eps_epa_l4()
+    eps_l4 = [eps_l4_map[s[0]] for s in SITES]
 
     # Joint predicted volumes under each epsilon
     pred_static = [joint_predicted_volume(EPS_STATIC, params)[s[0]] for s in SITES]
     pred_phen = [joint_predicted_volume(EPS_PHEN, params)[s[0]] for s in SITES]
-    pred_wr = [joint_predicted_volume(EPS_WR, params)[s[0]] for s in SITES]
+    pred_wr = [joint_predicted_volume(eps_wr_map, params)[s[0]] for s in SITES]
 
     # Spearman correlations
     print(f'{"Predictor":40s} {"vs ordinal":>14s} {"vs volume":>14s}')
@@ -109,6 +137,7 @@ def main():
     for name, x in [
         ('n_agg alone', n_agg),
         ('static epsilon alone', eps_st),
+        ('EPA-L4 epsilon alone', eps_l4),
         ('phenology epsilon alone', eps_ph),
         ('water-route epsilon alone', eps_wr),
         ('joint M_g(static_eps, n_agg)', pred_static),
@@ -117,12 +146,22 @@ def main():
     ]:
         r1, p1 = spearmanr(x, scale)
         r2, p2 = spearmanr(x, vol)
-        print(f'{name:40s} {r1:+.3f} (p={p1:.3f}) {r2:+.3f} (p={p2:.3f})')
-        rows.append({
+        row = {
             'predictor': name, 'rho_vs_ordinal_scale': float(r1),
             'p_vs_ordinal': float(p1),
             'rho_vs_volume': float(r2), 'p_vs_volume': float(p2),
-        })
+        }
+        if name.endswith('epsilon alone'):
+            row['partial_rho_vs_ordinal_given_nagg'] = partial_spearman(
+                x, scale, n_agg)
+            row['partial_rho_vs_volume_given_nagg'] = partial_spearman(
+                x, vol, n_agg)
+            print(f'{name:40s} {r1:+.3f} (p={p1:.3f}) {r2:+.3f} (p={p2:.3f}) '
+                  f'partial|n_agg: {row["partial_rho_vs_ordinal_given_nagg"]:+.3f} / '
+                  f'{row["partial_rho_vs_volume_given_nagg"]:+.3f}')
+        else:
+            print(f'{name:40s} {r1:+.3f} (p={p1:.3f}) {r2:+.3f} (p={p2:.3f})')
+        rows.append(row)
 
     # Marginal contribution: joint rho - n_agg-alone rho
     print()

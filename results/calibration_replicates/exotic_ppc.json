@@ -1,0 +1,102 @@
+{
+  "per_material": {
+    "copper": {
+      "model_mean": 106.125,
+      "model_sd_ddof1": 30.390024209081695,
+      "predictive_interval_95": [
+        46.56055255019988,
+        165.68944744980013
+      ],
+      "archaeological_count": 155,
+      "z_score": 1.6082580146610839,
+      "overprediction_ratio": 0.6846774193548387,
+      "observation_inside_interval": true
+    },
+    "crystal_quartz": {
+      "model_mean": 3190.375,
+      "model_sd_ddof1": 898.1137276854992,
+      "predictive_interval_95": [
+        1430.0720937364217,
+        4950.677906263578
+      ],
+      "archaeological_count": 395,
+      "z_score": -3.112495571361406,
+      "overprediction_ratio": 8.076898734177215,
+      "observation_inside_interval": false
+    },
+    "galena": {
+      "model_mean": 701.5,
+      "model_sd_ddof1": 188.07445334228677,
+      "predictive_interval_95": [
+        332.87407144911793,
+        1070.125928550882
+      ],
+      "archaeological_count": 740,
+      "z_score": 0.20470616458436164,
+      "overprediction_ratio": 0.947972972972973,
+      "observation_inside_interval": true
+    },
+    "novaculite": {
+      "model_mean": 6405.625,
+      "model_sd_ddof1": 1923.137461657011,
+      "predictive_interval_95": [
+        2636.2755751522586,
+        10174.974424847742
+      ],
+      "archaeological_count": 101,
+      "z_score": -3.2783017988572785,
+      "overprediction_ratio": 63.4220297029703,
+      "observation_inside_interval": false
+    },
+    "steatite": {
+      "model_mean": 479.5,
+      "model_sd_ddof1": 116.18335263096616,
+      "predictive_interval_95": [
+        251.78062884330635,
+        707.2193711566937
+      ],
+      "archaeological_count": 2221,
+      "z_score": 14.989238652214972,
+      "overprediction_ratio": 0.21589374155785682,
+      "observation_inside_interval": false
+    }
+  },
+  "joint_materials": [
+    "copper",
+    "steatite",
+    "galena",
+    "crystal_quartz"
+  ],
+  "cross_material_correlations": {
+    "matrix": [
+      [
+        1.0,
+        0.8927724550147107,
+        0.9618934208071709,
+        0.9508978199539372
+      ],
+      [
+        0.8927724550147107,
+        1.0,
+        0.9650763661125914,
+        0.9721618817601297
+      ],
+      [
+        0.9618934208071709,
+        0.9650763661125915,
+        0.9999999999999999,
+        0.9886092683836452
+      ],
+      [
+        0.9508978199539372,
+        0.9721618817601297,
+        0.988609268383645,
+        0.9999999999999999
+      ]
+    ],
+    "offdiag_min": 0.8927724550147107,
+    "offdiag_max": 0.9886092683836452
+  },
+  "mahalanobis_d2": 9288.704452198317,
+  "n_replicates": 8
+}

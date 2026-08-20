@@ -101,24 +101,24 @@
     },
     {
       "name": "Claiborne",
-      "eps_static": 0.3,
+      "eps_static": 0.4,
       "eps_phen": 0.18000000000000002,
       "peak_count": 1,
       "monument_scale": 1,
-      "sigma_star_static": 0.4174670368108802,
+      "sigma_star_static": 0.3832986314066753,
       "sigma_star_phen": 0.46747344142925445,
-      "margin_static": 0.2225329631891198,
+      "margin_static": 0.2567013685933247,
       "margin_phen": 0.17252655857074556
     },
     {
       "name": "Cedarland",
-      "eps_static": 0.3,
+      "eps_static": 0.4,
       "eps_phen": 0.18000000000000002,
       "peak_count": 1,
       "monument_scale": 1,
-      "sigma_star_static": 0.4174670368108802,
+      "sigma_star_static": 0.3832986314066753,
       "sigma_star_phen": 0.46747344142925445,
-      "margin_static": 0.2225329631891198,
+      "margin_static": 0.2567013685933247,
       "margin_phen": 0.17252655857074556
     }
   ],
@@ -131,8 +131,8 @@
   },
   "spearman": {
     "eps_static_vs_scale": {
-      "rho": 0.387846410524698,
-      "p": 0.23855057107893163,
+      "rho": 0.39067400380863776,
+      "p": 0.2348465093981425,
       "n": 11
     },
     "eps_phen_vs_scale": {
@@ -141,8 +141,8 @@
       "n": 11
     },
     "margin_static_vs_scale": {
-      "rho": 0.387846410524698,
-      "p": 0.23855057107893163,
+      "rho": 0.39067400380863776,
+      "p": 0.2348465093981425,
       "n": 11
     },
     "margin_phen_vs_scale": {

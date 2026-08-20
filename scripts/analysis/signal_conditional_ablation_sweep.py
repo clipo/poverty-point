@@ -6,9 +6,9 @@ if the run is interrupted.
 
 Sweep design:
 - 7 σ_eff values spanning 0.20 to 0.55
-- 6 replicates per cell
+- 20 replicates per cell
 - 2 modes (signal_conditional={True, False})
-- Total: 7 × 6 × 2 = 84 simulations
+- Total: 7 x 20 x 2 = 280 simulations
 - Estimated runtime at ~9 min/sim: ~12.6 hours
 """
 import sys, os, time, json
@@ -31,7 +31,7 @@ def interval_for_sigma_eff(sigma_eff_target):
     return T
 
 sigma_effs = [0.20, 0.28, 0.36, 0.40, 0.44, 0.50, 0.55]
-n_replicates = 6
+n_replicates = 20
 duration = 200
 burn_in = 50
 
@@ -44,7 +44,7 @@ print(flush=True)
 # Output paths
 OUTDIR = '/Users/clipo/PycharmProjects/poverty-point/results/ablation'
 os.makedirs(OUTDIR, exist_ok=True)
-OUTFILE = os.path.join(OUTDIR, 'overnight_sweep.json')
+OUTFILE = os.path.join(OUTDIR, 'ablation_sweep_engine2.json')
 
 # Load existing partial results if any
 if os.path.exists(OUTFILE):
@@ -64,6 +64,10 @@ else:
         'mode_random': {str(se): [] for se in sigma_effs},
         'realized_sigma_signal': {str(se): [] for se in sigma_effs},
         'realized_sigma_random': {str(se): [] for se in sigma_effs},
+        'agg_size_signal': {str(se): [] for se in sigma_effs},
+        'agg_size_random': {str(se): [] for se in sigma_effs},
+        'monument_signal': {str(se): [] for se in sigma_effs},
+        'monument_random': {str(se): [] for se in sigma_effs},
     }
 
 t_start = time.time()
@@ -90,9 +94,15 @@ for mode in [True, False]:
                 sim = IntegratedSimulation(params=p, seed=seed,
                                            shortfall_params=sp,
                                            signal_conditional_partners=mode)
+                # Pin the PP-scenario ecotone advantage rather than using
+                # the emergent environment-derived value.
+                sim.aggregation_site.ecotone_advantage = EPS
                 res = sim.run(verbose=False)
                 results[mode_key][str(sigma_eff_target)].append(float(res.final_strategy_dominance))
                 results[sigma_key][str(sigma_eff_target)].append(float(res.mean_effective_sigma))
+                aux = 'signal' if mode else 'random'
+                results[f'agg_size_{aux}'].setdefault(str(sigma_eff_target), []).append(float(res.mean_aggregation_size))
+                results[f'monument_{aux}'].setdefault(str(sigma_eff_target), []).append(float(res.final_monument_level))
             except Exception as e:
                 print(f"  σ_eff={sigma_eff_target:.2f} rep={rep}: ERROR {e}", flush=True)
                 continue

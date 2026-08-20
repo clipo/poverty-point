@@ -29,7 +29,7 @@ from poverty_point.signaling_core import (
     critical_threshold,
 )
 
-OUTPUT_DIR = Path(__file__).resolve().parents[2] / "figures" / "final"
+OUTPUT_DIR = Path(__file__).resolve().parents[2] / "figures" / "supplemental"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 plt.rcParams.update({

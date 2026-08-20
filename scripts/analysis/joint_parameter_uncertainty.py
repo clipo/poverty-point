@@ -98,10 +98,41 @@ print(f'\nPosterior on σ_eff - σ* (the methods reviewer\'s preferred summary):
 print(f'  mean={diff.mean():+.3f}, 95% CI=[{np.percentile(diff,2.5):+.3f}, {np.percentile(diff,97.5):+.3f}]')
 print(f'  P(σ_eff - σ* > 0) = {(diff > 0).mean():.3f}')
 
+# Monte Carlo seed sensitivity: recompute the joint P across additional
+# seeds so the reported seed-to-seed range is backed by stored output.
+def joint_P_for_seed(seed, n=N):
+    r = np.random.default_rng(seed)
+    s_sigma = sample_sigma(r, n)
+    s_eps = sample_epsilon(r, n)
+    s_par = {k: r.uniform(*prior_bounds[k], n) for k in defaults}
+    above = []
+    for i in range(n):
+        sp = SignalingParams(lambda_W=float(s_par['lambda_W'][i]))
+        np_ = NetworkParams(gamma=float(s_par['gamma'][i]),
+                            k_max=float(s_par['k_max'][i]),
+                            M_half=float(s_par['M_half'][i]))
+        ap = AggregationParams(C_signal=float(s_par['C_signal'][i]),
+                               C_opportunity=float(s_par['C_opportunity'][i]))
+        try:
+            res = critical_threshold(epsilon=float(s_eps[i]), n_agg=25,
+                                     sig_params=sp, net_params=np_,
+                                     conf_params=ConflictParams(), agg_params=ap)
+        except Exception:
+            continue
+        above.append(s_sigma[i] * (1 - s_eps[i]) > res['sigma_star'])
+    return float(np.mean(above))
+
+P_by_seed = {42: float(P_joint)}
+for extra_seed in (43, 44, 45, 46):
+    P_by_seed[extra_seed] = joint_P_for_seed(extra_seed)
+    print(f'Joint P at seed {extra_seed}: {P_by_seed[extra_seed]:.3f}')
+print(f'Joint P seed range: {min(P_by_seed.values()):.3f} to {max(P_by_seed.values()):.3f}')
+
 # Save
 import json
 out = {
     'N': int(len(results_sigma_star)),
+    'P_joint_by_seed': {str(k): v for k, v in P_by_seed.items()},
     'priors_match_section_6_2_rubric': True,
     'P_baseline_sigma_epsilon_only': float(P_baseline),
     'P_joint_with_6_parameters': float(P_joint),

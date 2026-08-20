@@ -312,12 +312,12 @@
     "J.W. Copes": 0.42,
     "Cowpen Slough": 0.42,
     "Jaketown": 0.4,
-    "Claiborne": 0.3,
-    "Cedarland": 0.3
+    "Claiborne": 0.4,
+    "Cedarland": 0.4
   },
   "spearman_qual_vs_gis_l4": {
-    "rho": 0.06559553986911043,
-    "p": 0.8480440142969873,
+    "rho": 0.11798886426452809,
+    "p": 0.7297124713417562,
     "n": 11
   },
   "buffer_km": 25.0,
